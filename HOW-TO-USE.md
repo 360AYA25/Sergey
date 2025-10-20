@@ -31,7 +31,7 @@ File → Open Workspace from File...
 ```
 Explorer (левая панель):
 ├── 🎯 SERGEY (MAIN)        ← Главный проект
-│   ├── CLAUDE-GLOBAL-INSTRUCTIONS.md
+│   ├── CLAUDE.md
 │   ├── PROJECT-STRUCTURE.md
 │   └── HOW-TO-USE.md (этот файл)
 │
@@ -88,7 +88,7 @@ Cmd+Shift+F              # Глобальный поиск
 
 ### Как Claude знает что делать:
 
-1. **Сначала** Claude читает `Sergey/CLAUDE-GLOBAL-INSTRUCTIONS.md` (глобальные правила)
+1. **Сначала** Claude читает `Sergey/CLAUDE.md` (глобальные правила)
 2. **Потом** ищет локальный `project/docs/CLAUDE-INSTRUCTIONS.md` (если есть)
 3. **Применяет** локальные правила поверх глобальных
 
@@ -97,7 +97,7 @@ Cmd+Shift+F              # Глобальный поиск
 **В проекте MultiBOT:**
 ```
 Вы: "Добавь новую функцию"
-Claude: [Читает CLAUDE-GLOBAL-INSTRUCTIONS.md]
+Claude: [Читает CLAUDE.md]
         [Читает MultiBOT/docs/CLAUDE-INSTRUCTIONS.md]
         [Применяет правила MultiBOT + глобальные]
 ```
@@ -105,7 +105,7 @@ Claude: [Читает CLAUDE-GLOBAL-INSTRUCTIONS.md]
 **В проекте без локальных инструкций:**
 ```
 Вы: "Помоги с кодом"
-Claude: [Читает только CLAUDE-GLOBAL-INSTRUCTIONS.md]
+Claude: [Читает только CLAUDE.md]
         [Работает по глобальным правилам]
 ```
 
@@ -383,7 +383,7 @@ Cmd+T                            # Go to Symbol in Workspace
 **Решение:**
 ```bash
 1. Проверить файл существует:
-   Sergey/CLAUDE-GLOBAL-INSTRUCTIONS.md
+   Sergey/CLAUDE.md
 
 2. Проверить формат:
    - Файл должен быть .md
@@ -410,7 +410,7 @@ Cmd+T                            # Go to Symbol in Workspace
 
 ### Документация:
 
-- [CLAUDE-GLOBAL-INSTRUCTIONS.md](CLAUDE-GLOBAL-INSTRUCTIONS.md) - Главный промпт
+- [CLAUDE.md](CLAUDE.md) - Главный промпт
 - [PROJECT-STRUCTURE.md](PROJECT-STRUCTURE.md) - Карта проектов
 - [MultiBOT/README.md](../MultiBOT/README.md) - Документация MultiBOT
 - [MultiBOT/GIT-COMMANDS.md](../MultiBOT/GIT-COMMANDS.md) - Git шпаргалка
@@ -452,7 +452,7 @@ Cmd+T                            # Go to Symbol in Workspace
 ### Для новичка:
 
 1. ✅ Открыть workspace
-2. ✅ Прочитать [CLAUDE-GLOBAL-INSTRUCTIONS.md](CLAUDE-GLOBAL-INSTRUCTIONS.md)
+2. ✅ Прочитать [CLAUDE.md](CLAUDE.md)
 3. ✅ Прочитать [PROJECT-STRUCTURE.md](PROJECT-STRUCTURE.md)
 4. ⏭️ Поработать с MultiBOT (основной проект)
 5. ⏭️ Изучить Git workflow

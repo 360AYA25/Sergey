@@ -9,7 +9,7 @@
 
 | Файл | Описание |
 |------|----------|
-| **[CLAUDE-GLOBAL-INSTRUCTIONS.md](CLAUDE-GLOBAL-INSTRUCTIONS.md)** | 🤖 Главный промпт для Claude Code |
+| **[CLAUDE.md](CLAUDE.md)** | 🤖 Главный промпт для Claude Code |
 | **[PROJECT-STRUCTURE.md](PROJECT-STRUCTURE.md)** | 🗺️ Карта всех проектов |
 | **[HOW-TO-USE.md](HOW-TO-USE.md)** | 📖 Шпаргалка: как работать с workspace |
 | `.vscode/settings.json` | ⚙️ Настройки VS Code для этой папки |
@@ -30,7 +30,7 @@ code ~/Projects/Sergey-Projects.code-workspace
 
 1. **Начни с** [HOW-TO-USE.md](HOW-TO-USE.md) - шпаргалка для работы
 2. **Потом** [PROJECT-STRUCTURE.md](PROJECT-STRUCTURE.md) - карта проектов
-3. **Для Claude** [CLAUDE-GLOBAL-INSTRUCTIONS.md](CLAUDE-GLOBAL-INSTRUCTIONS.md) - промпт
+3. **Для Claude** [CLAUDE.md](CLAUDE.md) - промпт
 
 ---
 
@@ -54,7 +54,7 @@ code ~/Projects/Sergey-Projects.code-workspace
 Projects/
 │
 ├── 🎯 Sergey/                       ← ВЫ ЗДЕСЬ
-│   ├── CLAUDE-GLOBAL-INSTRUCTIONS.md
+│   ├── CLAUDE.md
 │   ├── PROJECT-STRUCTURE.md
 │   ├── HOW-TO-USE.md
 │   ├── README.md (этот файл)
@@ -96,7 +96,7 @@ Projects/
 ### В этом проекте:
 - [HOW-TO-USE.md](HOW-TO-USE.md) - Как работать
 - [PROJECT-STRUCTURE.md](PROJECT-STRUCTURE.md) - Карта проектов
-- [CLAUDE-GLOBAL-INSTRUCTIONS.md](CLAUDE-GLOBAL-INSTRUCTIONS.md) - Промпт для Claude
+- [CLAUDE.md](CLAUDE.md) - Промпт для Claude
 
 ### В других проектах:
 - [MultiBOT/README.md](../MultiBOT/README.md) - Документация MultiBOT
@@ -109,7 +109,7 @@ Projects/
 
 ### Изменить промпт для Claude:
 
-1. Открыть [CLAUDE-GLOBAL-INSTRUCTIONS.md](CLAUDE-GLOBAL-INSTRUCTIONS.md)
+1. Открыть [CLAUDE.md](CLAUDE.md)
 2. Внести изменения
 3. Сохранить (Cmd+S)
 4. При следующей сессии Claude прочитает обновленный файл
@@ -143,7 +143,7 @@ Projects/
 1. **Читайте по порядку:**
    - [HOW-TO-USE.md](HOW-TO-USE.md) ← НАЧНИ ЗДЕСЬ
    - [PROJECT-STRUCTURE.md](PROJECT-STRUCTURE.md)
-   - [CLAUDE-GLOBAL-INSTRUCTIONS.md](CLAUDE-GLOBAL-INSTRUCTIONS.md)
+   - [CLAUDE.md](CLAUDE.md)
 
 2. **Откройте workspace:**
    ```bash

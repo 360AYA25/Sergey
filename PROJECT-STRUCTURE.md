@@ -11,7 +11,7 @@
 Projects/
 │
 ├── 🎯 Sergey/                           ← ГЛАВНЫЙ проект (этот файл здесь)
-│   ├── CLAUDE-GLOBAL-INSTRUCTIONS.md    ← Глобальный промпт
+│   ├── CLAUDE.md    ← Глобальный промпт
 │   ├── PROJECT-STRUCTURE.md             ← Карта проектов (этот файл)
 │   ├── HOW-TO-USE.md                    ← Шпаргалка для работы
 │   ├── docs/                            ← Общая документация
@@ -58,7 +58,7 @@ Projects/
 
 | Файл | Описание |
 |------|----------|
-| `CLAUDE-GLOBAL-INSTRUCTIONS.md` | 🤖 Главный промпт для Claude Code |
+| `CLAUDE.md` | 🤖 Главный промпт для Claude Code |
 | `PROJECT-STRUCTURE.md` | 🗺️ Карта всех проектов (этот файл) |
 | `HOW-TO-USE.md` | 📖 Шпаргалка: как работать с workspace |
 | `docs/` | 📚 Общая документация |
@@ -343,7 +343,7 @@ code ~/Projects/Sergey-Projects.code-workspace
 
 ## 📚 Связанные документы
 
-- [CLAUDE-GLOBAL-INSTRUCTIONS.md](CLAUDE-GLOBAL-INSTRUCTIONS.md) - Главный промпт
+- [CLAUDE.md](CLAUDE.md) - Главный промпт
 - [HOW-TO-USE.md](HOW-TO-USE.md) - Как работать с workspace
 - [MultiBOT/README.md](../MultiBOT/README.md) - Документация MultiBOT
 - [MultiBOT/ARCHITECTURE.md](../MultiBOT/ARCHITECTURE.md) - Архитектура системы

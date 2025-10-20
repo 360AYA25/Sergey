@@ -12,7 +12,7 @@
 ```
 Projects/
 ├── 🎯 Sergey/                           ← ГЛАВНЫЙ проект
-│   ├── CLAUDE-GLOBAL-INSTRUCTIONS.md    ← Главный промпт
+│   ├── CLAUDE.md    ← Главный промпт
 │   ├── PROJECT-STRUCTURE.md             ← Карта проектов
 │   ├── HOW-TO-USE.md                    ← Шпаргалка
 │   ├── INSTRUCTIONS-INDEX.md            ← Индекс инструкций
@@ -47,7 +47,7 @@ Projects/
 
 ### 3️⃣ Настроены глобальные инструкции для Claude
 
-**Файл:** `Sergey/CLAUDE-GLOBAL-INSTRUCTIONS.md` (16KB!)
+**Файл:** `Sergey/CLAUDE.md` (16KB!)
 
 **Содержит:**
 - Правила работы с вами (новичок, образовательный подход)
@@ -148,7 +148,7 @@ code ~/Projects/Sergey-Projects.code-workspace
 
 1. [HOW-TO-USE.md](HOW-TO-USE.md) - как работать с workspace
 2. [PROJECT-STRUCTURE.md](PROJECT-STRUCTURE.md) - карта проектов
-3. [CLAUDE-GLOBAL-INSTRUCTIONS.md](CLAUDE-GLOBAL-INSTRUCTIONS.md) - промпт для Claude
+3. [CLAUDE.md](CLAUDE.md) - промпт для Claude
 4. [INSTRUCTIONS-INDEX.md](INSTRUCTIONS-INDEX.md) - индекс всех инструкций
 
 ---
@@ -210,7 +210,7 @@ code ~/Projects/Sergey-Projects.code-workspace
 | [README.md](README.md) | Обзор проекта Sergey |
 | [HOW-TO-USE.md](HOW-TO-USE.md) | 📖 Шпаргалка для работы |
 | [PROJECT-STRUCTURE.md](PROJECT-STRUCTURE.md) | 🗺️ Карта всех проектов |
-| [CLAUDE-GLOBAL-INSTRUCTIONS.md](CLAUDE-GLOBAL-INSTRUCTIONS.md) | 🤖 Главный промпт |
+| [CLAUDE.md](CLAUDE.md) | 🤖 Главный промпт |
 | [INSTRUCTIONS-INDEX.md](INSTRUCTIONS-INDEX.md) | 📋 Индекс всех инструкций |
 | [VS-CODE-EXTENSIONS.md](VS-CODE-EXTENSIONS.md) | 🔌 Расширения VS Code |
 | [git-hooks-templates/README.md](git-hooks-templates/README.md) | 🔧 Git Hooks гид |
@@ -223,7 +223,7 @@ code ~/Projects/Sergey-Projects.code-workspace
 
 **При работе с проектом:**
 ```
-1. Claude читает CLAUDE-GLOBAL-INSTRUCTIONS.md
+1. Claude читает CLAUDE.md
 2. Claude читает project/docs/CLAUDE-INSTRUCTIONS.md
 3. Claude применяет оба набора правил
 ```

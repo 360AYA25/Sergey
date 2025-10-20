@@ -8,7 +8,7 @@
 
 | Файл | Описание | Читать |
 |------|----------|--------|
-| **[CLAUDE-GLOBAL-INSTRUCTIONS.md](CLAUDE-GLOBAL-INSTRUCTIONS.md)** | 🌟 Главный промпт для всех проектов | **ВСЕГДА** |
+| **[CLAUDE.md](CLAUDE.md)** | 🌟 Главный промпт для всех проектов | **ВСЕГДА** |
 
 ---
 
@@ -19,7 +19,7 @@
 
 Файлы:
 - [README.md](README.md) - Обзор проекта
-- [CLAUDE-GLOBAL-INSTRUCTIONS.md](CLAUDE-GLOBAL-INSTRUCTIONS.md) - Главный промпт
+- [CLAUDE.md](CLAUDE.md) - Главный промпт
 - [PROJECT-STRUCTURE.md](PROJECT-STRUCTURE.md) - Карта проектов
 - [HOW-TO-USE.md](HOW-TO-USE.md) - Шпаргалка
 - [INSTRUCTIONS-INDEX.md](INSTRUCTIONS-INDEX.md) - Этот файл
@@ -111,7 +111,7 @@
 ### Когда Claude начинает работу с проектом:
 
 ```
-1. Sergey/CLAUDE-GLOBAL-INSTRUCTIONS.md           (глобальные правила)
+1. Sergey/CLAUDE.md           (глобальные правила)
         ↓
 2. project/docs/CLAUDE-INSTRUCTIONS.md            (локальные правила)
         ↓
@@ -164,7 +164,7 @@ new-project/
 
 ### Как обновлять:
 
-1. **Глобальные:** Редактируй `Sergey/CLAUDE-GLOBAL-INSTRUCTIONS.md`
+1. **Глобальные:** Редактируй `Sergey/CLAUDE.md`
 2. **Локальные:** Редактируй `project/docs/CLAUDE-INSTRUCTIONS.md`
 3. **Этот индекс:** Добавь новый проект сюда
 
@@ -180,7 +180,7 @@ git push
 
 ## 🔗 Связанные документы
 
-- [CLAUDE-GLOBAL-INSTRUCTIONS.md](CLAUDE-GLOBAL-INSTRUCTIONS.md) - Главный промпт
+- [CLAUDE.md](CLAUDE.md) - Главный промпт
 - [PROJECT-STRUCTURE.md](PROJECT-STRUCTURE.md) - Карта проектов
 - [HOW-TO-USE.md](HOW-TO-USE.md) - Как работать с workspace
 

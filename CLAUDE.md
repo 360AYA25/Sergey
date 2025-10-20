@@ -97,7 +97,7 @@
 Projects/
 │
 ├── Sergey/                              🎯 MAIN project
-│   ├── CLAUDE-GLOBAL-INSTRUCTIONS.md    ← This file
+│   ├── CLAUDE.md    ← This file
 │   ├── PROJECT-STRUCTURE.md             ← Map of all projects
 │   ├── HOW-TO-USE.md                    ← Usage guide
 │   └── .vscode/                         ← Global settings
@@ -128,7 +128,7 @@ Projects/
 ### Instruction Priority:
 
 1. **Local** `project/docs/CLAUDE-INSTRUCTIONS.md` (if exists)
-2. **Global** `Sergey/CLAUDE-GLOBAL-INSTRUCTIONS.md` (this file)
+2. **Global** `Sergey/CLAUDE.md` (this file)
 3. **System** (built into Claude Code)
 
 ---
