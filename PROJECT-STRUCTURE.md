@@ -7,43 +7,46 @@
 
 ## 📊 Общая архитектура
 
+**Реальная структура workspace:**
+
 ```
 Projects/
 │
-├── 🎯 Sergey/                           ← ГЛАВНЫЙ проект (этот файл здесь)
-│   ├── CLAUDE.md    ← Глобальный промпт
-│   ├── PROJECT-STRUCTURE.md             ← Карта проектов (этот файл)
-│   ├── HOW-TO-USE.md                    ← Шпаргалка для работы
-│   ├── docs/                            ← Общая документация
-│   └── .vscode/                         ← Глобальные настройки
+├── 🎯 Sergey/                           ← MAIN project (global instructions)
+│   ├── CLAUDE.md                        ← Global Claude Code instructions
+│   ├── PROJECT-STRUCTURE.md             ← This file
+│   ├── .mcp.json                        ← MCP server config (n8n-server)
+│   └── .claude/settings.local.json      ← Permissions config
 │
-├── 📚 n8n-docs/                         ← База для всех проектов
-│   │
-│   ├── 🤖 MultiBOT/                     ← Telegram бот платформа
-│   │   ├── src/                         ← Исходный код
-│   │   ├── docs/                        ← Документация
-│   │   ├── workflows/                   ← n8n workflows
-│   │   ├── mini-app/                    ← Barcode scanner web app
-│   │   └── .vscode/                     ← Локальные настройки
-│   │
-│   ├── 🍎 FoodTracker/                  ← Food tracking bot
-│   │   ├── src/                         ← Исходный код
-│   │   ├── docs/                        ← Документация
-│   │   └── workflows/                   ← n8n workflows
-│   │
-│   ├── ⚡ n8n-automation/               ← n8n workflows
-│   │   ├── workflows/                   ← Все workflows
-│   │   └── docs/                        ← Документация
-│   │
-│   ├── 📦 archives/                     ← Архивы старых проектов
-│   │   └── docs/                        ← Архивная документация
-│   │
-│   └── 🎥 youtube-transcription/        ← YouTube транскрипция
-│       ├── src/                         ← Исходный код
-│       └── docs/                        ← Документация
+├── 📚 n8n-docs/                         ← Documentation hub
+│   ├── MUST-READ.md                     ← n8n-specific instructions
+│   ├── LEARNINGS.md                     ← Past errors and solutions
+│   └── PATTERNS.md                      ← Ready-made solutions
 │
-└── 📄 Sergey-Projects.code-workspace    ← Workspace файл (объединяет всё)
+├── 🤖 MultiBOT/                         ← Telegram bot platform (ACTIVE)
+│   ├── src/telegram-bot.js              ← Main bot code
+│   ├── docs/CLAUDE-INSTRUCTIONS.md      ← MultiBOT-specific instructions
+│   └── FoodTrackerBOT/                  ← Food tracking sub-bot
+│
+├── 🍎 food-tracker-v2/                  ← Food tracking V2 (DEPRECATED)
+│   └── docs/DEPRECATED.md               ← See Sergey/CLAUDE.md
+│
+├── 🎥 youtube-transcript-service/       ← YouTube transcription
+│   └── src/                             ← Transcript service code
+│
+├── 🔌 mcp-server/                       ← MCP server for n8n API
+│   ├── mcp-local-server.js              ← Server code
+│   └── docs/DEPRECATED.md               ← See Sergey/CLAUDE.md
+│
+├── 📦 n8n-automation-archive/           ← Archived n8n workflows
+│   └── docs/                            ← Old documentation
+│
+└── 📄 Sergey-Projects.code-workspace    ← Workspace config (combines all)
 ```
+
+**Active projects:** Sergey, MultiBOT, n8n-docs, youtube-transcript-service, mcp-server
+**Deprecated:** food-tracker-v2 (migrated to MultiBOT)
+**Archived:** n8n-automation-archive
 
 ---
 
