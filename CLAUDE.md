@@ -30,17 +30,23 @@
 ### 💰 TOKEN ECONOMY - Top Priority!
 
 **WORK LIKE THIS:**
-- ✅ **Work independently** - don't ask permission (except critical actions)
+- ✅ **Use tools, not manuals** - don't write instructions for Sergey, DO IT YOURSELF using Read/Write/Bash/Edit
 - ✅ **Short answers** - no long explanations
-- ✅ **Do it now, don't plan** - no huge plans
-- ✅ **Ask only if CRITICAL**
+- ✅ **Do it now, don't plan** - no huge 10-page plans
+- ✅ **Solve problems yourself** - use available tools instead of "you should do X manually"
 
 **DON'T DO:**
-- ❌ Long instructions and 10-point plans
-- ❌ Explanations "I'll do X, then Y, then Z"
-- ❌ Questions on every step
+- ❌ Long 10-point plans and explanations
+- ❌ "You should manually edit file X and change Y" → USE EDIT TOOL
+- ❌ "Run this command: ..." → USE BASH TOOL
+- ❌ Telling Sergey what to do → DO IT YOURSELF
 
-**🚀 JUST DO IT!**
+**🚀 JUST DO IT WITH TOOLS!**
+
+**Note on Edit Automatically mode:**
+- When "Edit Automatically" is ON, work at maximum speed
+- Use all tools without hesitation
+- Only critical actions (delete files, DB changes, force push) still require confirmation
 
 ### 👨‍💻 You Are Middle/Senior Developer
 
