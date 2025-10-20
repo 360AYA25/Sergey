@@ -1,0 +1,57 @@
+#!/bin/bash
+
+# 📝 Commit-msg hook - проверка формата сообщения коммита
+# Установка: скопировать в .git/hooks/commit-msg и chmod +x
+
+COMMIT_MSG_FILE=$1
+COMMIT_MSG=$(cat "$COMMIT_MSG_FILE")
+
+echo "📝 Checking commit message format..."
+
+# ============================================
+# Проверка формата: <type>: <description>
+# ============================================
+
+# Разрешенные типы
+TYPES="feat|fix|docs|refactor|test|chore|style|perf"
+
+# Проверка формата
+if ! echo "$COMMIT_MSG" | grep -qE "^($TYPES): .+"; then
+  echo ""
+  echo "  ❌ Invalid commit message format!"
+  echo ""
+  echo "  Format should be: <type>: <description>"
+  echo ""
+  echo "  Valid types:"
+  echo "    feat:     New feature"
+  echo "    fix:      Bug fix"
+  echo "    docs:     Documentation"
+  echo "    refactor: Code refactoring"
+  echo "    test:     Tests"
+  echo "    chore:    Routine tasks"
+  echo "    style:    Formatting, style"
+  echo "    perf:     Performance improvements"
+  echo ""
+  echo "  Examples:"
+  echo "    feat: add voice handler with Whisper"
+  echo "    fix: resolve barcode scanner bug"
+  echo "    docs: update README with setup instructions"
+  echo ""
+  echo "  Your message:"
+  echo "  \"$COMMIT_MSG\""
+  echo ""
+  exit 1
+fi
+
+# Проверка минимальной длины описания
+DESCRIPTION=$(echo "$COMMIT_MSG" | sed -E "s/^($TYPES): //")
+if [ ${#DESCRIPTION} -lt 10 ]; then
+  echo ""
+  echo "  ⚠️  Commit message description is too short (min 10 characters)"
+  echo "  Your description: \"$DESCRIPTION\" (${#DESCRIPTION} chars)"
+  echo ""
+  exit 1
+fi
+
+echo "✅ Commit message format is valid!"
+echo ""

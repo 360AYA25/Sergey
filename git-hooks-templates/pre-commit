@@ -1,0 +1,111 @@
+#!/bin/bash
+
+# 🔒 Pre-commit hook - проверки перед коммитом
+# Установка: скопировать в .git/hooks/pre-commit и chmod +x
+
+echo "🔍 Running pre-commit checks..."
+
+# ============================================
+# 1️⃣ Проверка на credentials в staged файлах
+# ============================================
+
+echo "  Checking for credentials..."
+
+# Список паттернов для поиска
+PATTERNS=(
+  "SUPABASE_ANON_KEY"
+  "TELEGRAM_BOT_TOKEN"
+  "OPENAI_API_KEY"
+  "N8N_API_KEY"
+  "sk-proj-"
+  "eyJhbGci"
+  "password.*="
+)
+
+# Получить список staged файлов
+STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACM)
+
+# Проверка каждого файла
+FOUND_SECRETS=0
+for file in $STAGED_FILES; do
+  # Пропустить бинарные файлы
+  if file "$file" | grep -q "text"; then
+    for pattern in "${PATTERNS[@]}"; do
+      if grep -iE "$pattern" "$file" > /dev/null 2>&1; then
+        echo "  ❌ WARNING: Possible credential found in $file (pattern: $pattern)"
+        FOUND_SECRETS=1
+      fi
+    done
+  fi
+done
+
+# Если нашли секреты - предупредить
+if [ $FOUND_SECRETS -eq 1 ]; then
+  echo ""
+  echo "  ⚠️  DANGER: Possible credentials detected!"
+  echo "  Review the files above before committing."
+  echo ""
+  read -p "  Do you want to continue anyway? (yes/no): " choice
+  case "$choice" in
+    yes|YES|Y|y )
+      echo "  ⚠️  Proceeding with commit (use caution!)"
+      ;;
+    * )
+      echo "  ❌ Commit aborted. Remove credentials and try again."
+      exit 1
+      ;;
+  esac
+fi
+
+# ============================================
+# 2️⃣ Проверка на большие файлы (>5MB)
+# ============================================
+
+echo "  Checking for large files..."
+
+MAX_SIZE=5242880  # 5MB in bytes
+LARGE_FILES=0
+
+for file in $STAGED_FILES; do
+  if [ -f "$file" ]; then
+    SIZE=$(wc -c < "$file")
+    if [ "$SIZE" -gt "$MAX_SIZE" ]; then
+      echo "  ⚠️  Large file detected: $file ($(($SIZE / 1024 / 1024))MB)"
+      LARGE_FILES=1
+    fi
+  fi
+done
+
+if [ $LARGE_FILES -eq 1 ]; then
+  echo ""
+  read -p "  Large files detected. Continue? (yes/no): " choice
+  case "$choice" in
+    yes|YES|Y|y )
+      echo "  Proceeding with commit"
+      ;;
+    * )
+      echo "  ❌ Commit aborted."
+      exit 1
+      ;;
+  esac
+fi
+
+# ============================================
+# 3️⃣ Проверка что не коммитим .env файлы
+# ============================================
+
+echo "  Checking for .env files..."
+
+ENV_FILES=$(echo "$STAGED_FILES" | grep -E '\.env$|\.env\.')
+if [ ! -z "$ENV_FILES" ]; then
+  echo "  ❌ ERROR: .env files should not be committed!"
+  echo "  Files:"
+  echo "$ENV_FILES"
+  echo ""
+  echo "  Add to .gitignore and remove from staging:"
+  echo "  git reset HEAD .env*"
+  exit 1
+fi
+
+echo "✅ Pre-commit checks passed!"
+echo ""

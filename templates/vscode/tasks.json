@@ -1,0 +1,38 @@
+{
+  // VS Code Tasks Template
+  // Скопировать в project/.vscode/tasks.json
+
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Git: Status",
+      "type": "shell",
+      "command": "git status",
+      "problemMatcher": []
+    },
+    {
+      "label": "Git: Pull",
+      "type": "shell",
+      "command": "git pull",
+      "problemMatcher": []
+    },
+    {
+      "label": "Git: Push",
+      "type": "shell",
+      "command": "git push",
+      "problemMatcher": []
+    },
+    {
+      "label": "Git: Log (last 10)",
+      "type": "shell",
+      "command": "git log --oneline --graph -10",
+      "problemMatcher": []
+    },
+    {
+      "label": "🚀 Quick Commit + Push",
+      "type": "shell",
+      "command": "git add . && git status && read -p 'Commit message: ' msg && git commit -m \"$msg\" && git push",
+      "problemMatcher": []
+    }
+  ]
+}

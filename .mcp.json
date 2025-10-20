@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "n8n-server": {
+      "command": "node",
+      "args": ["/Users/sergey/Projects/mcp-server/mcp-local-server.js"]
+    }
+  }
+}

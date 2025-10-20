@@ -1,0 +1,57 @@
+#!/bin/bash
+
+# 🚀 Pre-push hook - проверки перед push
+# Установка: скопировать в .git/hooks/pre-push и chmod +x
+
+echo "🚀 Running pre-push checks..."
+
+# ============================================
+# 1️⃣ Проверка что ветка не main/master
+# ============================================
+
+BRANCH=$(git symbolic-ref --short HEAD)
+
+if [ "$BRANCH" = "main" ] || [ "$BRANCH" = "master" ]; then
+  echo ""
+  echo "  ⚠️  WARNING: You are pushing to $BRANCH branch!"
+  echo ""
+  read -p "  Are you sure you want to push to $BRANCH? (yes/no): " choice
+  case "$choice" in
+    yes|YES|Y|y )
+      echo "  Proceeding with push to $BRANCH"
+      ;;
+    * )
+      echo "  ❌ Push aborted."
+      exit 1
+      ;;
+  esac
+fi
+
+# ============================================
+# 2️⃣ Проверка что нет WIP/TODO коммитов
+# ============================================
+
+echo "  Checking for WIP/TODO commits..."
+
+# Получить коммиты которые будут запушены
+COMMITS=$(git log @{u}.. --oneline 2>/dev/null)
+
+if echo "$COMMITS" | grep -qiE "WIP|TODO|FIXME|TEMP"; then
+  echo ""
+  echo "  ⚠️  WARNING: Found WIP/TODO/FIXME commits:"
+  echo "$COMMITS" | grep -iE "WIP|TODO|FIXME|TEMP"
+  echo ""
+  read -p "  Push anyway? (yes/no): " choice
+  case "$choice" in
+    yes|YES|Y|y )
+      echo "  Proceeding with push"
+      ;;
+    * )
+      echo "  ❌ Push aborted. Clean up commits and try again."
+      exit 1
+      ;;
+  esac
+fi
+
+echo "✅ Pre-push checks passed!"
+echo ""
