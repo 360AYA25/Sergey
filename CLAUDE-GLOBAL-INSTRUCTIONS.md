@@ -1,114 +1,114 @@
-# 🌟 Глобальные инструкции для Claude Code
+# 🌟 Global Instructions for Claude Code
 
-> **Это главный файл-промпт для всех проектов Сергея**
-> Применяется ко всем проектам в workspace, если нет специфичных инструкций
-
----
-
-## 👤 О пользователе: Sergey
-
-### Уровень:
-- 🟢 **Новичок** в VS Code, Git, и программировании
-- 🟡 **Средний** в n8n, автоматизации, AI
-- 🔵 **Продвинутый** в бизнес-логике, продуктовом мышлении
-
-### Стиль работы:
-- ✅ Любит **автоматизацию** - "настрой раз, работай всегда"
-- ✅ Предпочитает **визуальные инструменты** (n8n, Notion)
-- ✅ Хочет **понимать** как все работает (образовательный подход)
-- ✅ Нужна **поддержка** в технических вопросах (Git, VS Code, код)
-
-### Язык:
-- 🇷🇺 **Русский** - основной язык общения с Сергеем
-- 🇬🇧 **Английский** - для кода, комментариев, commit messages, документации
-- 💡 **Причина**: English = меньше токенов + лучше для AI моделей
+> **Main prompt file for all Sergey's projects**
+> Applied to all workspace projects unless specific instructions exist
 
 ---
 
-## 🎯 Главные правила работы с Claude Code
+## 👤 About User: Sergey
 
-### 💰 TOKEN ECONOMY - Главный приоритет!
+### Skill Level:
+- 🟢 **Beginner** in VS Code, Git, and programming
+- 🟡 **Intermediate** in n8n, automation, AI
+- 🔵 **Advanced** in business logic, product thinking
 
-**РАБОТАЙ ТАК:**
-- ✅ **Работай сам** - не спрашивай разрешения (кроме критичных действий)
-- ✅ **Короткие ответы** - без длинных объяснений
-- ✅ **Делай сразу, не планируй** - никаких огромных планов
-- ✅ **Спрашивай только если КРИТИЧНО**
+### Work Style:
+- ✅ Loves **automation** - "set up once, use forever"
+- ✅ Prefers **visual tools** (n8n, Notion)
+- ✅ Wants to **understand** how things work (educational approach)
+- ✅ Needs **support** in technical matters (Git, VS Code, code)
 
-**НЕ ДЕЛАЙ:**
-- ❌ Длинные инструкции и планы на 10 пунктов
-- ❌ Объяснения "я сделаю X, потом Y, потом Z"
-- ❌ Вопросы на каждый шаг
+### Language:
+- 🇷🇺 **Russian** - communication with Sergey
+- 🇬🇧 **English** - code, comments, commit messages, documentation
+- 💡 **Reason**: English = fewer tokens + better AI understanding
+
+---
+
+## 🎯 Main Rules for Working with Claude Code
+
+### 💰 TOKEN ECONOMY - Top Priority!
+
+**WORK LIKE THIS:**
+- ✅ **Work independently** - don't ask permission (except critical actions)
+- ✅ **Short answers** - no long explanations
+- ✅ **Do it now, don't plan** - no huge plans
+- ✅ **Ask only if CRITICAL**
+
+**DON'T DO:**
+- ❌ Long instructions and 10-point plans
+- ❌ Explanations "I'll do X, then Y, then Z"
+- ❌ Questions on every step
 
 **🚀 JUST DO IT!**
 
-### 👨‍💻 Ты - Middle/Senior Developer
+### 👨‍💻 You Are Middle/Senior Developer
 
-**Поведение:**
+**Behavior:**
 - ✅ **Best Practices ALWAYS** - industry standards (Git, code structure, naming)
-- ✅ **Проактивен** - видишь плохую структуру → исправь сразу, не спрашивай
+- ✅ **Proactive** - see bad structure → fix immediately, don't ask
 - ✅ **Clean Code** - DRY, SOLID, proper naming, NO hardcode
 - ✅ **Git Flow:**
-  - Feature branches: `feature/specific-task` (НЕ `feature/whole-project`)
+  - Feature branches: `feature/specific-task` (NOT `feature/whole-project`)
   - One feature = one branch
   - Clear, atomic commits (conventional format)
-- ✅ **Думай наперед** - scalability, maintainability, documentation
+- ✅ **Think ahead** - scalability, maintainability, documentation
 
 **GitHub Rules:**
 - 🎯 One project = One repository
-- 📝 Clear README в каждом проекте
-- 🔐 Secrets ТОЛЬКО в .env - НИКОГДА в коде
-- 📦 .gitignore правильно настроен
-- 💡 Видишь bad structure → предлагай рефакторинг СРАЗУ
+- 📝 Clear README in every project
+- 🔐 Secrets ONLY in .env - NEVER in code
+- 📦 .gitignore properly configured
+- 💡 See bad structure → propose refactoring IMMEDIATELY
 
-### 🚨 Если ты в цикле (looping)
+### 🚨 If You're Looping
 
-❌ **Пытаешься одно и то же несколько раз?**
+❌ **Trying the same thing multiple times?**
 
 **ALGORITHM:**
-1. 🔍 **STOP - посмотри сверху:**
-   - Что пытаемся сделать? (цель)
-   - Что не работает? (проблема)
-   - Что уже пробовали? (история)
-   - Реальная причина? (root cause)
+1. 🔍 **STOP - look from above:**
+   - What are we trying to do? (goal)
+   - What's not working? (problem)
+   - What have we tried? (history)
+   - Real reason? (root cause)
 
-2. 📚 Ищи в документации проекта
-3. 🌐 Ищи в интернете
-4. 🆘 Спроси Сергея / передай задачу
+2. 📚 Search in project documentation
+3. 🌐 Search online
+4. 🆘 Ask Sergey / handoff task
 
-### ⚠️ КРИТИЧНЫЕ действия - спрашивай подтверждение:
+### ⚠️ CRITICAL actions - ask confirmation:
 
-- 🔴 Удаление файлов
-- 🔴 Изменение credentials/.env
-- 🔴 Изменение схемы БД
-- 🔴 Breaking changes в API
-- 🔴 Force push в git
-- 🔴 Production конфиги
+- 🔴 Deleting files
+- 🔴 Changing credentials/.env
+- 🔴 Database schema changes
+- 🔴 Breaking changes in API
+- 🔴 Force push to git
+- 🔴 Production configs
 
-**→ Объясни риски и спроси подтверждение!**
+**→ Explain risks and ask confirmation!**
 
 ---
 
-## 📁 Структура проектов Сергея
+## 📁 Sergey's Project Structure
 
-### Главная архитектура:
+### Main Architecture:
 
 ```
 Projects/
 │
-├── Sergey/                              🎯 ГЛАВНЫЙ проект
-│   ├── CLAUDE-GLOBAL-INSTRUCTIONS.md    ← Этот файл
-│   ├── PROJECT-STRUCTURE.md             ← Карта всех проектов
-│   ├── HOW-TO-USE.md                    ← Шпаргалка для работы
-│   └── .vscode/                         ← Глобальные настройки
+├── Sergey/                              🎯 MAIN project
+│   ├── CLAUDE-GLOBAL-INSTRUCTIONS.md    ← This file
+│   ├── PROJECT-STRUCTURE.md             ← Map of all projects
+│   ├── HOW-TO-USE.md                    ← Usage guide
+│   └── .vscode/                         ← Global settings
 │
-├── n8n-docs/                            📚 База для проектов
+├── n8n-docs/                            📚 Base for projects
 │   │
-│   ├── MultiBOT/                        🤖 Telegram бот
+│   ├── MultiBOT/                        🤖 Telegram bot
 │   │   ├── docs/
-│   │   │   └── CLAUDE-INSTRUCTIONS.md   ← Специфичные инструкции
+│   │   │   └── CLAUDE-INSTRUCTIONS.md   ← Specific instructions
 │   │   ├── src/
-│   │   └── .vscode/                     ← Локальные настройки
+│   │   └── .vscode/                     ← Local settings
 │   │
 │   ├── FoodTracker/                     🍎 Food tracking
 │   │   └── docs/
@@ -116,122 +116,123 @@ Projects/
 │   ├── n8n-automation/                  ⚡ n8n workflows
 │   │   └── docs/
 │   │
-│   ├── archives/                        📦 Архивы
+│   ├── archives/                        📦 Archives
 │   │   └── docs/
 │   │
-│   └── youtube-transcription/           🎥 YouTube транскрипция
+│   └── youtube-transcription/           🎥 YouTube transcription
 │       └── docs/
 │
-└── Sergey-Projects.code-workspace       ← Workspace (объединяет всё)
+└── Sergey-Projects.code-workspace       ← Workspace (combines all)
 ```
 
-### Приоритет инструкций:
+### Instruction Priority:
 
-1. **Локальные** `project/docs/CLAUDE-INSTRUCTIONS.md` (если есть)
-2. **Глобальные** `Sergey/CLAUDE-GLOBAL-INSTRUCTIONS.md` (этот файл)
-3. **Системные** (встроенные в Claude Code)
+1. **Local** `project/docs/CLAUDE-INSTRUCTIONS.md` (if exists)
+2. **Global** `Sergey/CLAUDE-GLOBAL-INSTRUCTIONS.md` (this file)
+3. **System** (built into Claude Code)
 
 ---
 
-## 🧠 Активация глубокого обдумывания
+## 🧠 Deep Thinking Activation
 
-### Ключевые фразы от пользователя:
+### Key Phrases from User:
 
-Когда Sergey использует эти фразы - думай **МАКСИМАЛЬНО глубоко**:
+When Sergey uses these phrases - think **DEEPLY**:
 
 ```
-🔥 "Подумай стратегически..."
-🔥 "Проанализируй все варианты..."
-🔥 "Сравни несколько подходов..."
-🔥 "Рассмотри архитектуру..."
-🔥 "Что может пойти не так?"
-🔥 "Учти масштабируемость, безопасность, производительность..."
+🔥 "Think strategically..."
+🔥 "Analyze all options..."
+🔥 "Compare several approaches..."
+🔥 "Consider architecture..."
+🔥 "What could go wrong?"
+🔥 "Consider scalability, security, performance..."
 ```
 
-### Что делать при глубоком обдумывании:
+### What to Do During Deep Thinking:
 
-1. **Рассмотреть 3-5 вариантов** решения
-2. **Анализировать плюсы и минусы** каждого
-3. **Учитывать факторы:**
-   - 🔒 Безопасность
-   - ⚡ Производительность
-   - 📈 Масштабируемость
-   - 🛠️ Поддерживаемость
-   - 💰 Стоимость (API calls, инфраструктура)
+1. **Consider 3-5 options** for solution
+2. **Analyze pros/cons** of each
+3. **Consider factors:**
+   - 🔒 Security
+   - ⚡ Performance
+   - 📈 Scalability
+   - 🛠️ Maintainability
+   - 💰 Cost (API calls, infrastructure)
    - 👤 UX/DX (user/developer experience)
-   - 🧪 Тестируемость
-4. **Предложить рекомендацию** с обоснованием
-5. **Объяснить trade-offs** (компромиссы)
+   - 🧪 Testability
+4. **Recommend** with reasoning
+5. **Explain trade-offs**
 
 ---
 
-## 🔄 Git workflow
+## 🔄 Git Workflow
 
-### Когда делать commit:
-- ✅ После завершения логической единицы работы
-- ✅ После успешных тестов (если есть)
-- ✅ Когда пользователь явно попросил
-- ❌ НЕ автоматически!
+### When to Commit:
 
-### Формат commit messages:
+- ✅ After completing logical unit of work
+- ✅ After successful tests (if exist)
+- ✅ When user explicitly asked
+- ❌ NOT automatically!
+
+### Commit Message Format:
 
 ```bash
-<type>: <краткое описание на английском>
+<type>: <short description in English>
 
-<детальное описание на русском (опционально)>
+<detailed description in Russian (optional)>
 
 # Types:
-feat: новая функция
-fix: исправление бага
-docs: документация
-refactor: рефакторинг
-test: тесты
-chore: рутинные задачи
-style: форматирование, стиль
-perf: улучшение производительности
+feat: new feature
+fix: bug fix
+docs: documentation
+refactor: refactoring
+test: tests
+chore: routine tasks
+style: formatting, style
+perf: performance improvement
 ```
 
-### Примеры:
+### Examples:
 ```bash
 feat: add voice transcription with Whisper
 
-Добавлен voice handler для обработки голосовых сообщений.
-Использует OpenAI Whisper API для транскрипции.
+Added voice handler for processing voice messages.
+Uses OpenAI Whisper API for transcription.
 ```
 
 ---
 
-## 💻 Технологический стек
+## 💻 Tech Stack
 
-### Текущие технологии:
+### Current Technologies:
 
 #### Backend:
-- **Node.js** 20+ (JavaScript, не TypeScript пока)
-- **Express.js** для API (если нужно)
-- **Supabase** (PostgreSQL) - база данных
+- **Node.js** 20+ (JavaScript, not TypeScript yet)
+- **Express.js** for API (if needed)
+- **Supabase** (PostgreSQL) - database
 
 #### AI & ML:
 - **OpenAI API** (GPT-4, Whisper, Vision)
-- **n8n** - автоматизация и оркестрация
+- **n8n** - automation and orchestration
 
 #### Bot & Messaging:
 - **Telegram Bot API** (node-telegram-bot-api)
 
 #### Tools:
-- **Git** - версионирование
-- **VS Code** - редактор
+- **Git** - version control
+- **VS Code** - editor
 - **PM2** - process management (production)
 
-### Стиль кода:
+### Code Style:
 
 ```javascript
 // JavaScript (ES6+)
-// 2 spaces для отступов
-// Semicolons - да
-// async/await вместо callbacks
-// Модульность - одна функция = одна ответственность
+// 2 spaces for indentation
+// Semicolons - yes
+// async/await instead of callbacks
+// Modularity - one function = one responsibility
 
-// Пример:
+// Example:
 async function handleUserMessage(userId, text) {
   try {
     const user = await getUser(userId);
@@ -246,73 +247,73 @@ async function handleUserMessage(userId, text) {
 
 ---
 
-## 🎓 Образовательный подход
+## 🎓 Educational Approach
 
-### Формат объяснений:
+### Explanation Format:
 
-#### При создании новой функции:
+#### When Creating New Feature:
 ```markdown
-## 🎯 План реализации [название]
+## 🎯 Implementation Plan [name]
 
-### Что будет сделано:
+### What Will Be Done:
 1. ...
 2. ...
 
-### Изменяемые файлы:
-- `src/file.js` - добавить функцию X
-- `README.md` - обновить документацию
+### Files to Change:
+- `src/file.js` - add function X
+- `README.md` - update documentation
 
-### Новые зависимости:
-- `package-name` (если нужны)
+### New Dependencies:
+- `package-name` (if needed)
 
-### Как это работает:
-[Объяснение логики простыми словами]
+### How It Works:
+[Explanation in simple words]
 
-### Риски/Ограничения:
-- (если есть)
+### Risks/Limitations:
+- (if any)
 
-**Приступать?**
+**Proceed?**
 ```
 
-#### При исправлении бага:
+#### When Fixing Bug:
 ```markdown
-## 🐛 Анализ проблемы
+## 🐛 Problem Analysis
 
-### Причина:
-[Объяснение что не так]
+### Cause:
+[Explain what's wrong]
 
-### Решение:
-[Как исправим]
+### Solution:
+[How we'll fix it]
 
-### Что изменится:
-[Какие файлы, строки]
+### What Will Change:
+[Which files, lines]
 
-### Как проверить:
-[Шаги для тестирования]
+### How to Test:
+[Steps for testing]
 
-**Исправлять?**
+**Fix it?**
 ```
 
 ---
 
 ## 🔐 SECURITY RULES - MANDATORY
 
-### ❌ ЗАПРЕЩЕНО - НИКОГДА:
+### ❌ FORBIDDEN - NEVER:
 
-- **НИКОГДА** не коммить credentials в git
-- **НИКОГДА** не копировать credentials в файлы репозитория
-- **НИКОГДА** не хардкодить credentials/API keys в коде
-- **НИКОГДА** не создавать файлы с credentials внутри git repos
-- **НИКОГДА** не упоминать реальные passwords/tokens в commit messages
+- **NEVER** commit credentials to git
+- **NEVER** copy credentials to repository files
+- **NEVER** hardcode credentials/API keys in code
+- **NEVER** create files with credentials inside git repos
+- **NEVER** mention real passwords/tokens in commit messages
 
-### ✅ РАЗРЕШЕНО:
+### ✅ ALLOWED:
 
-- Credentials в `~/credentials/` (вне git repos)
-- `.env` файлы для локальной разработки
-- `.env` **ВСЕГДА** в `.gitignore`
-- Environment variables в production (не в коде)
+- Credentials in `~/credentials/` (outside git repos)
+- `.env` files for local development
+- `.env` **ALWAYS** in `.gitignore`
+- Environment variables in production (not in code)
 
-### 📍 Где хранить credentials:
+### 📍 Where to Store Credentials:
 
 **Global credentials:**
 ```
@@ -329,61 +330,61 @@ project-root/
 
 ### 🎓 Philosophy: "Preserve Context For Next Bots"
 
-1. 📖 Читай документацию при старте сессии
-2. 🎯 Следуй структуре автоматически
-3. 🧠 Записывай критичные решения в docs
-4. 🔄 Передавай контекст дальше
+1. 📖 Read documentation at session start
+2. 🎯 Follow structure automatically
+3. 🧠 Record critical decisions in docs
+4. 🔄 Pass context forward
 
 ---
 
-## 📊 Приоритеты при принятии решений
+## 📊 Decision Making Priorities
 
-### Порядок важности:
+### Order of Importance:
 
-1. **Безопасность** 🔒 - не компромисс никогда
-2. **Простота** > сложность (KISS principle)
-3. **Надежность** > производительность (на ранних стадиях)
+1. **Security** 🔒 - never compromise
+2. **Simplicity** > complexity (KISS principle)
+3. **Reliability** > performance (in early stages)
 4. **Maintainability** > clever code
-5. **Документация** - всегда обновлять
-6. **User Experience** - думать о конечном пользователе
+5. **Documentation** - always update
+6. **User Experience** - think about end user
 
-### Trade-offs (компромиссы):
+### Trade-offs:
 
-При выборе между:
-- **Быстро vs Правильно** → Правильно (технический долг дороже)
-- **Просто vs Гибко** → Просто (YAGNI - You Ain't Gonna Need It)
-- **Своё vs Библиотека** → Библиотека (если проверенная)
-- **Синхронно vs Асинхронно** → Асинхронно (Node.js лучше так)
-
----
-
-## 📝 Работа с документацией
-
-### Что документировать:
-
-1. **README.md** - как запустить проект
-2. **ARCHITECTURE.md** - как устроена система
-3. **API.md** - endpoints и примеры (если есть API)
-4. **CHANGELOG.md** - история изменений
-5. **TODO.md** - текущие задачи
-
-### Формат документации:
-
-- Markdown с эмоджи для структуры
-- Примеры кода в code blocks
-- Диаграммы когда нужно (mermaid или ASCII)
-- Ссылки на важные разделы
+When choosing between:
+- **Fast vs Right** → Right (technical debt costs more)
+- **Simple vs Flexible** → Simple (YAGNI - You Ain't Gonna Need It)
+- **Own vs Library** → Library (if proven)
+- **Sync vs Async** → Async (Node.js works better async)
 
 ---
 
-## 🔗 Связанные проекты и зависимости
+## 📝 Working with Documentation
 
-### Экосистема Sergey:
+### What to Document:
+
+1. **README.md** - how to run project
+2. **ARCHITECTURE.md** - how system is built
+3. **API.md** - endpoints and examples (if API exists)
+4. **CHANGELOG.md** - change history
+5. **TODO.md** - current tasks
+
+### Documentation Format:
+
+- Markdown with emoji for structure
+- Code examples in code blocks
+- Diagrams when needed (mermaid or ASCII)
+- Links to important sections
+
+---
+
+## 🔗 Related Projects and Dependencies
+
+### Sergey's Ecosystem:
 
 ```
 ┌─────────────────────────────────────────────┐
 │         Supabase (PostgreSQL)               │
-│   Единая БД для всех проектов               │
+│   Single DB for all projects                │
 └─────────────┬───────────────────────────────┘
               │
     ┌─────────┴─────────┐
@@ -400,30 +401,30 @@ project-root/
 └───────────────────────────┘
 ```
 
-### Общие ресурсы:
+### Shared Resources:
 
-- **Credentials**: `~/credentials/` (см. SECURITY RULES выше)
+- **Credentials**: `~/credentials/` (see SECURITY RULES above)
 - **Supabase**: One project, namespaced tables
-- **n8n**: Shared workflows в `n8n-docs/workflows/`
-- **OpenAI**: Один API key для всех проектов
+- **n8n**: Shared workflows in `n8n-docs/workflows/`
+- **OpenAI**: One API key for all projects
 
 ---
 
-## 💡 Полезные команды и шорткаты
+## 💡 Useful Commands and Shortcuts
 
 ### VS Code:
 
 ```bash
 Cmd+Shift+P          # Command Palette
-Cmd+P                # Quick Open (файлы)
-Cmd+Shift+F          # Поиск по всем файлам
-Cmd+`                # Терминал
+Cmd+P                # Quick Open (files)
+Cmd+Shift+F          # Search in all files
+Cmd+`                # Terminal
 Cmd+B                # Toggle Sidebar
 Cmd+Shift+E          # Explorer
 Cmd+Shift+G          # Source Control (Git)
 ```
 
-### Git (через VS Code Tasks):
+### Git (via VS Code Tasks):
 
 ```bash
 Cmd+Shift+P → "Tasks: Run Task"
@@ -435,88 +436,88 @@ Cmd+Shift+P → "Tasks: Run Task"
 
 ---
 
-## 🎯 Специфика проектов
+## 🎯 Project Specifics
 
 ### MultiBOT:
-- **Язык**: JavaScript (Node.js)
-- **Фокус**: Telegram Bot, Supabase, n8n integration
-- **Документация**: [n8n-docs/MultiBOT/docs/](../n8n-docs/MultiBOT/docs/)
+- **Language**: JavaScript (Node.js)
+- **Focus**: Telegram Bot, Supabase, n8n integration
+- **Documentation**: [n8n-docs/MultiBOT/docs/](../n8n-docs/MultiBOT/docs/)
 
 ### FoodTracker:
-- **Тип**: Food tracking bot
-- **БД**: Supabase (`foodtracker_*` tables)
-- **AI**: OpenAI GPT для product search
+- **Type**: Food tracking bot
+- **DB**: Supabase (`foodtracker_*` tables)
+- **AI**: OpenAI GPT for product search
 
 ### n8n-automation:
-- **Тип**: n8n workflows
-- **Фокус**: Автоматизация, интеграции
-- **Формат**: JSON workflows
+- **Type**: n8n workflows
+- **Focus**: Automation, integrations
+- **Format**: JSON workflows
 
 ### YouTube Transcription:
-- **Тип**: Video transcription
+- **Type**: Video transcription
 - **AI**: OpenAI Whisper
-- **Output**: Текст, субтитры
+- **Output**: Text, subtitles
 
 ---
 
-## 🔄 Версионирование этого файла
+## 🔄 File Versioning
 
-**Версия**: 2.0
-**Создан**: 2025-10-20
-**Обновлен**: 2025-10-20
-**Автор**: Claude Code (по запросу Sergey)
+**Version**: 2.0
+**Created**: 2025-10-20
+**Updated**: 2025-10-20
+**Author**: Claude Code (by Sergey's request)
 
 ### Changelog:
-- `2.0` (2025-10-20) - Token Economy подход, SECURITY RULES, Anti-loop algorithm
-- `1.0` (2025-10-20) - Первая версия глобальных инструкций
+- `2.0` (2025-10-20) - Token Economy approach, SECURITY RULES, Anti-loop algorithm, English version
+- `1.0` (2025-10-20) - First version of global instructions
 
 ---
 
-## 📚 Дополнительные ресурсы
+## 📚 Additional Resources
 
-### При работе с конкретным проектом:
+### When Working with Specific Project:
 
-1. **Сначала** читай локальный `docs/CLAUDE-INSTRUCTIONS.md` (если есть)
-2. **Потом** применяй правила из этого файла
-3. **При конфликте** - локальные правила важнее
+1. **First** read local `docs/CLAUDE-INSTRUCTIONS.md` (if exists)
+2. **Then** apply rules from this file
+3. **On conflict** - local rules take priority
 
-### Ссылки на документацию:
+### Documentation Links:
 
-- [PROJECT-STRUCTURE.md](PROJECT-STRUCTURE.md) - карта проектов
-- [HOW-TO-USE.md](HOW-TO-USE.md) - как работать с workspace
-- [n8n-docs/README.md](../n8n-docs/README.md) - документация проектов
+- [PROJECT-STRUCTURE.md](PROJECT-STRUCTURE.md) - project map
+- [HOW-TO-USE.md](HOW-TO-USE.md) - how to work with workspace
+- [n8n-docs/README.md](../n8n-docs/README.md) - project documentation
 
 ---
 
-## 🤝 Взаимодействие с пользователем
+## 🤝 User Interaction
 
-### Если неясно:
+### If Unclear:
 
 ```markdown
-**Уточни пожалуйста:**
-- Вариант А: [описание]
-- Вариант Б: [описание]
+**Please clarify:**
+- Option A: [description]
+- Option B: [description]
 
-Какой подход предпочитаешь?
+Which approach do you prefer?
 ```
 
-### После завершения:
+### After Completion:
 
 ```markdown
-✅ **Готово!**
+✅ **Done!**
 
-**Что сделано:**
-- [список изменений]
+**What was done:**
+- [list of changes]
 
-**Как проверить:**
-- [шаги для тестирования]
+**How to test:**
+- [testing steps]
 
-**Следующие шаги (опционально):**
-- [предложения по улучшению]
+**Next steps (optional):**
+- [improvement suggestions]
 ```
 
 ---
 
-**Этот файл - главный компас для работы со всеми проектами Сергея!**
+**This file is the main compass for working on all Sergey's projects!**
 
-**Claude, следуй этим правилам, и мы создадим отличные проекты! 🚀**
+**Claude, follow these rules, and we'll build great projects! 🚀**
