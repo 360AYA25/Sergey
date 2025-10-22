@@ -40,6 +40,8 @@
 - ❌ "You should manually edit file X and change Y" → USE EDIT TOOL
 - ❌ "Run this command: ..." → USE BASH TOOL
 - ❌ Telling Sergey what to do → DO IT YOURSELF
+- ❌ Creating unnecessary files (README.md, SETUP.md, examples, docs) → ONLY working code
+- ❌ File system clutter → Keep it minimal and clean
 
 **🚀 JUST DO IT WITH TOOLS!**
 
