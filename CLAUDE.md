@@ -253,55 +253,6 @@ async function handleUserMessage(userId, text) {
 
 ---
 
-## 🎓 Educational Approach
-
-### Explanation Format:
-
-#### When Creating New Feature:
-```markdown
-## 🎯 Implementation Plan [name]
-
-### What Will Be Done:
-1. ...
-2. ...
-
-### Files to Change:
-- `src/file.js` - add function X
-- `README.md` - update documentation
-
-### New Dependencies:
-- `package-name` (if needed)
-
-### How It Works:
-[Explanation in simple words]
-
-### Risks/Limitations:
-- (if any)
-
-**Proceed?**
-```
-
-#### When Fixing Bug:
-```markdown
-## 🐛 Problem Analysis
-
-### Cause:
-[Explain what's wrong]
-
-### Solution:
-[How we'll fix it]
-
-### What Will Change:
-[Which files, lines]
-
-### How to Test:
-[Steps for testing]
-
-**Fix it?**
-```
-
----
-
 ## 🔐 SECURITY RULES - MANDATORY
 
 ### ❌ FORBIDDEN - NEVER:
@@ -364,118 +315,24 @@ When choosing between:
 
 ---
 
-## 📝 Working with Documentation
+## 🔗 Shared Resources
 
-### What to Document:
-
-1. **README.md** - how to run project
-2. **ARCHITECTURE.md** - how system is built
-3. **API.md** - endpoints and examples (if API exists)
-4. **CHANGELOG.md** - change history
-5. **TODO.md** - current tasks
-
-### Documentation Format:
-
-- Markdown with emoji for structure
-- Code examples in code blocks
-- Diagrams when needed (mermaid or ASCII)
-- Links to important sections
-
----
-
-## 🔗 Related Projects and Dependencies
-
-### Sergey's Ecosystem:
-
-```
-┌─────────────────────────────────────────────┐
-│         Supabase (PostgreSQL)               │
-│   Single DB for all projects                │
-└─────────────┬───────────────────────────────┘
-              │
-    ┌─────────┴─────────┐
-    │                   │
-┌───▼────┐         ┌───▼────┐
-│ n8n    │◄────────┤ Bots   │
-│ Hub    │         │ Layer  │
-└───┬────┘         └───┬────┘
-    │                  │
-    │                  │
-┌───▼──────────────────▼────┐
-│   OpenAI API              │
-│   (GPT-4, Whisper, Vision)│
-└───────────────────────────┘
-```
-
-### Shared Resources:
-
-- **Credentials**: `~/credentials/` (see SECURITY RULES above)
-- **Supabase**: One project, namespaced tables
-- **n8n**: Shared workflows in `n8n-docs/workflows/`
-- **OpenAI**: One API key for all projects
-
----
-
-## 💡 Useful Commands and Shortcuts
-
-### VS Code:
-
-```bash
-Cmd+Shift+P          # Command Palette
-Cmd+P                # Quick Open (files)
-Cmd+Shift+F          # Search in all files
-Cmd+`                # Terminal
-Cmd+B                # Toggle Sidebar
-Cmd+Shift+E          # Explorer
-Cmd+Shift+G          # Source Control (Git)
-```
-
-### Git (via VS Code Tasks):
-
-```bash
-Cmd+Shift+P → "Tasks: Run Task"
-├─ Git: Status
-├─ Git: Quick Push
-├─ 🚀 Start Development
-└─ 📦 Finish Work
-```
-
----
-
-## 🎯 Project Specifics
-
-### MultiBOT:
-- **Language**: JavaScript (Node.js)
-- **Focus**: Telegram Bot, Supabase, n8n integration
-- **Documentation**: [n8n-docs/MultiBOT/docs/](../n8n-docs/MultiBOT/docs/)
-
-### FoodTracker:
-- **Type**: Food tracking bot
-- **DB**: Supabase (`foodtracker_*` tables)
-- **AI**: OpenAI GPT for product search
-
-### n8n-automation:
-- **Type**: n8n workflows
-- **Focus**: Automation, integrations
-- **Format**: JSON workflows
-
-### YouTube Transcription:
-- **Type**: Video transcription
-- **AI**: OpenAI Whisper
-- **Output**: Text, subtitles
+- **Credentials**: `~/credentials/` (see SECURITY RULES)
+- **Supabase**: Single DB for all projects (namespaced tables)
+- **n8n**: Orchestration hub + workflows
+- **OpenAI**: One API key for all projects (GPT-4, Whisper, Vision)
 
 ---
 
 ## 🔄 File Versioning
 
-**Version**: 2.0
-**Created**: 2025-10-20
-**Updated**: 2025-10-20
-**Author**: Claude Code (by Sergey's request)
+**Version**: 2.1
+**Updated**: 2025-10-22
 
 ### Changelog:
-- `2.0` (2025-10-20) - Token Economy approach, SECURITY RULES, Anti-loop algorithm, English version
-- `1.0` (2025-10-20) - First version of global instructions
+- `2.1` (2025-10-22) - Optimized for token economy (removed ~150 lines)
+- `2.0` (2025-10-20) - Token Economy approach, SECURITY RULES, Anti-loop algorithm
+- `1.0` (2025-10-20) - First version
 
 ---
 
@@ -492,35 +349,6 @@ Cmd+Shift+P → "Tasks: Run Task"
 - [PROJECT-STRUCTURE.md](PROJECT-STRUCTURE.md) - project map
 - [HOW-TO-USE.md](HOW-TO-USE.md) - how to work with workspace
 - [n8n-docs/README.md](../n8n-docs/README.md) - project documentation
-
----
-
-## 🤝 User Interaction
-
-### If Unclear:
-
-```markdown
-**Please clarify:**
-- Option A: [description]
-- Option B: [description]
-
-Which approach do you prefer?
-```
-
-### After Completion:
-
-```markdown
-✅ **Done!**
-
-**What was done:**
-- [list of changes]
-
-**How to test:**
-- [testing steps]
-
-**Next steps (optional):**
-- [improvement suggestions]
-```
 
 ---
 
