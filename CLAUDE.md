@@ -146,11 +146,11 @@ Projects/
 When Sergey uses these phrases - think **DEEPLY**:
 
 ```
-🔥 "Think strategically..."
-🔥 "Analyze all options..."
-🔥 "Compare several approaches..."
-🔥 "Consider architecture..."
-🔥 "What could go wrong?"
+🔥 "Think strategically..." / "Подумай стратегически..."
+🔥 "Analyze all options..." / "Проанализируй все варианты..."
+🔥 "Compare several approaches..." / "Сравни несколько подходов..."
+🔥 "Consider architecture..." / "Рассмотри архитектуру..."
+🔥 "What could go wrong?" / "Что может пойти не так?"
 🔥 "Consider scalability, security, performance..."
 ```
 

@@ -1,161 +1,161 @@
-# 🎯 Sergey - Главный проект
+# 🎯 Sergey - Main Project
 
-> **Центр управления всеми проектами Сергея**
-> Global instructions, documentation, и настройки для всех проектов
+> **Control center for all Sergey's projects**
+> Global instructions, documentation, settings for all projects
 
 ---
 
-## 📋 Что здесь:
+## 📋 What's here:
 
-| Файл | Описание |
+| File | Description |
 |------|----------|
-| **[CLAUDE.md](CLAUDE.md)** | 🤖 Главный промпт для Claude Code |
-| **[PROJECT-STRUCTURE.md](PROJECT-STRUCTURE.md)** | 🗺️ Карта всех проектов |
-| **[HOW-TO-USE.md](HOW-TO-USE.md)** | 📖 Шпаргалка: как работать с workspace |
-| `.vscode/settings.json` | ⚙️ Настройки VS Code для этой папки |
+| **[CLAUDE.md](CLAUDE.md)** | 🤖 Main Claude Code prompt |
+| **[PROJECT-STRUCTURE.md](PROJECT-STRUCTURE.md)** | 🗺️ All projects map |
+| **[HOW-TO-USE.md](HOW-TO-USE.md)** | 📖 Cheatsheet: how to work with workspace |
+| `.vscode/settings.json` | ⚙️ VS Code settings for this folder |
 
 ---
 
-## 🚀 Быстрый старт
+## 🚀 Quick Start
 
-### Открыть workspace:
+### Open workspace:
 
 ```bash
 code ~/Projects/Sergey-Projects.code-workspace
 ```
 
-Или двойной клик на `Sergey-Projects.code-workspace`
+Or double-click `Sergey-Projects.code-workspace`
 
-### Прочитать документацию:
+### Read documentation:
 
-1. **Начни с** [HOW-TO-USE.md](HOW-TO-USE.md) - шпаргалка для работы
-2. **Потом** [PROJECT-STRUCTURE.md](PROJECT-STRUCTURE.md) - карта проектов
-3. **Для Claude** [CLAUDE.md](CLAUDE.md) - промпт
-
----
-
-## 🎯 Назначение этого проекта
-
-### Для пользователя (Sergey):
-- 📚 **Центральная документация** для всех проектов
-- 🗺️ **Навигация** - карта всех проектов
-- 📖 **Шпаргалки** - как работать с VS Code, Git, workspace
-
-### Для Claude Code:
-- 🤖 **Главный промпт** - глобальные правила работы
-- 🎓 **Контекст** - понимание структуры всех проектов
-- 🔗 **Связи** - как проекты связаны между собой
+1. **Start with** [HOW-TO-USE.md](HOW-TO-USE.md) - workflow cheatsheet
+2. **Then** [PROJECT-STRUCTURE.md](PROJECT-STRUCTURE.md) - projects map
+3. **For Claude** [CLAUDE.md](CLAUDE.md) - prompt
 
 ---
 
-## 📊 Структура проектов
+## 🎯 Project Purpose
+
+### For user (Sergey):
+- 📚 **Central documentation** for all projects
+- 🗺️ **Navigation** - map of all projects
+- 📖 **Cheatsheets** - how to work with VS Code, Git, workspace
+
+### For Claude Code:
+- 🤖 **Main prompt** - global work rules
+- 🎓 **Context** - understanding all projects structure
+- 🔗 **Relations** - how projects connect
+
+---
+
+## 📊 Project Structure
 
 ```
 Projects/
 │
-├── 🎯 Sergey/                       ← ВЫ ЗДЕСЬ
+├── 🎯 Sergey/                       ← YOU ARE HERE
 │   ├── CLAUDE.md
 │   ├── PROJECT-STRUCTURE.md
 │   ├── HOW-TO-USE.md
-│   ├── README.md (этот файл)
+│   ├── README.md (this file)
 │   └── .vscode/
 │
-├── 📚 n8n-docs/                     ← Документация
-├── 🤖 MultiBOT/                     ← Telegram бот
+├── 📚 n8n-docs/                     ← Documentation
+├── 🤖 MultiBOT/                     ← Telegram bot
 ├── 🍎 food-tracker-v2/              ← Food tracking
-├── 🎥 youtube-transcript/           ← YouTube транскрипция
+├── 🎥 youtube-transcript/           ← YouTube transcription
 ├── 📝 transcript-service/           ← Transcript service
 ├── 🔌 mcp-server/                   ← MCP server
-├── 📦 n8n-automation-archive/       ← Архивы
+├── 📦 n8n-automation-archive/       ← Archives
 │
-└── Sergey-Projects.code-workspace   ← Workspace (объединяет всё)
+└── Sergey-Projects.code-workspace   ← Workspace (combines all)
 ```
 
 ---
 
-## 💡 Зачем нужен этот проект?
+## 💡 Why this project?
 
-### Проблема (было):
-- Каждый проект в отдельном окне VS Code
-- Переключение между проектами неудобно
-- Настройки дублируются в каждом проекте
-- Claude не видит общую картину
-- Нет единых правил работы
+### Problem (was):
+- Each project in separate VS Code window
+- Switching between projects inconvenient
+- Settings duplicated in each project
+- Claude doesn't see big picture
+- No unified work rules
 
-### Решение (стало):
-- ✅ **Multi-Root Workspace** - все проекты в одном окне
-- ✅ **Глобальные инструкции** для Claude
-- ✅ **Центральная документация** и карта проектов
-- ✅ **Единые настройки** VS Code для всех проектов
-- ✅ **Навигация** между проектами одним кликом
-
----
-
-## 🔗 Связанные документы
-
-### В этом проекте:
-- [HOW-TO-USE.md](HOW-TO-USE.md) - Как работать
-- [PROJECT-STRUCTURE.md](PROJECT-STRUCTURE.md) - Карта проектов
-- [CLAUDE.md](CLAUDE.md) - Промпт для Claude
-
-### В других проектах:
-- [MultiBOT/README.md](../MultiBOT/README.md) - Документация MultiBOT
-- [MultiBOT/ARCHITECTURE.md](../MultiBOT/ARCHITECTURE.md) - Архитектура системы
-- [MultiBOT/GIT-COMMANDS.md](../MultiBOT/GIT-COMMANDS.md) - Git шпаргалка
+### Solution (now):
+- ✅ **Multi-Root Workspace** - all projects in one window
+- ✅ **Global instructions** for Claude
+- ✅ **Central documentation** and projects map
+- ✅ **Unified VS Code settings** for all projects
+- ✅ **Navigation** between projects with one click
 
 ---
 
-## 🛠️ Как редактировать
+## 🔗 Related Documents
 
-### Изменить промпт для Claude:
+### In this project:
+- [HOW-TO-USE.md](HOW-TO-USE.md) - How to work
+- [PROJECT-STRUCTURE.md](PROJECT-STRUCTURE.md) - Projects map
+- [CLAUDE.md](CLAUDE.md) - Claude prompt
 
-1. Открыть [CLAUDE.md](CLAUDE.md)
-2. Внести изменения
-3. Сохранить (Cmd+S)
-4. При следующей сессии Claude прочитает обновленный файл
+### In other projects:
+- [MultiBOT/README.md](../MultiBOT/README.md) - MultiBOT documentation
+- [MultiBOT/ARCHITECTURE.md](../MultiBOT/ARCHITECTURE.md) - System architecture
+- [MultiBOT/GIT-COMMANDS.md](../MultiBOT/GIT-COMMANDS.md) - Git cheatsheet
 
-### Добавить проект в workspace:
+---
 
-1. Открыть `~/Projects/Sergey-Projects.code-workspace`
-2. Добавить в секцию `"folders"`:
+## 🛠️ How to Edit
+
+### Change Claude prompt:
+
+1. Open [CLAUDE.md](CLAUDE.md)
+2. Make changes
+3. Save (Cmd+S)
+4. Next session Claude reads updated file
+
+### Add project to workspace:
+
+1. Open `~/Projects/Sergey-Projects.code-workspace`
+2. Add to `"folders"` section:
 ```json
 {
   "name": "🔥 New Project",
   "path": "/Users/sergey/Projects/new-project"
 }
 ```
-3. Сохранить
+3. Save
 4. Reload workspace (Command Palette → "Reload Window")
 
-### Обновить карту проектов:
+### Update projects map:
 
-1. Открыть [PROJECT-STRUCTURE.md](PROJECT-STRUCTURE.md)
-2. Добавить описание нового проекта
-3. Обновить диаграммы
-4. Сохранить
+1. Open [PROJECT-STRUCTURE.md](PROJECT-STRUCTURE.md)
+2. Add new project description
+3. Update diagrams
+4. Save
 
 ---
 
-## 🎓 Для новичков
+## 🎓 For Beginners
 
-### Если вы впервые здесь:
+### If you're here first time:
 
-1. **Читайте по порядку:**
-   - [HOW-TO-USE.md](HOW-TO-USE.md) ← НАЧНИ ЗДЕСЬ
+1. **Read in order:**
+   - [HOW-TO-USE.md](HOW-TO-USE.md) ← START HERE
    - [PROJECT-STRUCTURE.md](PROJECT-STRUCTURE.md)
    - [CLAUDE.md](CLAUDE.md)
 
-2. **Откройте workspace:**
+2. **Open workspace:**
    ```bash
    code ~/Projects/Sergey-Projects.code-workspace
    ```
 
-3. **Попробуйте:**
-   - Переключиться между проектами (Cmd+P)
-   - Найти файл глобально (Cmd+Shift+F)
-   - Открыть терминал для проекта (правый клик → Terminal)
+3. **Try:**
+   - Switch between projects (Cmd+P)
+   - Find file globally (Cmd+Shift+F)
+   - Open terminal for project (right-click → Terminal)
 
-4. **Попросите помощь у Claude:**
+4. **Ask Claude for help:**
    ```
    "Объясни структуру проектов"
    "Как работать с workspace?"
@@ -164,31 +164,31 @@ Projects/
 
 ---
 
-## 📝 Версия
+## 📝 Version
 
-**Версия**: 1.0
-**Создано**: 2025-10-20
-**Автор**: Claude Code (по запросу Sergey)
+**Version**: 1.0
+**Created**: 2025-10-20
+**Author**: Claude Code (by Sergey's request)
 
 ### Changelog:
-- `1.0` (2025-10-20) - Первая версия проекта Sergey
+- `1.0` (2025-10-20) - First version of Sergey project
 
 ---
 
-## 🎯 Следующие шаги
+## 🎯 Next Steps
 
-### Для проекта Sergey:
-- ⏭️ Добавить Git integration (инициализировать репозиторий)
-- ⏭️ Добавить templates для новых проектов
-- ⏭️ Создать автоматизацию для создания новых проектов
+### For Sergey project:
+- ⏭️ Add Git integration (initialize repository)
+- ⏭️ Add templates for new projects
+- ⏭️ Create automation for new project creation
 
-### Для вас:
-- ⏭️ Прочитать всю документацию
-- ⏭️ Поработать с workspace
-- ⏭️ Настроить под себя (если нужно)
+### For you:
+- ⏭️ Read all documentation
+- ⏭️ Work with workspace
+- ⏭️ Customize if needed
 
 ---
 
-**Этот проект - фундамент для всех остальных! 🚀**
+**This project is foundation for all others! 🚀**
 
-**Вопросы? Читай [HOW-TO-USE.md](HOW-TO-USE.md) или спроси Claude Code! 😊**
+**Questions? Read [HOW-TO-USE.md](HOW-TO-USE.md) or ask Claude Code! 😊**

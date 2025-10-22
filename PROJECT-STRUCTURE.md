@@ -1,13 +1,13 @@
-# 🗺️ Карта проектов Сергея
+# 🗺️ Sergey's Projects Map
 
-> **Полная структура всех проектов в workspace**
-> Обновлено: 2025-10-20
+> **Complete structure of all workspace projects**
+> Updated: 2025-10-22
 
 ---
 
-## 📊 Общая архитектура
+## 📊 Overall Architecture
 
-**Реальная структура workspace:**
+**Real workspace structure:**
 
 ```
 Projects/
@@ -50,38 +50,38 @@ Projects/
 
 ---
 
-## 🎯 Проект: Sergey (Главный)
+## 🎯 Project: Sergey (Main)
 
-**Расположение:** `/Users/sergey/Projects/Sergey/`
+**Location:** `/Users/sergey/Projects/Sergey/`
 
-### Назначение:
-Главный проект с **глобальными инструкциями** и **общей документацией** для всех проектов.
+### Purpose:
+Main project with **global instructions** and **shared documentation** for all projects.
 
-### Содержимое:
+### Content:
 
-| Файл | Описание |
+| File | Description |
 |------|----------|
-| `CLAUDE.md` | 🤖 Главный промпт для Claude Code |
-| `PROJECT-STRUCTURE.md` | 🗺️ Карта всех проектов (этот файл) |
-| `HOW-TO-USE.md` | 📖 Шпаргалка: как работать с workspace |
-| `docs/` | 📚 Общая документация |
-| `.vscode/settings.json` | ⚙️ Глобальные настройки VS Code |
+| `CLAUDE.md` | 🤖 Main Claude Code prompt |
+| `PROJECT-STRUCTURE.md` | 🗺️ All projects map (this file) |
+| `HOW-TO-USE.md` | 📖 Cheatsheet: how to work with workspace |
+| `docs/` | 📚 Shared documentation |
+| `.vscode/settings.json` | ⚙️ Global VS Code settings |
 
-### Связи:
-- **Родитель** для всех остальных проектов
-- **Читается первым** при запуске Claude Code
-- **Приоритет**: Локальные инструкции переопределяют глобальные
+### Relations:
+- **Parent** for all other projects
+- **Read first** when starting Claude Code
+- **Priority**: Local instructions override global
 
 ---
 
-## 🤖 Проект: MultiBOT
+## 🤖 Project: MultiBOT
 
-**Расположение:** `/Users/sergey/Projects/MultiBOT/`
+**Location:** `/Users/sergey/Projects/MultiBOT/`
 
-### Назначение:
-Модульная платформа для Telegram ботов с общей инфраструктурой.
+### Purpose:
+Modular platform for Telegram bots with shared infrastructure.
 
-### Технологии:
+### Tech Stack:
 - **Backend**: Node.js 20, JavaScript
 - **Bot**: node-telegram-bot-api
 - **DB**: Supabase (PostgreSQL)
@@ -89,47 +89,42 @@ Projects/
 - **Automation**: n8n
 - **Barcode**: @zxing/library
 
-### Статус:
+### Status:
 🚧 **Active Development** - Week 2 (Phase 1)
 
-### Текущий фокус:
+### Current Focus:
 - Voice handler (Whisper transcription)
 - Photo handler (GPT-4o Vision)
 - Barcode scanner (OpenFoodFacts API)
 - Product search (3-tier fallback)
 
-### Структура:
+### Structure:
 
 ```
 MultiBOT/
-├── src/
-│   └── telegram-bot.js              # Main bot code
-├── workflows/
-│   └── router-mini.json             # n8n workflow
-├── mini-app/
-│   └── server.js                    # Barcode scanner web app
-├── docs/
-│   ├── CLAUDE-INSTRUCTIONS.md       # Локальный промпт
-│   ├── ARCHITECTURE.md              # Архитектура системы
-│   ├── DATABASE-CURRENT-SCHEMA.md   # Схема БД
-│   ├── ROADMAP.md                   # План развития (Week 1-12)
-│   └── CURRENT-STATUS.md            # Текущий статус
-├── .vscode/
-│   ├── settings.json                # Настройки VS Code
-│   └── tasks.json                   # Git автоматизация
+├── src/telegram-bot.js              # Main bot code
+├── workflows/router-mini.json       # n8n workflow
+├── mini-app/server.js               # Barcode scanner web app
+├── docs/CLAUDE-INSTRUCTIONS.md      # Local prompt
+├── docs/ARCHITECTURE.md             # System architecture
+├── docs/DATABASE-CURRENT-SCHEMA.md  # DB schema
+├── docs/ROADMAP.md                  # Development plan (Week 1-12)
+├── docs/CURRENT-STATUS.md           # Current status
+├── .vscode/settings.json            # VS Code settings
+├── .vscode/tasks.json               # Git automation
 ├── package.json                     # Dependencies
 ├── .env                             # Credentials (gitignored)
-└── README.md                        # Документация
+└── README.md                        # Documentation
 ```
 
-### База данных:
+### Database:
 **Supabase Project**: One project, namespaced tables
 
-**Shared tables** (для всех ботов):
-- `users` - все пользователи
-- `user_settings` - настройки
-- `goals` - цели (calories, protein, steps, water, sleep)
-- `daily_summaries` - дневные агрегаты
+**Shared tables** (for all bots):
+- `users` - all users
+- `user_settings` - settings
+- `goals` - goals (calories, protein, steps, water, sleep)
+- `daily_summaries` - daily aggregates
 
 **MultiBOT tables** (`multibot_*`):
 - Coming soon...
@@ -139,114 +134,108 @@ MultiBOT/
 - **Branch**: `feature/week-2-handlers`
 - **Main**: `main`
 
-### Документация:
-- [ARCHITECTURE.md](../MultiBOT/ARCHITECTURE.md) - Архитектура
-- [ROADMAP.md](../MultiBOT/ROADMAP.md) - План развития
-- [CURRENT-STATUS.md](../MultiBOT/CURRENT-STATUS.md) - Текущий статус
-- [GIT-COMMANDS.md](../MultiBOT/GIT-COMMANDS.md) - Git шпаргалка
-
 ---
 
-## 🍎 Проект: FoodTracker
+## 🍎 Project: FoodTracker
 
-**Расположение:** `/Users/sergey/Projects/n8n-docs/FoodTracker/`
+**Location:** `/Users/sergey/Projects/n8n-docs/FoodTracker/`
 
-### Назначение:
-Telegram бот для трекинга еды, калорий, макронутриентов.
+### Purpose:
+Telegram bot for food tracking, calories, macronutrients.
 
-### Технологии:
+### Tech Stack:
 - **Backend**: Node.js
 - **Bot**: Telegram Bot API
 - **DB**: Supabase (`foodtracker_*` tables)
-- **AI**: OpenAI GPT для поиска продуктов
+- **AI**: OpenAI GPT for product search
 - **Visualization**: Notion (Phase 1), QuickChart (Phase 3+)
 
-### Статус:
-🔄 **Migration to MultiBOT** - переносится в MultiBOT как sub-bot
+### Status:
+🔄 **Migration to MultiBOT** - moving to MultiBOT as sub-bot
 
-### База данных:
+### Database:
 
 **FoodTracker tables** (`foodtracker_*`):
-- `foodtracker_entries` - записи о еде (все приёмы пищи)
-- `food_products` - база продуктов
+- `foodtracker_entries` - food entries (all meals)
+- `food_products` - products database
 
-### Особенности:
+### Features:
 - **Input**: text, voice, photo, barcode
 - **Processing**: Smart product search (3-tier: DB → OpenFoodFacts → GPT)
 - **Output**: Daily format (1 day = 1 entry), Notion sync
 
 ---
 
-## ⚡ Проект: n8n-automation
+## ⚡ Project: n8n-automation
 
-**Расположение:** `/Users/sergey/Projects/n8n-docs/n8n-automation/`
+**Location:** `/Users/sergey/Projects/n8n-docs/n8n-automation/`
 
-### Назначение:
-Хранилище n8n workflows для автоматизации и интеграций.
+### Purpose:
+n8n workflows storage for automation and integrations.
 
-### Содержимое:
-- **Workflows**: JSON файлы с n8n workflows
-- **Shared workflows**: Общие для всех проектов
-- **Документация**: Описание каждого workflow
+### Content:
+- **Workflows**: JSON files with n8n workflows
+- **Shared workflows**: Common for all projects
+- **Documentation**: Description of each workflow
 
-### Типы workflows:
-- **Router workflows** - маршрутизация запросов
-- **Integration workflows** - интеграции с API
-- **Processing workflows** - обработка данных
-- **Notification workflows** - уведомления
+### Workflow Types:
+- **Router workflows** - request routing
+- **Integration workflows** - API integrations
+- **Processing workflows** - data processing
+- **Notification workflows** - notifications
 
-### Связи:
-- Используется **MultiBOT** для оркестрации
-- Используется **FoodTracker** для обработки
-- Интеграция с **Supabase**, **OpenAI**, **Notion**
+### Relations:
+- Used by **MultiBOT** for orchestration
+- Used by **FoodTracker** for processing
+- Integration with **Supabase**, **OpenAI**, **Notion**
 
 ---
 
-## 🎥 Проект: youtube-transcription
+## 🎥 Project: youtube-transcription
 
-**Расположение:** `/Users/sergey/Projects/n8n-docs/youtube-transcription/`
+**Location:** `/Users/sergey/Projects/n8n-docs/youtube-transcription/`
 
-### Назначение:
-Инструменты для транскрипции YouTube видео.
+### Purpose:
+Tools for YouTube video transcription.
 
-### Технологии:
+### Tech Stack:
 - **AI**: OpenAI Whisper (transcription)
 - **Video**: youtube-dl / yt-dlp
-- **Output**: Text, SRT субтитры
+- **Output**: Text, SRT subtitles
 
-### Статус:
-⏸️ **Planning** - в планах
+### Status:
+⏸️ **Planning** - planned
 
-### Возможности:
-- Транскрипция YouTube видео
-- Генерация субтитров
-- Перевод на другие языки
-- Саммаризация контента
-
----
-
-## 📦 Проект: archives
-
-**Расположение:** `/Users/sergey/Projects/n8n-docs/archives/`
-
-### Назначение:
-Архив старых проектов, документации, экспериментов.
-
-### Содержимое:
-- Старые версии проектов
-- Устаревшая документация
-- Эксперименты и прототипы
+### Capabilities:
+- YouTube video transcription
+- Subtitle generation
+- Translation to other languages
+- Content summarization
 
 ---
 
-## 🔗 Связи между проектами
+## 📦 Project: archives
 
-### Диаграмма зависимостей:
+**Location:** `/Users/sergey/Projects/n8n-docs/archives/`
+
+### Purpose:
+Archive of old projects, documentation, experiments.
+
+### Content:
+- Old project versions
+- Outdated documentation
+- Experiments and prototypes
+
+---
+
+## 🔗 Project Relations
+
+### Dependency Diagram:
 
 ```
 ┌─────────────────────────────────────────────────┐
 │           Supabase (PostgreSQL)                 │
-│        Единая БД для всех проектов              │
+│        Single DB for all projects               │
 └──────────────────┬──────────────────────────────┘
                    │
         ┌──────────┴──────────┐
@@ -264,25 +253,25 @@ Telegram бот для трекинга еды, калорий, макронут
 └──────────────────────────────────────┘
 ```
 
-### Общие ресурсы:
+### Shared Resources:
 
-| Ресурс | Расположение | Используется в |
+| Resource | Location | Used In |
 |--------|--------------|----------------|
-| **Credentials** | `~/credentials/n8n-access.md` | Все проекты |
-| **Supabase DB** | Cloud (qyemyvplvtzpukvktkae) | Все проекты |
-| **OpenAI API** | Один ключ | MultiBOT, FoodTracker, YouTube |
-| **n8n Instance** | n8n.srv1068954.hstgr.cloud | Все проекты |
+| **Credentials** | `~/credentials/n8n-access.md` | All projects |
+| **Supabase DB** | Cloud (qyemyvplvtzpukvktkae) | All projects |
+| **OpenAI API** | One key | MultiBOT, FoodTracker, YouTube |
+| **n8n Instance** | n8n.srv1068954.hstgr.cloud | All projects |
 
 ---
 
 ## 📋 Workspace: Sergey-Projects.code-workspace
 
-**Расположение:** `/Users/sergey/Projects/Sergey-Projects.code-workspace`
+**Location:** `/Users/sergey/Projects/Sergey-Projects.code-workspace`
 
-### Назначение:
-Multi-Root Workspace файл который объединяет **все проекты** в один workspace.
+### Purpose:
+Multi-Root Workspace file that combines **all projects** into one workspace.
 
-### Содержимое:
+### Content:
 
 ```json
 {
@@ -290,25 +279,25 @@ Multi-Root Workspace файл который объединяет **все пр�
     { "name": "🎯 Sergey (Main)", "path": "/Users/sergey/Projects/Sergey" },
     { "name": "🤖 MultiBOT", "path": "/Users/sergey/Projects/MultiBOT" },
     { "name": "📚 n8n-docs", "path": "/Users/sergey/Projects/n8n-docs" },
-    // ... другие проекты
+    // ... other projects
   ],
-  "settings": { /* глобальные настройки */ }
+  "settings": { /* global settings */ }
 }
 ```
 
-### Как открыть:
+### How to open:
 ```bash
-# Из терминала
+# From terminal
 code ~/Projects/Sergey-Projects.code-workspace
 
-# Или двойной клик на файл
+# Or double-click on file
 ```
 
 ---
 
-## 🎯 Приоритеты разработки
+## 🎯 Development Priorities
 
-### Phase 1 (Week 1-2) - ТЕКУЩИЙ:
+### Phase 1 (Week 1-2) - CURRENT:
 ✅ Week 1: Foundation (DONE)
 🔄 Week 2: MultiBOT Feature Parity (IN PROGRESS)
 
@@ -320,9 +309,9 @@ code ~/Projects/Sergey-Projects.code-workspace
 
 ---
 
-## 📊 Статистика проектов
+## 📊 Project Statistics
 
-| Проект | Статус | Language | Lines | Files |
+| Project | Status | Language | Lines | Files |
 |--------|--------|----------|-------|-------|
 | **Sergey** | 📚 Docs | Markdown | ~500 | 4 |
 | **MultiBOT** | 🚧 Dev | JavaScript | ~2000 | 15+ |
@@ -332,25 +321,25 @@ code ~/Projects/Sergey-Projects.code-workspace
 
 ---
 
-## 🔄 Версионирование
+## 🔄 Versioning
 
-**Версия**: 1.0
-**Создано**: 2025-10-20
-**Автор**: Claude Code
-**Последнее обновление**: 2025-10-20
+**Version**: 1.0
+**Created**: 2025-10-20
+**Author**: Claude Code
+**Last Update**: 2025-10-22
 
 ### Changelog:
-- `1.0` (2025-10-20) - Первая версия карты проектов
+- `1.0` (2025-10-20) - First version of project map
 
 ---
 
-## 📚 Связанные документы
+## 📚 Related Documents
 
-- [CLAUDE.md](CLAUDE.md) - Главный промпт
-- [HOW-TO-USE.md](HOW-TO-USE.md) - Как работать с workspace
-- [MultiBOT/README.md](../MultiBOT/README.md) - Документация MultiBOT
-- [MultiBOT/ARCHITECTURE.md](../MultiBOT/ARCHITECTURE.md) - Архитектура системы
+- [CLAUDE.md](CLAUDE.md) - Main prompt
+- [HOW-TO-USE.md](HOW-TO-USE.md) - How to work with workspace
+- [MultiBOT/README.md](../MultiBOT/README.md) - MultiBOT documentation
+- [MultiBOT/ARCHITECTURE.md](../MultiBOT/ARCHITECTURE.md) - System architecture
 
 ---
 
-**Эта карта поможет ориентироваться во всех проектах! 🗺️**
+**This map helps navigate all projects! 🗺️**

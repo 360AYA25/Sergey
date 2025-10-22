@@ -1,117 +1,117 @@
-# 📖 Как работать с Sergey Projects Workspace
+# 📖 How to Use Sergey Projects Workspace
 
-> **Шпаргалка для ежедневной работы**
-> Быстрый старт и полезные советы
+> **Daily workflow cheatsheet**
+> Quick start & useful tips
 
 ---
 
-## 🚀 Быстрый старт
+## 🚀 Quick Start
 
-### 1️⃣ Открыть workspace:
+### 1️⃣ Open workspace:
 
-**Вариант А: Из файлового менеджера**
+**Option A: From Finder**
 ```
 Finder → Projects → Sergey-Projects.code-workspace
-Двойной клик → VS Code откроется
+Double click → VS Code opens
 ```
 
-**Вариант Б: Из терминала**
+**Option B: From Terminal**
 ```bash
 code ~/Projects/Sergey-Projects.code-workspace
 ```
 
-**Вариант В: Из VS Code**
+**Option C: From VS Code**
 ```
 File → Open Workspace from File...
-→ Выбрать Sergey-Projects.code-workspace
+→ Select Sergey-Projects.code-workspace
 ```
 
-### 2️⃣ Что вы увидите:
+### 2️⃣ What you'll see:
 
 ```
-Explorer (левая панель):
-├── 🎯 SERGEY (MAIN)        ← Главный проект
+Explorer (left panel):
+├── 🎯 SERGEY (MAIN)        ← Main project
 │   ├── CLAUDE.md
 │   ├── PROJECT-STRUCTURE.md
-│   └── HOW-TO-USE.md (этот файл)
+│   └── HOW-TO-USE.md (this file)
 │
-├── 📚 N8N-DOCS             ← Документация
-├── 🤖 MULTIBOT             ← Telegram бот
+├── 📚 N8N-DOCS             ← Documentation
+├── 🤖 MULTIBOT             ← Telegram bot
 ├── 🍎 FOOD TRACKER V2      ← Food tracking
-├── 🎥 YOUTUBE TRANSCRIPT   ← Транскрипция
+├── 🎥 YOUTUBE TRANSCRIPT   ← Transcription
 ├── 📝 TRANSCRIPT SERVICE   ← Transcript service
 ├── 🔌 MCP SERVER           ← MCP server
-└── 📦 ARCHIVES (N8N)       ← Архивы
+└── 📦 ARCHIVES (N8N)       ← Archives
 ```
 
-Все проекты **одновременно** в одном окне! 🎉
+All projects **simultaneously** in one window! 🎉
 
 ---
 
-## 🎯 Работа с проектами
+## 🎯 Working with Projects
 
-### Переключение между проектами:
+### Switch between projects:
 
-**Быстро:**
+**Quick:**
 ```
 Cmd+P                    # Quick Open
-Введите часть имени файла
+Type part of filename
 Enter
 ```
 
-**Через Explorer:**
+**Via Explorer:**
 ```
-Клик на название проекта в левой панели
-→ Развернуть папку
-→ Открыть нужный файл
-```
-
-### Поиск по всем проектам:
-
-```
-Cmd+Shift+F              # Глобальный поиск
-Введите текст
-→ Результаты из ВСЕХ проектов
+Click on project name in left panel
+→ Expand folder
+→ Open needed file
 ```
 
-### Открыть терминал для конкретного проекта:
+### Search across all projects:
 
 ```
-1. Кликните правой кнопкой на название проекта
+Cmd+Shift+F              # Global search
+Enter text
+→ Results from ALL projects
+```
+
+### Open terminal for specific project:
+
+```
+1. Right-click on project name
 2. "Open in Integrated Terminal"
-3. Терминал откроется в папке этого проекта
+3. Terminal opens in that project folder
 ```
 
 ---
 
-## 🤖 Работа с Claude Code
+## 🤖 Working with Claude Code
 
-### Как Claude знает что делать:
+### How Claude knows what to do:
 
-1. **Сначала** Claude читает `Sergey/CLAUDE.md` (глобальные правила)
-2. **Потом** ищет локальный `project/docs/CLAUDE-INSTRUCTIONS.md` (если есть)
-3. **Применяет** локальные правила поверх глобальных
+1. **First** Claude reads `Sergey/CLAUDE.md` (global rules)
+2. **Then** looks for local `project/docs/CLAUDE-INSTRUCTIONS.md` (if exists)
+3. **Applies** local rules on top of global
 
-### Примеры:
+### Examples:
 
-**В проекте MultiBOT:**
+**In MultiBOT project:**
 ```
 Вы: "Добавь новую функцию"
-Claude: [Читает CLAUDE.md]
-        [Читает MultiBOT/docs/CLAUDE-INSTRUCTIONS.md]
-        [Применяет правила MultiBOT + глобальные]
+Claude: [Reads CLAUDE.md]
+        [Reads MultiBOT/docs/CLAUDE-INSTRUCTIONS.md]
+        [Applies MultiBOT + global rules]
 ```
 
-**В проекте без локальных инструкций:**
+**In project without local instructions:**
 ```
 Вы: "Помоги с кодом"
-Claude: [Читает только CLAUDE.md]
-        [Работает по глобальным правилам]
+Claude: [Reads only CLAUDE.md]
+        [Works by global rules]
 ```
 
-### Активировать глубокое обдумывание:
+### Activate deep thinking:
 
-Используйте ключевые фразы:
+Use key phrases:
 ```
 "Подумай стратегически над..."
 "Проанализируй все варианты..."
@@ -119,75 +119,75 @@ Claude: [Читает только CLAUDE.md]
 "Рассмотри архитектуру с точки зрения масштабирования..."
 ```
 
-Claude переключится в режим **максимального анализа** 🧠
+Claude switches to **maximum analysis mode** 🧠
 
 ---
 
-## ⚙️ Настройки VS Code
+## ⚙️ VS Code Settings
 
-### Где какие настройки:
+### Where are settings:
 
 ```
-Sergey-Projects.code-workspace      ← Глобальные для ВСЕХ проектов
+Sergey-Projects.code-workspace      ← Global for ALL projects
 ├── settings (workspace level)
 │
-├── Sergey/.vscode/settings.json    ← Только для Sergey
-├── MultiBOT/.vscode/settings.json  ← Только для MultiBOT
-└── ... другие проекты
+├── Sergey/.vscode/settings.json    ← Only for Sergey
+├── MultiBOT/.vscode/settings.json  ← Only for MultiBOT
+└── ... other projects
 ```
 
-### Приоритет настроек:
+### Settings priority:
 
 ```
-Локальные (.vscode/settings.json)
-    ↓ переопределяют
+Local (.vscode/settings.json)
+    ↓ override
 Workspace (Sergey-Projects.code-workspace)
-    ↓ переопределяют
-Глобальные VS Code (User Settings)
+    ↓ override
+Global VS Code (User Settings)
 ```
 
-### Как изменить настройки:
+### How to change settings:
 
-**Для всех проектов:**
+**For all projects:**
 ```
 Code → Settings → Workspace
-Или редактировать Sergey-Projects.code-workspace
+Or edit Sergey-Projects.code-workspace
 ```
 
-**Для одного проекта:**
+**For one project:**
 ```
-Создать/редактировать project/.vscode/settings.json
+Create/edit project/.vscode/settings.json
 ```
 
 ---
 
-## 🔄 Git workflow
+## 🔄 Git Workflow
 
-### Базовый workflow:
+### Basic workflow:
 
 ```bash
-# 1. Начало работы
-git pull                 # Получить последние изменения
+# 1. Start work
+git pull                 # Get latest changes
 
-# 2. Работа с кодом
-# ... делаете изменения ...
+# 2. Code work
+# ... make changes ...
 
-# 3. Проверка
-git status               # Что изменилось?
-git diff                 # Какие именно изменения?
+# 3. Check
+git status               # What changed?
+git diff                 # What exactly?
 
-# 4. Сохранение
-git add .                # Добавить всё
-git commit -m "feat: описание"  # Коммит
-git push                 # Отправить на GitHub
+# 4. Save
+git add .                # Add all
+git commit -m "feat: description"  # Commit
+git push                 # Push to GitHub
 ```
 
-### Через VS Code Tasks:
+### Via VS Code Tasks:
 
 ```
 Cmd+Shift+P → "Tasks: Run Task"
 
-Популярные задачи:
+Popular tasks:
 ├─ 🚀 Start Development  (pull + install + run)
 ├─ 📦 Finish Work        (add + commit + push)
 ├─ Git: Status
@@ -195,242 +195,242 @@ Cmd+Shift+P → "Tasks: Run Task"
 └─ Git: Log
 ```
 
-### Source Control панель:
+### Source Control panel:
 
 ```
-Cmd+Shift+G              # Открыть Source Control
-→ Видите все изменения
-→ + рядом с файлом = git add
-→ Галочка вверху = commit
-→ ... меню = push/pull
+Cmd+Shift+G              # Open Source Control
+→ See all changes
+→ + near file = git add
+→ Checkmark on top = commit
+→ ... menu = push/pull
 ```
 
 ---
 
-## 💡 Полезные горячие клавиши
+## 💡 Useful Shortcuts
 
-### Навигация:
+### Navigation:
 
 ```bash
-Cmd+P                # Quick Open (файлы)
-Cmd+Shift+P          # Command Palette (команды)
-Cmd+B                # Toggle Sidebar (показать/скрыть)
+Cmd+P                # Quick Open (files)
+Cmd+Shift+P          # Command Palette (commands)
+Cmd+B                # Toggle Sidebar
 Cmd+Shift+E          # Explorer
-Cmd+Shift+F          # Поиск по всем файлам
+Cmd+Shift+F          # Search across files
 Cmd+Shift+G          # Source Control (Git)
-Cmd+`                # Терминал
+Cmd+`                # Terminal
 ```
 
-### Редактирование:
+### Editing:
 
 ```bash
-Cmd+D                # Выделить следующее совпадение
-Cmd+Shift+L          # Выделить все совпадения
-Cmd+/                # Закомментировать строку
-Cmd+[                # Уменьшить отступ
-Cmd+]                # Увеличить отступ
-Option+↑ / ↓         # Переместить строку вверх/вниз
-Shift+Option+↑ / ↓   # Дублировать строку
+Cmd+D                # Select next occurrence
+Cmd+Shift+L          # Select all occurrences
+Cmd+/                # Comment line
+Cmd+[                # Decrease indent
+Cmd+]                # Increase indent
+Option+↑ / ↓         # Move line up/down
+Shift+Option+↑ / ↓   # Duplicate line
 ```
 
-### Работа с файлами:
+### Files:
 
 ```bash
-Cmd+N                # Новый файл
-Cmd+W                # Закрыть файл
-Cmd+S                # Сохранить
-Cmd+Shift+S          # Сохранить как...
-Cmd+K Cmd+W          # Закрыть все файлы
+Cmd+N                # New file
+Cmd+W                # Close file
+Cmd+S                # Save
+Cmd+Shift+S          # Save as...
+Cmd+K Cmd+W          # Close all files
 ```
 
 ---
 
-## 📁 Структура файлов (best practices)
+## 📁 File Structure (best practices)
 
-### В каждом проекте должно быть:
+### Each project should have:
 
 ```
 project/
-├── README.md                    ← Описание проекта
-├── docs/                        ← Документация
-│   ├── CLAUDE-INSTRUCTIONS.md   ← Промпт для Claude (если нужен)
-│   ├── ARCHITECTURE.md          ← Архитектура (для сложных проектов)
-│   └── API.md                   ← API документация (если есть API)
-├── src/                         ← Исходный код
-├── .vscode/                     ← Настройки VS Code
-│   ├── settings.json            ← Локальные настройки
-│   └── tasks.json               ← Tasks для автоматизации
-├── .gitignore                   ← Что не коммитить
-├── package.json                 ← Зависимости (для Node.js)
-└── .env                         ← Credentials (НЕ коммитить!)
+├── README.md                    ← Project description
+├── docs/                        ← Documentation
+│   ├── CLAUDE-INSTRUCTIONS.md   ← Claude prompt (if needed)
+│   ├── ARCHITECTURE.md          ← Architecture (for complex projects)
+│   └── API.md                   ← API docs (if has API)
+├── src/                         ← Source code
+├── .vscode/                     ← VS Code settings
+│   ├── settings.json            ← Local settings
+│   └── tasks.json               ← Automation tasks
+├── .gitignore                   ← What not to commit
+├── package.json                 ← Dependencies (for Node.js)
+└── .env                         ← Credentials (DON'T commit!)
 ```
 
 ---
 
-## 🔍 Поиск и навигация
+## 🔍 Search & Navigation
 
-### Поиск файлов:
+### Find files:
 
 ```bash
-Cmd+P                            # По имени файла
-→ Введите часть имени
+Cmd+P                            # By filename
+→ Type part of name
 → Enter
 
-Примеры:
-"arc"         → найдёт ARCHITECTURE.md
-"telbot"      → найдёт telegram-bot.js
-"readme"      → найдёт все README.md
+Examples:
+"arc"         → finds ARCHITECTURE.md
+"telbot"      → finds telegram-bot.js
+"readme"      → finds all README.md
 ```
 
-### Поиск по содержимому:
+### Search by content:
 
 ```bash
-Cmd+Shift+F                      # Глобальный поиск
-→ Введите текст
-→ Можно фильтровать по типу файлов
+Cmd+Shift+F                      # Global search
+→ Enter text
+→ Can filter by file type
 
-Примеры:
-"async function"                 # Найти все async функции
-"TODO"                           # Найти все TODO
-"суpabase"                       # Найти где используется Supabase
+Examples:
+"async function"                 # Find all async functions
+"TODO"                           # Find all TODOs
+"supabase"                       # Find Supabase usage
 ```
 
-### Переход к определению:
+### Go to definition:
 
 ```bash
 F12                              # Go to Definition
-Cmd+Click                        # Тоже самое
+Cmd+Click                        # Same
 Cmd+T                            # Go to Symbol in Workspace
 ```
 
 ---
 
-## 🎓 Типичный рабочий день
+## 🎓 Typical Workday
 
-### Утро (начало работы):
+### Morning (start work):
 
 ```bash
-1. Открыть workspace:
+1. Open workspace:
    code ~/Projects/Sergey-Projects.code-workspace
 
-2. Получить последние изменения:
+2. Get latest changes:
    Cmd+Shift+P → "Tasks: Run Task" → "🚀 Start Development"
 
-3. Проверить TODO:
+3. Check TODOs:
    Cmd+Shift+F → "TODO" → Enter
 ```
 
-### День (работа):
+### Day (work):
 
 ```bash
-1. Работаете с Claude Code:
-   - Просите помощь
-   - Делаете изменения
-   - Тестируете
+1. Work with Claude Code:
+   - Ask for help
+   - Make changes
+   - Test
 
-2. Периодически коммитите:
-   git add . && git commit -m "feat: описание"
+2. Commit periodically:
+   git add . && git commit -m "feat: description"
 
-3. Переключаетесь между проектами:
-   Cmd+P → вводите имя файла
+3. Switch between projects:
+   Cmd+P → type filename
 ```
 
-### Вечер (завершение):
+### Evening (finish):
 
 ```bash
-1. Сохранить всё:
+1. Save everything:
    Cmd+Shift+P → "Tasks: Run Task" → "📦 Finish Work"
 
-2. Проверить что залито:
+2. Check what's pushed:
    git log -1
 
-3. Закрыть VS Code с чистой совестью 😊
+3. Close VS Code with clear conscience 😊
 ```
 
 ---
 
-## 🚨 Частые проблемы и решения
+## 🚨 Common Issues & Solutions
 
-### Проблема: "Git конфликт при pull"
+### Issue: "Git conflict on pull"
 
-**Решение:**
+**Solution:**
 ```bash
-1. git status                    # Посмотреть конфликтующие файлы
-2. Открыть файлы, найти маркеры:
+1. git status                    # See conflicting files
+2. Open files, find markers:
    <<<<<<< HEAD
-   ваш код
+   your code
    =======
-   чужой код
+   their code
    >>>>>>> origin/main
 
-3. Исправить вручную (оставить нужное)
-4. Удалить маркеры
+3. Fix manually (keep needed)
+4. Remove markers
 5. git add . && git commit -m "resolve merge conflict"
 ```
 
-### Проблема: "VS Code тормозит"
+### Issue: "VS Code lags"
 
-**Решение:**
+**Solution:**
 ```bash
-1. Закрыть ненужные файлы: Cmd+K Cmd+W
-2. Перезапустить VS Code
-3. Проверить что не индексируется node_modules:
-   Settings → Files: Exclude → добавить **/node_modules
+1. Close unnecessary files: Cmd+K Cmd+W
+2. Restart VS Code
+3. Check node_modules not indexed:
+   Settings → Files: Exclude → add **/node_modules
 ```
 
-### Проблема: "Claude не видит мои инструкции"
+### Issue: "Claude doesn't see my instructions"
 
-**Решение:**
+**Solution:**
 ```bash
-1. Проверить файл существует:
+1. Check file exists:
    Sergey/CLAUDE.md
 
-2. Проверить формат:
-   - Файл должен быть .md
-   - Кодировка UTF-8
+2. Check format:
+   - File must be .md
+   - Encoding UTF-8
 
-3. Перезапустить Claude Code сессию
+3. Restart Claude Code session
 ```
 
-### Проблема: "Не могу найти проект"
+### Issue: "Can't find project"
 
-**Решение:**
+**Solution:**
 ```bash
-1. Убедитесь что workspace открыт:
+1. Ensure workspace is open:
    File → Open Workspace → Sergey-Projects.code-workspace
 
-2. Проверьте что проект добавлен:
-   Редактировать Sergey-Projects.code-workspace
-   → Должен быть в "folders"
+2. Check project is added:
+   Edit Sergey-Projects.code-workspace
+   → Should be in "folders"
 ```
 
 ---
 
-## 📚 Полезные ресурсы
+## 📚 Useful Resources
 
-### Документация:
+### Documentation:
 
-- [CLAUDE.md](CLAUDE.md) - Главный промпт
-- [PROJECT-STRUCTURE.md](PROJECT-STRUCTURE.md) - Карта проектов
-- [MultiBOT/README.md](../MultiBOT/README.md) - Документация MultiBOT
-- [MultiBOT/GIT-COMMANDS.md](../MultiBOT/GIT-COMMANDS.md) - Git шпаргалка
+- [CLAUDE.md](CLAUDE.md) - Main prompt
+- [PROJECT-STRUCTURE.md](PROJECT-STRUCTURE.md) - Project map
+- [MultiBOT/README.md](../MultiBOT/README.md) - MultiBOT docs
+- [MultiBOT/GIT-COMMANDS.md](../MultiBOT/GIT-COMMANDS.md) - Git cheatsheet
 
 ### VS Code:
 
-- Официальная документация: https://code.visualstudio.com/docs
+- Official docs: https://code.visualstudio.com/docs
 - Shortcuts: https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf
 - Multi-Root Workspaces: https://code.visualstudio.com/docs/editor/multi-root-workspaces
 
 ### Git:
 
-- Git шпаргалка: [MultiBOT/GIT-COMMANDS.md](../MultiBOT/GIT-COMMANDS.md)
-- Git книга: https://git-scm.com/book/ru/v2
+- Git cheatsheet: [MultiBOT/GIT-COMMANDS.md](../MultiBOT/GIT-COMMANDS.md)
+- Git book: https://git-scm.com/book/en/v2
 
 ---
 
-## 💬 Нужна помощь?
+## 💬 Need Help?
 
-### Спросите Claude Code:
+### Ask Claude Code:
 
 ```
 "Как работать с workspace?"
@@ -439,33 +439,33 @@ Cmd+T                            # Go to Symbol in Workspace
 "Подумай стратегически: как организовать новый проект?"
 ```
 
-### Проверьте документацию:
+### Check documentation:
 
-1. Сначала смотрите файлы в проекте `Sergey/`
-2. Потом локальную документацию проекта
-3. Потом спрашивайте Claude
-
----
-
-## 🎯 Следующие шаги
-
-### Для новичка:
-
-1. ✅ Открыть workspace
-2. ✅ Прочитать [CLAUDE.md](CLAUDE.md)
-3. ✅ Прочитать [PROJECT-STRUCTURE.md](PROJECT-STRUCTURE.md)
-4. ⏭️ Поработать с MultiBOT (основной проект)
-5. ⏭️ Изучить Git workflow
-
-### Для продвинутого:
-
-1. ⏭️ Настроить свои горячие клавиши
-2. ⏭️ Установить рекомендуемые расширения
-3. ⏭️ Создать свои Tasks для автоматизации
-4. ⏭️ Настроить Git aliases
+1. First check files in `Sergey/` project
+2. Then local project documentation
+3. Then ask Claude
 
 ---
 
-**Удачной работы! 🚀**
+## 🎯 Next Steps
 
-**Есть вопросы? Спросите Claude Code - я всегда рад помочь! 😊**
+### For beginner:
+
+1. ✅ Open workspace
+2. ✅ Read [CLAUDE.md](CLAUDE.md)
+3. ✅ Read [PROJECT-STRUCTURE.md](PROJECT-STRUCTURE.md)
+4. ⏭️ Work with MultiBOT (main project)
+5. ⏭️ Learn Git workflow
+
+### For advanced:
+
+1. ⏭️ Setup custom shortcuts
+2. ⏭️ Install recommended extensions
+3. ⏭️ Create custom Tasks for automation
+4. ⏭️ Setup Git aliases
+
+---
+
+**Good work! 🚀**
+
+**Questions? Ask Claude Code - I'm always happy to help! 😊**

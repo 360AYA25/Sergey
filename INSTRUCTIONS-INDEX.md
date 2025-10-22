@@ -1,202 +1,181 @@
-# 📋 Индекс всех Claude Instructions
+# 📋 Claude Instructions Index
 
-> **Навигация по всем файлам-промптам для Claude Code**
+> **Navigation for all Claude Code prompt files**
 
 ---
 
-## 🎯 Глобальные инструкции
+## 🎯 Global Instructions
 
-| Файл | Описание | Читать |
+| File | Description | Read |
 |------|----------|--------|
-| **[CLAUDE.md](CLAUDE.md)** | 🌟 Главный промпт для всех проектов | **ВСЕГДА** |
+| **[CLAUDE.md](CLAUDE.md)** | 🌟 Main prompt for all projects | **ALWAYS** |
 
 ---
 
-## 📚 Локальные инструкции по проектам
+## 📚 Project-Specific Instructions
 
 ### 🎯 Sergey (Main Project)
-**Расположение:** `/Users/sergey/Projects/Sergey/`
+**Location:** `/Users/sergey/Projects/Sergey/`
 
-Файлы:
-- [README.md](README.md) - Обзор проекта
-- [CLAUDE.md](CLAUDE.md) - Главный промпт
-- [PROJECT-STRUCTURE.md](PROJECT-STRUCTURE.md) - Карта проектов
-- [HOW-TO-USE.md](HOW-TO-USE.md) - Шпаргалка
-- [INSTRUCTIONS-INDEX.md](INSTRUCTIONS-INDEX.md) - Этот файл
+Files:
+- [README.md](README.md) - Project overview
+- [CLAUDE.md](CLAUDE.md) - Main prompt
+- [PROJECT-STRUCTURE.md](PROJECT-STRUCTURE.md) - Projects map
+- [HOW-TO-USE.md](HOW-TO-USE.md) - Cheatsheet
+- [INSTRUCTIONS-INDEX.md](INSTRUCTIONS-INDEX.md) - This file
 
 ---
 
 ### 📚 n8n-docs
-**Расположение:** `/Users/sergey/Projects/n8n-docs/`
-**Статус:** 📚 Active Documentation
+**Location:** `/Users/sergey/Projects/n8n-docs/`
 
-**Claude Instructions:**
-- [CLAUDE-INSTRUCTIONS.md](../n8n-docs/CLAUDE-INSTRUCTIONS.md) - Локальные инструкции
+Files:
+- `MUST-READ.md` - n8n-specific instructions
+- `LEARNINGS.md` - Past errors & solutions
+- `PATTERNS.md` - Ready-made solutions
 
-**Дополнительно (КРИТИЧНО):**
-- [MUST-READ.md](../n8n-docs/MUST-READ.md) - ⭐ Читать ВСЕГДА!
-- [LEARNINGS.md](../n8n-docs/LEARNINGS.md) - Ошибки прошлого
-- [PATTERNS.md](../n8n-docs/PATTERNS.md) - Готовые решения
-- [CLAUDE_CODE_WORKFLOW.md](../n8n-docs/CLAUDE_CODE_WORKFLOW.md) - Workflow
+**Purpose:** Documentation hub for all projects
 
 ---
 
 ### 🤖 MultiBOT
-**Расположение:** `/Users/sergey/Projects/MultiBOT/`
-**Статус:** 🚧 Active Development (Week 2)
+**Location:** `/Users/sergey/Projects/MultiBOT/`
 
-**Claude Instructions:**
-- [docs/CLAUDE-INSTRUCTIONS.md](../MultiBOT/docs/CLAUDE-INSTRUCTIONS.md)
+Files:
+- `docs/CLAUDE-INSTRUCTIONS.md` - 🎯 MultiBOT-specific prompt
+- `docs/ARCHITECTURE.md` - System architecture
+- `docs/DATABASE-CURRENT-SCHEMA.md` - DB schema
+- `docs/ROADMAP.md` - Development plan (Week 1-12)
+- `docs/CURRENT-STATUS.md` - Current status
+- `README.md` - Main documentation
 
-**Дополнительная документация:**
-- [ARCHITECTURE.md](../MultiBOT/ARCHITECTURE.md)
-- [DATABASE-CURRENT-SCHEMA.md](../MultiBOT/DATABASE-CURRENT-SCHEMA.md)
-- [ROADMAP.md](../MultiBOT/ROADMAP.md)
-- [CURRENT-STATUS.md](../MultiBOT/CURRENT-STATUS.md)
-- [GIT-COMMANDS.md](../MultiBOT/GIT-COMMANDS.md)
-
----
-
-### 🍎 Food Tracker V2
-**Расположение:** `/Users/sergey/Projects/food-tracker-v2/`
-**Статус:** 🔄 Migration to MultiBOT
-
-**Claude Instructions:**
-- [docs/CLAUDE-INSTRUCTIONS.md](../food-tracker-v2/docs/CLAUDE-INSTRUCTIONS.md)
-
-**Примечание:** Legacy project, переносится в MultiBOT
+**Priority:** Global CLAUDE.md → Local CLAUDE-INSTRUCTIONS.md
 
 ---
 
-### 🎥 YouTube Transcript
-**Расположение:** `/Users/sergey/Projects/youtube-transcript/`
-**Статус:** ⏸️ Planning
+### 🍎 FoodTracker
+**Location:** `/Users/sergey/Projects/n8n-docs/FoodTracker/`
 
-**Claude Instructions:**
-- [docs/CLAUDE-INSTRUCTIONS.md](../youtube-transcript/docs/CLAUDE-INSTRUCTIONS.md)
+Files:
+- `docs/CLAUDE-INSTRUCTIONS.md` - FoodTracker-specific prompt
+- `README.md` - Documentation
 
----
-
-### 📝 Transcript Service
-**Расположение:** `/Users/sergey/Projects/transcript-service/`
-**Статус:** ⏸️ Planning
-
-**Claude Instructions:**
-- [docs/CLAUDE-INSTRUCTIONS.md](../transcript-service/docs/CLAUDE-INSTRUCTIONS.md)
+**Status:** 🔄 Migration to MultiBOT
 
 ---
 
-### 🔌 MCP Server
-**Расположение:** `/Users/sergey/Projects/mcp-server/`
-**Статус:** ⏸️ Planning/Development
+### ⚡ n8n-automation
+**Location:** `/Users/sergey/Projects/n8n-docs/n8n-automation/`
 
-**Claude Instructions:**
-- [docs/CLAUDE-INSTRUCTIONS.md](../mcp-server/docs/CLAUDE-INSTRUCTIONS.md)
+Files:
+- `docs/CLAUDE-INSTRUCTIONS.md` - Workflow instructions
+- `README.md` - Documentation
 
----
-
-### 📦 n8n Automation Archive
-**Расположение:** `/Users/sergey/Projects/n8n-automation-archive/`
-**Статус:** 📦 Archive (read-only)
-
-**Claude Instructions:**
-- [docs/CLAUDE-INSTRUCTIONS.md](../n8n-automation-archive/docs/CLAUDE-INSTRUCTIONS.md)
-
-**Примечание:** Только для референса, активная работа в n8n-docs
+**Purpose:** n8n workflows storage
 
 ---
 
-## 🔄 Приоритет чтения инструкций
+### 🎥 youtube-transcription
+**Location:** `/Users/sergey/Projects/n8n-docs/youtube-transcription/`
 
-### Когда Claude начинает работу с проектом:
+Files:
+- `docs/CLAUDE-INSTRUCTIONS.md` - YouTube project instructions
+- `README.md` - Documentation
+
+**Status:** ⏸️ Planning
+
+---
+
+### 📦 archives
+**Location:** `/Users/sergey/Projects/n8n-docs/archives/`
+
+Files:
+- `docs/DEPRECATED.md` - Archive info
+
+**Purpose:** Old projects archive
+
+---
+
+## 🔄 Instruction Loading Order
+
+### When starting Claude Code session:
 
 ```
-1. Sergey/CLAUDE.md           (глобальные правила)
-        ↓
-2. project/docs/CLAUDE-INSTRUCTIONS.md            (локальные правила)
-        ↓
-3. Дополнительные файлы проекта (если есть)
-   - n8n-docs: MUST-READ.md, LEARNINGS.md, PATTERNS.md
-   - MultiBOT: ARCHITECTURE.md, DATABASE-CURRENT-SCHEMA.md
-```
+1. Read: Sergey/CLAUDE.md
+   ↓ (global rules loaded)
 
----
+2. Check: project/docs/CLAUDE-INSTRUCTIONS.md exists?
+   ↓ (if yes)
 
-## 📊 Статистика проектов
+3. Read: project/docs/CLAUDE-INSTRUCTIONS.md
+   ↓ (local rules loaded)
 
-| Проект | Статус | Instructions | Дополнительно |
-|--------|--------|--------------|---------------|
-| **Sergey** | 📚 Docs | ✅ Global | 4 файла |
-| **n8n-docs** | 📚 Active | ✅ Local | 4 критичных |
-| **MultiBOT** | 🚧 Dev | ✅ Local | 5 docs |
-| **Food Tracker V2** | 🔄 Migration | ✅ Local | - |
-| **YouTube Transcript** | ⏸️ Planning | ✅ Local | - |
-| **Transcript Service** | ⏸️ Planning | ✅ Local | - |
-| **MCP Server** | ⏸️ Planning | ✅ Local | - |
-| **n8n Archive** | 📦 Archive | ✅ Local | Read-only |
+4. Merge: Local rules override global
+   ↓
 
-**Всего:** 8 проектов, 8 наборов инструкций
-
----
-
-## 🎓 Для новых проектов
-
-### Checklist при создании нового проекта:
-
-```bash
-new-project/
-├── docs/
-│   └── CLAUDE-INSTRUCTIONS.md    ← Создать из template
-├── README.md                      ← Описание проекта
-├── .gitignore                     ← Что не коммитить
-└── .vscode/
-    ├── settings.json              ← Локальные настройки
-    └── tasks.json                 ← Tasks для автоматизации
-```
-
-### Template для CLAUDE-INSTRUCTIONS.md:
-
-См. `/Users/sergey/Projects/Sergey/templates/` (будет создан следующим шагом)
-
----
-
-## 🔄 Обновление инструкций
-
-### Как обновлять:
-
-1. **Глобальные:** Редактируй `Sergey/CLAUDE.md`
-2. **Локальные:** Редактируй `project/docs/CLAUDE-INSTRUCTIONS.md`
-3. **Этот индекс:** Добавь новый проект сюда
-
-### Git workflow:
-
-```bash
-git add docs/CLAUDE-INSTRUCTIONS.md
-git commit -m "docs: update Claude instructions for [project]"
-git push
+5. Start work with combined context
 ```
 
 ---
 
-## 🔗 Связанные документы
+## 📝 How to Create New Instructions
 
-- [CLAUDE.md](CLAUDE.md) - Главный промпт
-- [PROJECT-STRUCTURE.md](PROJECT-STRUCTURE.md) - Карта проектов
-- [HOW-TO-USE.md](HOW-TO-USE.md) - Как работать с workspace
+### For new project:
+
+1. **Create folder:**
+   ```bash
+   mkdir -p /path/to/project/docs
+   ```
+
+2. **Create prompt file:**
+   ```bash
+   touch /path/to/project/docs/CLAUDE-INSTRUCTIONS.md
+   ```
+
+3. **Add to this index:**
+   - Edit INSTRUCTIONS-INDEX.md
+   - Add project section
+   - Describe instructions
+
+4. **Update workspace:**
+   - Add project to Sergey-Projects.code-workspace
+   - Reload window
 
 ---
 
-## 🔄 Версионирование
+## 🎯 Instruction Best Practices
 
-**Версия**: 1.0
-**Создано**: 2025-10-20
-**Обновлено**: 2025-10-20
+### What to include:
 
-### Changelog:
-- `1.0` (2025-10-20) - Первая версия индекса, все проекты покрыты инструкциями
+**In global CLAUDE.md:**
+- Universal work rules
+- Token economy guidelines
+- Git workflow
+- Security rules
+- Tech stack
+
+**In local CLAUDE-INSTRUCTIONS.md:**
+- Project-specific context
+- Special workflows
+- Local architecture
+- Project-specific rules
+- Override global if needed
+
+### What NOT to duplicate:
+
+- ❌ Basic Git commands (already in global)
+- ❌ Security rules (already in global)
+- ❌ VS Code shortcuts (already in HOW-TO-USE)
+- ❌ General best practices (already in global)
 
 ---
 
-**Этот индекс поможет найти нужные инструкции для любого проекта! 🗺️**
+## 🔗 Related Documents
 
-**Claude, используй этот индекс для навигации по инструкциям! 🤖**
+- [CLAUDE.md](CLAUDE.md) - Main prompt
+- [PROJECT-STRUCTURE.md](PROJECT-STRUCTURE.md) - Projects map
+- [HOW-TO-USE.md](HOW-TO-USE.md) - Workflow guide
+
+---
+
+**This index helps navigate all Claude Code instructions! 📋**

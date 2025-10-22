@@ -1,82 +1,195 @@
-# 🔌 Рекомендуемые расширения VS Code
+# 🔌 Recommended VS Code Extensions
 
-> **Полезные расширения для разработки**
+> **Useful extensions for development**
 
 ---
 
-## ⭐ Обязательные (Must-have)
+## ⭐ Must-Have
 
 ### GitLens
 **ID:** `eamodio.gitlens`
-**Зачем:** Показывает кто написал каждую строку кода, историю изменений
+**Why:** Shows who wrote each line, change history
 
-**Установка:**
+**Install:**
 ```bash
 code --install-extension eamodio.gitlens
 ```
 
 ### Git Graph
 **ID:** `mhutchie.git-graph`
-**Зачем:** Визуальный граф веток и коммитов
+**Why:** Visual branch and commit graph
 
-**Установка:**
+**Install:**
 ```bash
 code --install-extension mhutchie.git-graph
 ```
 
 ### Prettier
 **ID:** `esbenp.prettier-vscode`
-**Зачем:** Автоформатирование кода
+**Why:** Auto code formatting
 
-**Установка:**
+**Install:**
 ```bash
 code --install-extension esbenp.prettier-vscode
 ```
 
+### ESLint
+**ID:** `dbaeumer.vscode-eslint`
+**Why:** JavaScript/TypeScript linting
+
+**Install:**
+```bash
+code --install-extension dbaeumer.vscode-eslint
+```
+
 ---
 
-## 💡 Очень полезные
+## 🎨 Helpful
 
 ### Error Lens
 **ID:** `usernamehw.errorlens`
-**Зачем:** Показывает ошибки прямо в коде (inline)
+**Why:** Shows errors inline in code
 
-### Indent Rainbow
-**ID:** `oderwat.indent-rainbow`
-**Зачем:** Цветные отступы - легче видеть вложенность
-
-### TODO Highlight
-**ID:** `wayou.vscode-todo-highlight`
-**Зачем:** Подсветка TODO, FIXME в коде
-
----
-
-## 🇷🇺 Русский интерфейс
-
-### Russian Language Pack
-**ID:** `ms-ceintl.vscode-language-pack-ru`
-
-**Установка:**
+**Install:**
 ```bash
-code --install-extension ms-ceintl.vscode-language-pack-ru
+code --install-extension usernamehw.errorlens
+```
+
+### Path Intellisense
+**ID:** `christian-kohler.path-intellisense`
+**Why:** Autocomplete file paths
+
+**Install:**
+```bash
+code --install-extension christian-kohler.path-intellisense
+```
+
+### Auto Rename Tag
+**ID:** `formulahendry.auto-rename-tag`
+**Why:** Auto rename paired HTML/XML tags
+
+**Install:**
+```bash
+code --install-extension formulahendry.auto-rename-tag
+```
+
+### Bracket Pair Colorizer 2
+**ID:** `CoenraadS.bracket-pair-colorizer-2`
+**Why:** Color matching brackets
+
+**Install:**
+```bash
+code --install-extension CoenraadS.bracket-pair-colorizer-2
 ```
 
 ---
 
-## 📦 Установить все сразу
+## 🎯 For Specific Tasks
+
+### Thunder Client
+**ID:** `rangav.vscode-thunder-client`
+**Why:** API testing (like Postman)
+
+**Install:**
+```bash
+code --install-extension rangav.vscode-thunder-client
+```
+
+### REST Client
+**ID:** `humao.rest-client`
+**Why:** HTTP requests from .http files
+
+**Install:**
+```bash
+code --install-extension humao.rest-client
+```
+
+### Markdown All in One
+**ID:** `yzhang.markdown-all-in-one`
+**Why:** Markdown editing & preview
+
+**Install:**
+```bash
+code --install-extension yzhang.markdown-all-in-one
+```
+
+### Live Server
+**ID:** `ritwickdey.LiveServer`
+**Why:** Local dev server with live reload
+
+**Install:**
+```bash
+code --install-extension ritwickdey.LiveServer
+```
+
+---
+
+## 🤖 For AI/Automation
+
+### Claude Code (already installed)
+**Why:** AI coding assistant
+
+### GitHub Copilot (optional)
+**ID:** `GitHub.copilot`
+**Why:** AI code completions
+
+**Install:**
+```bash
+code --install-extension GitHub.copilot
+```
+
+---
+
+## 🎨 Themes (optional)
+
+### One Dark Pro
+**ID:** `zhuangtongfa.Material-theme`
+
+### Dracula Official
+**ID:** `dracula-theme.theme-dracula`
+
+### Material Icon Theme
+**ID:** `PKief.material-icon-theme`
+
+---
+
+## 📦 Install All at Once
 
 ```bash
-# Копируй и вставь в терминал:
-
+# Must-have
 code --install-extension eamodio.gitlens
 code --install-extension mhutchie.git-graph
 code --install-extension esbenp.prettier-vscode
+code --install-extension dbaeumer.vscode-eslint
+
+# Helpful
 code --install-extension usernamehw.errorlens
-code --install-extension oderwat.indent-rainbow
-code --install-extension wayou.vscode-todo-highlight
-code --install-extension ms-ceintl.vscode-language-pack-ru
+code --install-extension christian-kohler.path-intellisense
+code --install-extension formulahendry.auto-rename-tag
+
+# Specific tasks
+code --install-extension rangav.vscode-thunder-client
+code --install-extension yzhang.markdown-all-in-one
+code --install-extension ritwickdey.LiveServer
 ```
 
 ---
 
-**После установки: Reload VS Code** (Cmd+Shift+P → "Reload Window")
+## ⚙️ Recommended Settings
+
+Add to `settings.json`:
+
+```json
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.bracketPairColorization.enabled": true,
+  "errorLens.enabled": true,
+  "gitlens.codeLens.enabled": true,
+  "files.autoSave": "onFocusChange"
+}
+```
+
+---
+
+**Install what you need and customize to your taste! 🚀**
