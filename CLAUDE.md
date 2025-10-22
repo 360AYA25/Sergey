@@ -93,39 +93,6 @@
 
 **→ Explain risks and ask confirmation!**
 
-### 🔄 Multiple Requests Rule - IMPORTANT!
-
-**When sending many requests to webhooks/APIs:**
-
-❌ **WRONG - Parallel (all at once):**
-```bash
-# All requests sent simultaneously - causes race conditions!
-curl POST webhook/url -d '{"id":"1"}' &
-curl POST webhook/url -d '{"id":"2"}' &
-curl POST webhook/url -d '{"id":"3"}' &
-# Result: All process the SAME item or fail
-```
-
-✅ **CORRECT - Sequential with delays:**
-```bash
-# Send one by one with 3-5 second delays
-curl POST webhook/url -d '{"id":"1"}' && sleep 3 && \
-curl POST webhook/url -d '{"id":"2"}' && sleep 3 && \
-curl POST webhook/url -d '{"id":"3"}'
-# Result: Each item processes correctly
-```
-
-**Why:**
-- Webhooks need time to process each request
-- Race conditions cause duplicate/missed data
-- n8n workflows can't handle simultaneous identical requests
-- Backend services need buffer time between requests
-
-**Best Practice:**
-- 3-5 seconds delay between requests
-- Use `&&` to ensure sequential execution
-- For >10 items: batch in groups of 3-5 with longer pauses
-
 ---
 
 ## 📁 Sergey's Project Structure
@@ -359,11 +326,10 @@ When choosing between:
 
 ## 🔄 File Versioning
 
-**Version**: 2.2
+**Version**: 2.1
 **Updated**: 2025-10-22
 
 ### Changelog:
-- `2.2` (2025-10-22) - Added Multiple Requests Rule (sequential with delays)
 - `2.1` (2025-10-22) - Optimized for token economy (removed ~150 lines)
 - `2.0` (2025-10-20) - Token Economy approach, SECURITY RULES, Anti-loop algorithm
 - `1.0` (2025-10-20) - First version
