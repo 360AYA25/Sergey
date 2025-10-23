@@ -1,0 +1,23 @@
+{
+  "servers": {
+    "n8n-mcp": {
+      "command": "npx",
+      "args": ["n8n-mcp"],
+      "env": {
+        "N8N_API_URL": "https://n8n.srv1068954.hstgr.cloud",
+        "N8N_API_KEY": "${input:n8nApiKey}",
+        "MCP_MODE": "stdio",
+        "LOG_LEVEL": "error",
+        "DISABLE_CONSOLE_OUTPUT": "true",
+        "WEBHOOK_SECURITY_MODE": "production"
+      }
+    }
+  },
+  "inputs": {
+    "n8nApiKey": {
+      "type": "promptString",
+      "description": "Enter your n8n API key from ~/credentials/.env",
+      "password": true
+    }
+  }
+}
