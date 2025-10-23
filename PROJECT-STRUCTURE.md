@@ -12,10 +12,19 @@ Projects/
 │
 ├── 🎯 Sergey/                           [MAIN CONTROL CENTER]
 │   ├── CLAUDE.md                        ← Global instructions
-│   ├── PROJECT-STRUCTURE.md             ← This file
-│   ├── n8n-MCP.md                       ← n8n automation system
-│   ├── HOW-TO-USE.md                    ← Usage guide
+│   ├── PROJECT-STRUCTURE.md             ← This file (map of all projects)
+│   ├── README.md                        ← Project overview
 │   └── .vscode/                         ← Global VS Code settings
+│
+├── 🔌 mcp-server/                       [n8n-MCP CONFIGURATION]
+│   ├── README.md                        ← MCP overview
+│   ├── SETUP.md                         ← Installation guide
+│   ├── QUICK-START.md                   ← 5-minute setup
+│   ├── .vscode/mcp.json                 ← VS Code integration
+│   ├── .github/copilot-instructions.md  ← Copilot enhancement
+│   ├── config/                          ← Configuration files
+│   ├── docs/                            ← Complete MCP documentation
+│   └── examples/                        ← Sample workflows
 │
 ├── 🤖 MultiBOT/                         [TELEGRAM BOT PROJECT]
 │   ├── src/                             ← Bot source code
@@ -87,8 +96,8 @@ project/
 
 | Project | Status | Type | Description |
 |---------|--------|------|-------------|
-| **Sergey** | ✅ Active | Control | Main configuration hub |
-| **n8n-MCP** | ✅ Production | Integration | Full n8n automation |
+| **Sergey** | ✅ Active | Control | Main configuration & documentation hub |
+| **mcp-server** | ✅ Production | Integration | n8n-MCP configuration & setup |
 | **MultiBOT** | ✅ Production | Bot | Telegram assistant |
 | **FoodTracker** | ✅ Production | Automation | Nutrition tracking |
 | **YouTube Transcription** | ✅ Production | Service | Video processing |
@@ -98,19 +107,13 @@ project/
 
 ## 🚀 Quick Start Commands
 
-### n8n-MCP Test:
-```bash
-# Test MCP installation
-npx n8n-mcp --version
-
-# List available workflows
-npx n8n-mcp list-workflows
-```
-
 ### Project Navigation:
 ```bash
 # Main control center
 cd ~/Projects/Sergey
+
+# MCP Server configuration
+cd ~/Projects/mcp-server
 
 # Active projects
 cd ~/Projects/MultiBOT
@@ -118,6 +121,16 @@ cd ~/Projects/food-tracker-v2
 
 # Open workspace
 code ~/Projects/Sergey-Projects.code-workspace
+```
+
+### n8n-MCP Commands:
+```bash
+# Test MCP installation
+npx n8n-mcp --version
+
+# See all available commands
+cd ~/Projects/mcp-server
+cat README.md
 ```
 
 ### Git Operations:
@@ -138,9 +151,9 @@ git commit -m "feat: add new n8n workflow"
 ## 📝 Documentation Structure
 
 ### Global Documentation:
-- `Sergey/CLAUDE.md` - Main instructions
-- `Sergey/n8n-MCP.md` - n8n automation guide
-- `Sergey/PROJECT-STRUCTURE.md` - This file
+- `Sergey/CLAUDE.md` - Main instructions for all projects
+- `Sergey/PROJECT-STRUCTURE.md` - This file (project map)
+- `mcp-server/docs/` - Complete n8n-MCP documentation
 
 ### Project Documentation:
 - `project/docs/CLAUDE-INSTRUCTIONS.md` - Local overrides
