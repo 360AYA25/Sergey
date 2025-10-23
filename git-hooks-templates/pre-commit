@@ -28,6 +28,10 @@ STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACM)
 # Check each file
 FOUND_SECRETS=0
 for file in $STAGED_FILES; do
+  # Skip git hooks and binary files
+  if [[ "$file" == *"git-hooks"* ]] || [[ "$file" == *".git/hooks"* ]]; then
+    continue
+  fi
   # Skip binary files and documentation examples
   if file "$file" | grep -q "text"; then
     for pattern in "${PATTERNS[@]}"; do
