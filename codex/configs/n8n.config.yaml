@@ -1,0 +1,14 @@
+env:
+  OPENAI_API_KEY: ${OPENAI_API_KEY}
+  # Optional: n8n API credentials (if using API-driven workflows in tools)
+  N8N_BASE_URL: ${N8N_BASE_URL}
+  N8N_API_KEY: ${N8N_API_KEY}
+
+agent:
+  preset: ../agents/n8n.yaml
+
+runtime:
+  approvals: on-request
+  network: restricted
+  fs: workspace-write
+

@@ -1,0 +1,22 @@
+name: n8n-agent
+description: n8n MCP-guided agent preset for Sergey project
+model:
+  provider: openai
+  name: gpt-4o-mini
+  temperature: 0.2
+  top_p: 0.9
+prompts:
+  system: ../prompts/n8n-system.md
+  developer: ../prompts/developer.md
+tools:
+  - shell
+  - apply_patch
+  - update_plan
+policies:
+  ask_before_destructive: true
+  redact_secrets_in_logs: true
+  default_language: ru
+notes:
+  - Uses n8n-focused system prompt and standard Codex tools.
+  - Add service-specific tools later (Notion, Telegram, OFF) as needed.
+

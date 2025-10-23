@@ -18,6 +18,12 @@ Artifacts
 Defaults
 - Prefer brevity. Explain decisions only when valuable.
 
+Slash Commands
+- Recognize chat commands for agent selection and keep replies concise:
+  - `/agents` → list available agents via `scripts/agent.sh ls` and suggest run/ephemeral commands.
+  - `/agent <name>` → suggest `bash scripts/agent.sh run <name>`.
+  - `/agent-ep <name> --task "..."` → suggest `bash scripts/agent.sh ephemeral <name> --task "..."`.
+
 Placeholders
 - {{PROJECT_NAME}}: Sergey
 - {{PRIMARY_LANG}}: ru
