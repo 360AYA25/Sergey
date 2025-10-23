@@ -37,8 +37,8 @@ for file in $STAGED_FILES; do
     for pattern in "${PATTERNS[@]}"; do
       # Check if pattern exists
       if grep -iE "$pattern" "$file" > /dev/null 2>&1; then
-        # Skip if it's a safe placeholder in documentation
-        if grep -iE "(your_key|your_jwt_token|your_api_key|\\\$\{input:|example|template|placeholder)" "$file" | grep -iE "$pattern" > /dev/null 2>&1; then
+        # Skip if it's a safe placeholder or env reference
+        if grep -iE "(your_key|your_jwt_token|your_api_key|\\\$\{input:|example|template|placeholder|\\\$\{[A-Z0-9_]+\}|process\\.env\\.[A-Z0-9_]+)" "$file" | grep -iE "$pattern" > /dev/null 2>&1; then
           # This is a documentation example, skip
           continue
         fi
