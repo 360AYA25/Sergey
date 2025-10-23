@@ -39,7 +39,34 @@ run_agent() {
     exit 1
   fi
   need_codex
-  exec codex --config "$cfg" "$@"
+
+  # Detect Codex CLI capability: newer codex-cli (>=0.4x) does NOT accept --config <file>
+  # and instead uses `-c key=value` overrides. Fall back to best-effort flags.
+  if codex --help 2>/dev/null | grep -qE '^[[:space:]]*-c, --config <key=value>'; then
+    # Fallback path: approximate config via flags
+    local cfg_dir="$(dirname "$cfg")"
+    local preset_rel
+    preset_rel="$(sed -n 's/^\s*preset:\s*\(.*\)$/\1/p' "$cfg" | head -n1 | tr -d '"')"
+    local preset_path="$cfg_dir/$preset_rel"
+    # Extract model.name from preset YAML (simple awk across the model: block)
+    local model_name
+    if [ -f "$preset_path" ]; then
+      model_name="$(awk '
+        /^model:/ {inmodel=1; next}
+        /^[^[:space:]]/ {inmodel=0}
+        inmodel && /name:/ {print $2; exit}
+      ' "$preset_path")"
+    fi
+    [ -n "${model_name-}" ] || model_name="gpt-4o-mini"
+
+    echo "codex-cli does not support --config <file>. Starting with flags instead..." >&2
+    echo "Using model: $model_name" >&2
+    echo "Note: custom system/developer prompts from $preset_path cannot be injected automatically in this mode." >&2
+    exec codex -m "$model_name" -a on-request -s workspace-write -C "$ROOT_DIR" "$@"
+  else
+    # Legacy/alt Codex that supports --config <file>
+    exec codex --config "$cfg" "$@"
+  fi
 }
 
 run_ephemeral() {
@@ -70,10 +97,46 @@ run_ephemeral() {
     echo "Tip: paste this task after start:" > "$run_dir/TASK.txt"
     if [ -n "$task" ]; then echo "$task" >> "$run_dir/TASK.txt"; fi
     # Start interactive codex and capture transcript
-    exec script -q "$log_file" codex --config "$cfg"
+    if codex --help 2>/dev/null | grep -qE '^[[:space:]]*-c, --config <key=value>'; then
+      # Fallback flags mode
+      local cfg_dir="$(dirname "$cfg")"
+      local preset_rel
+      preset_rel="$(sed -n 's/^\s*preset:\s*\(.*\)$/\1/p' "$cfg" | head -n1 | tr -d '"')"
+      local preset_path="$cfg_dir/$preset_rel"
+      local model_name
+      if [ -f "$preset_path" ]; then
+        model_name="$(awk '
+          /^model:/ {inmodel=1; next}
+          /^[^[:space:]]/ {inmodel=0}
+          inmodel && /name:/ {print $2; exit}
+        ' "$preset_path")"
+      fi
+      [ -n "${model_name-}" ] || model_name="gpt-4o-mini"
+      echo "codex-cli lacks --config <file>; starting with flags (model=$model_name)." >&2
+      exec script -q "$log_file" codex -m "$model_name" -a on-request -s workspace-write -C "$ROOT_DIR"
+    else
+      exec script -q "$log_file" codex --config "$cfg"
+    fi
   else
     echo "'script' utility not found. Starting without transcript logging." >&2
-    exec codex --config "$cfg"
+    if codex --help 2>/dev/null | grep -qE '^[[:space:]]*-c, --config <key=value>'; then
+      local cfg_dir="$(dirname "$cfg")"
+      local preset_rel
+      preset_rel="$(sed -n 's/^\s*preset:\s*\(.*\)$/\1/p' "$cfg" | head -n1 | tr -d '"')"
+      local preset_path="$cfg_dir/$preset_rel"
+      local model_name
+      if [ -f "$preset_path" ]; then
+        model_name="$(awk '
+          /^model:/ {inmodel=1; next}
+          /^[^[:space:]]/ {inmodel=0}
+          inmodel && /name:/ {print $2; exit}
+        ' "$preset_path")"
+      fi
+      [ -n "${model_name-}" ] || model_name="gpt-4o-mini"
+      exec codex -m "$model_name" -a on-request -s workspace-write -C "$ROOT_DIR"
+    else
+      exec codex --config "$cfg"
+    fi
   fi
 }
 
