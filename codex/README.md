@@ -29,9 +29,9 @@ N8N Agent
   - OpenAI key env var (e.g., OPENAI_API_…)
   - optional for n8n API tools: base URL (e.g., N8N_BASE_URL), API key (e.g., N8N_…_KEY)
 - Use:
-  - Simplified (codex-cli 0.47): `bash scripts/agent.sh run n8n`
-    - После запуска вставьте содержимое `prompts/n8n-system.md` как первый ввод (или `bash scripts/prompt.sh copy n8n` и вставьте из клипборда).
+  - Standard: `bash scripts/agent.sh run n8n`
   - Ephemeral: `bash scripts/agent.sh ephemeral n8n --task "..."`
+  - Direct: `codex --config configs/n8n.config.yaml`
 
 Ephemeral Subagent
 - Run n8n agent in a separate, short-lived session without polluting your main chat:

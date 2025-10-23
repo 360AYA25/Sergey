@@ -12,6 +12,7 @@ tools:
   - shell
   - apply_patch
   - update_plan
+  - mcp:n8n-mcp
 policies:
   ask_before_destructive: true
   redact_secrets_in_logs: true
