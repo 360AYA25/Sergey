@@ -23,15 +23,19 @@ Usage
 N8N Agent
 - Files:
   - `prompts/n8n-system.md` — system prompt for n8n MCP.
-  - `agents/n8n.yaml` — agent preset (OpenAI gpt-5-mini).
-  - `configs/n8n.config.yaml` — runtime config pointing to the preset.
+  - `agents/n8n.yaml` — agent preset with n8n-MCP tools.
+  - `configs/n8n.config.yaml` — runtime config with MCP server configuration.
+  - `scripts/n8n-exec.sh` — non-interactive wrapper for Claude Code integration.
 - Env vars (no secrets in git):
   - OpenAI key env var (e.g., OPENAI_API_…)
-  - optional for n8n API tools: base URL (e.g., N8N_BASE_URL), API key (e.g., N8N_…_KEY)
+  - N8N_API_KEY — n8n API key from ~/credentials/n8n-access.md
+- MCP Integration:
+  - n8n-MCP tools configured in ~/.codex/config.toml
+  - 37 specialized tools, 536 nodes, 2,500+ templates available
 - Use:
   - Standard: `bash scripts/agent.sh run n8n`
   - Ephemeral: `bash scripts/agent.sh ephemeral n8n --task "..."`
-  - Direct: `codex --config configs/n8n.config.yaml`
+  - Non-interactive (from Claude Code): `bash scripts/n8n-exec.sh "task description"`
 
 Ephemeral Subagent
 - Run n8n agent in a separate, short-lived session without polluting your main chat:
