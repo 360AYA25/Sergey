@@ -23,11 +23,11 @@ Usage
 N8N Agent
 - Files:
   - `prompts/n8n-system.md` — system prompt for n8n MCP.
-  - `agents/n8n.yaml` — agent preset (OpenAI gpt-4o-mini).
+  - `agents/n8n.yaml` — agent preset (OpenAI gpt-5-mini).
   - `configs/n8n.config.yaml` — runtime config pointing to the preset.
-- Env vars:
-  - `OPENAI_API_KEY` (required)
-  - optional for n8n API tools: `N8N_BASE_URL`, `N8N_API_KEY`
+- Env vars (no secrets in git):
+  - OpenAI key env var (e.g., OPENAI_API_…)
+  - optional for n8n API tools: base URL (e.g., N8N_BASE_URL), API key (e.g., N8N_…_KEY)
 - Use:
   - Simplified (codex-cli 0.47): `bash scripts/agent.sh run n8n`
     - После запуска вставьте содержимое `prompts/n8n-system.md` как первый ввод (или `bash scripts/prompt.sh copy n8n` и вставьте из клипборда).
