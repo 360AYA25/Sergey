@@ -1,0 +1,34 @@
+{
+  "name": "ai-subagent-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for integrating GPT-4o Mini and Gemini as subagents in Claude Code",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.6.0",
+    "openai": "^4.74.0",
+    "@google/generative-ai": "^0.21.0",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  },
+  "keywords": [
+    "mcp",
+    "claude",
+    "ai",
+    "openai",
+    "gemini",
+    "subagent"
+  ],
+  "author": "Sergey",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

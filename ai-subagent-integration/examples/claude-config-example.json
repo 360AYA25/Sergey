@@ -1,0 +1,24 @@
+{
+  "mcpServers": {
+    "ai-subagent": {
+      "command": "node",
+      "args": ["/Users/sergey/Projects/ai-subagent-mcp/src/index.js"],
+      "env": {
+        "OPENAI_API_KEY": "sk-...",
+        "GOOGLE_AI_API_KEY": "AIza..."
+      }
+    },
+    "n8n-server": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@n8n-io/mcp-server-n8n@latest"
+      ],
+      "env": {
+        "N8N_API_URL": "https://n8n.srv1068954.hstgr.cloud/api/v1",
+        "N8N_API_KEY": "your-n8n-api-key"
+      }
+    }
+  },
+  "globalShortcut": "Alt+Cmd+C"
+}
