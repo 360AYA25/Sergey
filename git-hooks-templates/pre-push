@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# 🚀 Pre-push hook - проверки перед push
-# Установка: скопировать в .git/hooks/pre-push и chmod +x
+# 🚀 Pre-push hook - checks before push
+# Installation: copy to .git/hooks/pre-push and chmod +x
 
 echo "🚀 Running pre-push checks..."
 
 # ============================================
-# 1️⃣ Проверка что ветка не main/master
+# 1️⃣ Check that branch is not main/master
 # ============================================
 
 BRANCH=$(git symbolic-ref --short HEAD)
@@ -28,12 +28,12 @@ if [ "$BRANCH" = "main" ] || [ "$BRANCH" = "master" ]; then
 fi
 
 # ============================================
-# 2️⃣ Проверка что нет WIP/TODO коммитов
+# 2️⃣ Check for WIP/TODO commits
 # ============================================
 
 echo "  Checking for WIP/TODO commits..."
 
-# Получить коммиты которые будут запушены
+# Get commits that will be pushed
 COMMITS=$(git log @{u}.. --oneline 2>/dev/null)
 
 if echo "$COMMITS" | grep -qiE "WIP|TODO|FIXME|TEMP"; then

@@ -1,20 +1,20 @@
 #!/bin/bash
 
 # 🔧 Git Hooks Installer
-# Устанавливает git hooks в текущий проект
+# Installs git hooks in current project
 
 echo "🔧 Git Hooks Installer"
 echo "====================="
 echo ""
 
-# Проверка что мы в git репозитории
+# Check that we're in a git repository
 if [ ! -d ".git" ]; then
   echo "❌ Error: Not in a git repository!"
   echo "   Please run this script from the root of your git project."
   exit 1
 fi
 
-# Путь к templates
+# Path to templates
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 HOOKS_DIR=".git/hooks"
 
@@ -22,10 +22,10 @@ echo "📁 Installing hooks from: $SCRIPT_DIR"
 echo "📁 To: $(pwd)/$HOOKS_DIR"
 echo ""
 
-# Список hooks для установки
+# List of hooks to install
 HOOKS=("pre-commit" "commit-msg" "pre-push")
 
-# Установка каждого hook
+# Install each hook
 for hook in "${HOOKS[@]}"; do
   SOURCE="$SCRIPT_DIR/$hook"
   DEST="$HOOKS_DIR/$hook"
@@ -35,7 +35,7 @@ for hook in "${HOOKS[@]}"; do
     continue
   fi
 
-  # Проверка существует ли уже hook
+  # Check if hook already exists
   if [ -f "$DEST" ]; then
     echo "⚠️  $hook already exists"
     read -p "   Overwrite? (yes/no): " choice

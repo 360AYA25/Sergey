@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# 📝 Commit-msg hook - проверка формата сообщения коммита
-# Установка: скопировать в .git/hooks/commit-msg и chmod +x
+# 📝 Commit-msg hook - validates commit message format
+# Installation: copy to .git/hooks/commit-msg and chmod +x
 
 COMMIT_MSG_FILE=$1
 COMMIT_MSG=$(cat "$COMMIT_MSG_FILE")
@@ -9,13 +9,13 @@ COMMIT_MSG=$(cat "$COMMIT_MSG_FILE")
 echo "📝 Checking commit message format..."
 
 # ============================================
-# Проверка формата: <type>: <description>
+# Check format: <type>: <description>
 # ============================================
 
-# Разрешенные типы
+# Allowed types
 TYPES="feat|fix|docs|refactor|test|chore|style|perf"
 
-# Проверка формата
+# Check format
 if ! echo "$COMMIT_MSG" | grep -qE "^($TYPES): .+"; then
   echo ""
   echo "  ❌ Invalid commit message format!"
@@ -43,7 +43,7 @@ if ! echo "$COMMIT_MSG" | grep -qE "^($TYPES): .+"; then
   exit 1
 fi
 
-# Проверка минимальной длины описания
+# Check minimum description length
 DESCRIPTION=$(echo "$COMMIT_MSG" | sed -E "s/^($TYPES): //")
 if [ ${#DESCRIPTION} -lt 10 ]; then
   echo ""

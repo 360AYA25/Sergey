@@ -1,41 +1,41 @@
 # 🔧 Git Hooks Templates
 
-> **Автоматизация Git через hooks**
-> Скрипты запускаются автоматически при git операциях
+> **Git automation through hooks**
+> Scripts run automatically during git operations
 
 ---
 
-## 📋 Доступные hooks
+## 📋 Available Hooks
 
-| Hook | Когда запускается | Что делает |
-|------|-------------------|------------|
-| **pre-commit** | Перед `git commit` | Проверка credentials, больших файлов, .env |
-| **commit-msg** | При `git commit` | Проверка формата сообщения |
-| **pre-push** | Перед `git push` | Проверка ветки, WIP коммитов |
+| Hook | When it runs | What it does |
+|------|--------------|--------------|
+| **pre-commit** | Before `git commit` | Checks credentials, large files, .env |
+| **commit-msg** | During `git commit` | Validates message format |
+| **pre-push** | Before `git push` | Checks branch, WIP commits |
 
 ---
 
-## 🚀 Установка
+## 🚀 Installation
 
-### Автоматическая (для конкретного проекта):
+### Automatic (for specific project):
 
 ```bash
 cd ~/Projects/your-project/
 bash ~/Projects/Sergey/git-hooks-templates/install.sh
 ```
 
-### Ручная:
+### Manual:
 
 ```bash
-# 1. Перейти в проект
+# 1. Navigate to project
 cd ~/Projects/your-project/
 
-# 2. Скопировать hooks
+# 2. Copy hooks
 cp ~/Projects/Sergey/git-hooks-templates/pre-commit .git/hooks/
 cp ~/Projects/Sergey/git-hooks-templates/commit-msg .git/hooks/
 cp ~/Projects/Sergey/git-hooks-templates/pre-push .git/hooks/
 
-# 3. Сделать исполняемыми
+# 3. Make executable
 chmod +x .git/hooks/pre-commit
 chmod +x .git/hooks/commit-msg
 chmod +x .git/hooks/pre-push
@@ -43,23 +43,23 @@ chmod +x .git/hooks/pre-push
 
 ---
 
-## 📝 Что делают hooks
+## 📝 What Hooks Do
 
 ### 🔒 pre-commit
 
-**Запускается:** Перед каждым `git commit`
+**Runs:** Before every `git commit`
 
-**Проверяет:**
-- ✅ Нет ли credentials в коде (API keys, tokens, passwords)
-- ✅ Нет ли больших файлов (>5MB)
-- ✅ Не коммитятся ли .env файлы
+**Checks:**
+- ✅ No credentials in code (API keys, tokens, passwords)
+- ✅ No large files (>5MB)
+- ✅ No .env files being committed
 
-**Пример:**
+**Example:**
 ```bash
 git add .
 git commit -m "feat: add new feature"
 
-# Hook запускается:
+# Hook runs:
 🔍 Running pre-commit checks...
   Checking for credentials...
   Checking for large files...
@@ -71,44 +71,44 @@ git commit -m "feat: add new feature"
 
 ### 📝 commit-msg
 
-**Запускается:** При `git commit` (проверяет сообщение)
+**Runs:** During `git commit` (validates message)
 
-**Проверяет:**
-- ✅ Формат: `<type>: <description>`
-- ✅ Допустимые типы: feat, fix, docs, refactor, test, chore, style, perf
-- ✅ Минимальная длина описания (10 символов)
+**Checks:**
+- ✅ Format: `<type>: <description>`
+- ✅ Valid types: feat, fix, docs, refactor, test, chore, style, perf
+- ✅ Minimum description length (10 characters)
 
-**Примеры:**
+**Examples:**
 
-✅ **Правильно:**
+✅ **Correct:**
 ```bash
 git commit -m "feat: add voice handler with Whisper"
 git commit -m "fix: resolve barcode scanner bug"
 git commit -m "docs: update README with setup"
 ```
 
-❌ **Неправильно:**
+❌ **Incorrect:**
 ```bash
-git commit -m "added stuff"              # нет типа
-git commit -m "feature: fix"             # неверный тип (должен быть feat)
-git commit -m "fix: bug"                 # слишком короткое описание
+git commit -m "added stuff"              # no type
+git commit -m "feature: fix"             # wrong type (should be feat)
+git commit -m "fix: bug"                 # too short description
 ```
 
 ---
 
 ### 🚀 pre-push
 
-**Запускается:** Перед `git push`
+**Runs:** Before `git push`
 
-**Проверяет:**
-- ✅ Не пушим ли в main/master (спрашивает подтверждение)
-- ✅ Нет ли WIP/TODO/FIXME коммитов
+**Checks:**
+- ✅ Not pushing to main/master (asks confirmation)
+- ✅ No WIP/TODO/FIXME commits
 
-**Пример:**
+**Example:**
 ```bash
 git push
 
-# Hook запускается:
+# Hook runs:
 🚀 Running pre-push checks...
   ⚠️  WARNING: You are pushing to main branch!
   Are you sure you want to push to main? (yes/no):
@@ -116,19 +116,19 @@ git push
 
 ---
 
-## ⚙️ Настройка
+## ⚙️ Configuration
 
-### Отключить hook временно:
+### Temporarily disable hook:
 
 ```bash
-# Для одного коммита
+# For one commit
 git commit --no-verify -m "feat: something"
 
-# Для одного push
+# For one push
 git push --no-verify
 ```
 
-### Удалить hooks:
+### Remove hooks:
 
 ```bash
 rm .git/hooks/pre-commit
@@ -136,51 +136,51 @@ rm .git/hooks/commit-msg
 rm .git/hooks/pre-push
 ```
 
-### Редактировать hook:
+### Edit hook:
 
 ```bash
-# Редактировать template
+# Edit template
 nano ~/Projects/Sergey/git-hooks-templates/pre-commit
 
-# Переустановить в проект
+# Reinstall in project
 bash ~/Projects/Sergey/git-hooks-templates/install.sh
 ```
 
 ---
 
-## 📊 Рекомендации
+## 📊 Recommendations
 
-### Для новичков:
+### For beginners:
 
-✅ **Установите все hooks** - они помогут избежать ошибок
-✅ **Читайте сообщения** - hooks объясняют что не так
-✅ **Не используйте --no-verify** без понимания зачем
+✅ **Install all hooks** - they help avoid mistakes
+✅ **Read messages** - hooks explain what's wrong
+✅ **Don't use --no-verify** without understanding why
 
-### Для продвинутых:
+### For advanced users:
 
-✅ Настройте hooks под свой workflow
-✅ Добавьте свои проверки (linting, tests)
-✅ Используйте husky для Node.js проектов
+✅ Customize hooks for your workflow
+✅ Add your own checks (linting, tests)
+✅ Use husky for Node.js projects
 
 ---
 
-## 🔧 Расширение hooks
+## 🔧 Extending Hooks
 
-### Добавить свою проверку в pre-commit:
+### Add custom check to pre-commit:
 
 ```bash
-# Редактировать ~/Projects/Sergey/git-hooks-templates/pre-commit
+# Edit ~/Projects/Sergey/git-hooks-templates/pre-commit
 
-# Добавить в конец (перед "checks passed"):
+# Add at the end (before "checks passed"):
 
 # ============================================
-# 4️⃣ Ваша проверка
+# 4️⃣ Your custom check
 # ============================================
 
 echo "  Running custom check..."
 
-# Ваш код здесь
-if [ условие ]; then
+# Your code here
+if [ condition ]; then
   echo "  ❌ Custom check failed!"
   exit 1
 fi
@@ -188,15 +188,15 @@ fi
 
 ---
 
-## 💡 Примеры использования
+## 💡 Usage Examples
 
-### Сценарий 1: Случайно добавил .env
+### Scenario 1: Accidentally added .env
 
 ```bash
 git add .
 git commit -m "feat: new feature"
 
-# Hook блокирует:
+# Hook blocks:
 ❌ ERROR: .env files should not be committed!
 Files:
 .env
@@ -204,55 +204,75 @@ Files:
 Add to .gitignore and remove from staging:
 git reset HEAD .env*
 
-# Исправляем:
+# Fix:
 git reset HEAD .env
 echo ".env" >> .gitignore
 git add .gitignore
 git commit -m "chore: add .env to gitignore"
 ```
 
-### Сценарий 2: Неправильный формат commit
+### Scenario 2: Wrong commit format
 
 ```bash
 git commit -m "fixed bug"
 
-# Hook блокирует:
+# Hook blocks:
 ❌ Invalid commit message format!
 Format should be: <type>: <description>
 
-# Исправляем:
+# Fix:
 git commit -m "fix: resolve authentication bug"
 ```
 
-### Сценарий 3: Push в main
+### Scenario 3: Push to main
 
 ```bash
 git push
 
-# Hook предупреждает:
+# Hook warns:
 ⚠️  WARNING: You are pushing to main branch!
 Are you sure you want to push to main? (yes/no): no
 ❌ Push aborted.
 
-# Переключаемся на feature ветку:
+# Switch to feature branch:
 git checkout -b feature/my-changes
 git push -u origin feature/my-changes
 ```
 
 ---
 
-## 🔗 Связанные документы
+## 🎯 Why Use These Hooks?
 
-- [HOW-TO-USE.md](../HOW-TO-USE.md) - Git workflow
-- [MultiBOT/GIT-COMMANDS.md](../../MultiBOT/GIT-COMMANDS.md) - Git шпаргалка
+### Security:
+- 🔒 **Prevents credential leaks** - catches API keys before they're committed
+- 🔒 **Protects sensitive data** - blocks .env files from being committed
+- 🔒 **Saves from security incidents** - one leaked key = big problems
+
+### Code Quality:
+- 📝 **Consistent commit messages** - easier to read git history
+- 📝 **Professional standards** - follows industry conventions
+- 📝 **Better collaboration** - team understands commit purpose
+
+### Workflow:
+- ⚡ **Catches mistakes early** - before they reach remote
+- ⚡ **Saves time** - no need to fix after push
+- ⚡ **Automated checks** - don't rely on memory
 
 ---
 
-## 🔄 Версионирование
+## 🔗 Related Documents
 
-**Версия**: 1.0
-**Создано**: 2025-10-20
+- [docs/guides/README.md](../docs/guides/README.md) - Git workflow guide
+- Update links after docs reorganization
 
 ---
 
-**Hooks помогут избежать ошибок и улучшат Git workflow! 🚀**
+## 🔄 Version
+
+**Version**: 2.0
+**Created**: 2025-10-20
+**Updated**: 2025-10-23 (translated to English)
+
+---
+
+**Hooks help avoid mistakes and improve Git workflow! 🚀**
