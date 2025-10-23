@@ -16,15 +16,23 @@ Projects/
 │   ├── README.md                        ← Project overview
 │   └── .vscode/                         ← Global VS Code settings
 │
-├── 🔌 mcp-server/                       [n8n-MCP CONFIGURATION]
-│   ├── README.md                        ← MCP overview
-│   ├── SETUP.md                         ← Installation guide
-│   ├── QUICK-START.md                   ← 5-minute setup
-│   ├── .vscode/mcp.json                 ← VS Code integration
-│   ├── .github/copilot-instructions.md  ← Copilot enhancement
-│   ├── config/                          ← Configuration files
-│   ├── docs/                            ← Complete MCP documentation
-│   └── examples/                        ← Sample workflows
+├── 🔌 mcp-server/                       [MCP SERVERS HUB]
+│   ├── README.md                        ← MCP servers overview
+│   ├── .mcp.json                        ← MCP project config
+│   ├── .gitignore                       ← Security rules
+│   │
+│   └── mcp/                             ← All MCP servers
+│       ├── README.md                    ← Servers directory guide
+│       │
+│       └── n8n/                         ← n8n-MCP (workflow automation)
+│           ├── README.md                ← n8n-MCP overview
+│           ├── SETUP.md                 ← Installation guide
+│           ├── QUICK-START.md           ← 5-minute setup
+│           ├── .vscode/mcp.json         ← VS Code integration
+│           ├── .github/                 ← Copilot enhancement
+│           ├── config/                  ← Configuration files
+│           ├── docs/                    ← Complete documentation
+│           └── examples/                ← Sample workflows
 │
 ├── 🤖 MultiBOT/                         [TELEGRAM BOT PROJECT]
 │   ├── src/                             ← Bot source code
@@ -112,8 +120,11 @@ project/
 # Main control center
 cd ~/Projects/Sergey
 
-# MCP Server configuration
+# MCP Servers hub
 cd ~/Projects/mcp-server
+
+# n8n-MCP configuration
+cd ~/Projects/mcp-server/mcp/n8n
 
 # Active projects
 cd ~/Projects/MultiBOT
@@ -128,7 +139,11 @@ code ~/Projects/Sergey-Projects.code-workspace
 # Test MCP installation
 npx n8n-mcp --version
 
-# See all available commands
+# Quick start guide
+cd ~/Projects/mcp-server/mcp/n8n
+cat QUICK-START.md
+
+# See all MCP servers
 cd ~/Projects/mcp-server
 cat README.md
 ```
@@ -153,7 +168,8 @@ git commit -m "feat: add new n8n workflow"
 ### Global Documentation:
 - `Sergey/CLAUDE.md` - Main instructions for all projects
 - `Sergey/PROJECT-STRUCTURE.md` - This file (project map)
-- `mcp-server/docs/` - Complete n8n-MCP documentation
+- `mcp-server/README.md` - MCP servers hub overview
+- `mcp-server/mcp/n8n/docs/` - Complete n8n-MCP documentation
 
 ### Project Documentation:
 - `project/docs/CLAUDE-INSTRUCTIONS.md` - Local overrides
