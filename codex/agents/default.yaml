@@ -1,0 +1,21 @@
+name: codex-default
+description: Base Codex agent preset for the Sergey project
+model:
+  provider: openai
+  name: gpt-4o-mini
+  temperature: 0.2
+  top_p: 0.9
+prompts:
+  system: ../prompts/system.md
+  developer: ../prompts/developer.md
+tools:
+  - shell
+  - apply_patch
+  - update_plan
+policies:
+  ask_before_destructive: true
+  redact_secrets_in_logs: true
+  default_language: ru
+notes:
+  - Adjust name/model for your actual environment.
+  - Provider credentials come from environment variables.
