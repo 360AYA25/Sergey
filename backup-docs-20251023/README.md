@@ -7,11 +7,11 @@
 
 ## 📋 What's here:
 
-| File/Folder | Description |
+| File | Description |
 |------|----------|
 | **[CLAUDE.md](CLAUDE.md)** | 🤖 Main Claude Code prompt |
-| **[docs/](docs/)** | 📚 All documentation (organized) |
-| **[ai-subagent-integration/](ai-subagent-integration/)** | 🤖 AI subagent integration |
+| **[PROJECT-STRUCTURE.md](PROJECT-STRUCTURE.md)** | 🗺️ All projects map |
+| **[HOW-TO-USE.md](HOW-TO-USE.md)** | 📖 Cheatsheet: how to work with workspace |
 | `.vscode/settings.json` | ⚙️ VS Code settings for this folder |
 
 ---
@@ -28,10 +28,9 @@ Or double-click `Sergey-Projects.code-workspace`
 
 ### Read documentation:
 
-1. **Start with** [docs/guides/README.md](docs/guides/README.md) - workflow cheatsheet
-2. **Then** [docs/architecture/README.md](docs/architecture/README.md) - projects map
-3. **All docs** [docs/README.md](docs/README.md) - documentation navigation
-4. **For Claude** [CLAUDE.md](CLAUDE.md) - main prompt
+1. **Start with** [HOW-TO-USE.md](HOW-TO-USE.md) - workflow cheatsheet
+2. **Then** [PROJECT-STRUCTURE.md](PROJECT-STRUCTURE.md) - projects map
+3. **For Claude** [CLAUDE.md](CLAUDE.md) - prompt
 
 ---
 
@@ -52,30 +51,25 @@ Or double-click `Sergey-Projects.code-workspace`
 ## 📊 Project Structure
 
 ```
-Sergey/                               ← YOU ARE HERE
+Projects/
 │
-├── 📄 README.md                      ← Main project overview (this file)
-├── 📄 CLAUDE.md                      ← Main Claude Code instructions
+├── 🎯 Sergey/                       ← YOU ARE HERE
+│   ├── CLAUDE.md
+│   ├── PROJECT-STRUCTURE.md
+│   ├── HOW-TO-USE.md
+│   ├── README.md (this file)
+│   └── .vscode/
 │
-├── 📚 docs/                          ← All documentation (organized)
-│   ├── setup/                        ← Setup & configuration
-│   ├── guides/                       ← How-to guides
-│   ├── architecture/                 ← Project structure & maps
-│   └── claude/                       ← Claude-specific docs
+├── 📚 n8n-docs/                     ← Documentation
+├── 🤖 MultiBOT/                     ← Telegram bot
+├── 🍎 food-tracker-v2/              ← Food tracking
+├── 🎥 youtube-transcript/           ← YouTube transcription
+├── 📝 transcript-service/           ← Transcript service
+├── 🔌 mcp-server/                   ← MCP server
+├── 📦 n8n-automation-archive/       ← Archives
 │
-├── 🤖 ai-subagent-integration/       ← AI subagent (GPT-4o Mini, Gemini)
-├── 📁 templates/                     ← Project templates
-├── 📁 examples/                      ← Code examples
-├── 📁 git-hooks-templates/           ← Git hooks
-└── ⚙️ .vscode/                       ← VS Code settings
+└── Sergey-Projects.code-workspace   ← Workspace (combines all)
 ```
-
-**External projects** managed from here:
-- 🤖 MultiBOT - Telegram bot
-- 🍎 food-tracker-v2 - Food tracking
-- 🎥 youtube-transcript - YouTube transcription
-- 📚 n8n-docs - Documentation
-- See full map in [docs/architecture/README.md](docs/architecture/README.md)
 
 ---
 
@@ -100,11 +94,9 @@ Sergey/                               ← YOU ARE HERE
 ## 🔗 Related Documents
 
 ### In this project:
-- [docs/guides/README.md](docs/guides/README.md) - How to work (cheatsheet)
-- [docs/architecture/README.md](docs/architecture/README.md) - Projects map
-- [docs/setup/](docs/setup/) - Setup & configuration
-- [docs/claude/](docs/claude/) - Claude-specific documentation
-- [CLAUDE.md](CLAUDE.md) - Main Claude prompt
+- [HOW-TO-USE.md](HOW-TO-USE.md) - How to work
+- [PROJECT-STRUCTURE.md](PROJECT-STRUCTURE.md) - Projects map
+- [CLAUDE.md](CLAUDE.md) - Claude prompt
 
 ### In other projects:
 - [MultiBOT/README.md](../MultiBOT/README.md) - MultiBOT documentation
@@ -137,7 +129,7 @@ Sergey/                               ← YOU ARE HERE
 
 ### Update projects map:
 
-1. Open [docs/architecture/README.md](docs/architecture/README.md)
+1. Open [PROJECT-STRUCTURE.md](PROJECT-STRUCTURE.md)
 2. Add new project description
 3. Update diagrams
 4. Save
@@ -149,10 +141,9 @@ Sergey/                               ← YOU ARE HERE
 ### If you're here first time:
 
 1. **Read in order:**
-   - [docs/README.md](docs/README.md) ← START HERE (documentation navigation)
-   - [docs/guides/README.md](docs/guides/README.md) ← How to work
-   - [docs/architecture/README.md](docs/architecture/README.md) ← Projects map
-   - [CLAUDE.md](CLAUDE.md) ← Main Claude prompt
+   - [HOW-TO-USE.md](HOW-TO-USE.md) ← START HERE
+   - [PROJECT-STRUCTURE.md](PROJECT-STRUCTURE.md)
+   - [CLAUDE.md](CLAUDE.md)
 
 2. **Open workspace:**
    ```bash
@@ -175,13 +166,11 @@ Sergey/                               ← YOU ARE HERE
 
 ## 📝 Version
 
-**Version**: 2.0
+**Version**: 1.0
 **Created**: 2025-10-20
-**Updated**: 2025-10-23
 **Author**: Claude Code (by Sergey's request)
 
 ### Changelog:
-- `2.0` (2025-10-23) - Major reorganization: clean root, organized docs/
 - `1.0` (2025-10-20) - First version of Sergey project
 
 ---
@@ -202,4 +191,4 @@ Sergey/                               ← YOU ARE HERE
 
 **This project is foundation for all others! 🚀**
 
-**Questions? Read [docs/README.md](docs/README.md) or ask Claude Code! 😊**
+**Questions? Read [HOW-TO-USE.md](HOW-TO-USE.md) or ask Claude Code! 😊**
