@@ -2,7 +2,7 @@ name: n8n-agent
 description: n8n MCP-guided agent preset for Sergey project
 model:
   provider: openai
-  name: gpt-4o-mini
+  name: gpt-5-mini
   temperature: 0.2
   top_p: 0.9
 prompts:
@@ -19,4 +19,3 @@ policies:
 notes:
   - Uses n8n-focused system prompt and standard Codex tools.
   - Add service-specific tools later (Notion, Telegram, OFF) as needed.
-

@@ -17,6 +17,9 @@ Quick Start
 - Optionally load via direnv/dotenv in scripts.
 - Adjust prompts/system.md and agents/default.yaml as needed.
 
+Usage
+- See `USAGE.md` for the one‑command start, ephemeral subagent, scripts, and how to change the model.
+
 N8N Agent
 - Files:
   - `prompts/n8n-system.md` — system prompt for n8n MCP.
@@ -26,9 +29,9 @@ N8N Agent
   - `OPENAI_API_KEY` (required)
   - optional for n8n API tools: `N8N_BASE_URL`, `N8N_API_KEY`
 - Use:
-  - Quick launcher: `bash scripts/agent.sh n8n`
-  - Or manually: `codex --config configs/n8n.config.yaml`
-  - Edit model/tools in `agents/n8n.yaml` if needed.
+  - Simplified (codex-cli 0.47): `bash scripts/agent.sh run n8n`
+    - После запуска вставьте содержимое `prompts/n8n-system.md` как первый ввод (или `bash scripts/prompt.sh copy n8n` и вставьте из клипборда).
+  - Ephemeral: `bash scripts/agent.sh ephemeral n8n --task "..."`
 
 Ephemeral Subagent
 - Run n8n agent in a separate, short-lived session without polluting your main chat:

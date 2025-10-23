@@ -10,17 +10,13 @@ set -euo pipefail
 #   ./scripts/agent.sh <name>
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-CONFIGS_DIR="$ROOT_DIR/configs"
 LOGS_DIR="$ROOT_DIR/logs"
+PROMPTS_DIR="$ROOT_DIR/prompts"
 
 list_configs() {
-  echo "Available agents:"
-  for f in "$CONFIGS_DIR"/*.config.yaml; do
-    [ -e "$f" ] || continue
-    base="$(basename "$f")"
-    name="${base%.config.yaml}"
-    echo "  - $name"
-  done
+  echo "Available agents (presets):"
+  echo "  - n8n"
+  echo "  - codex (default)"
 }
 
 need_codex() {
@@ -31,42 +27,15 @@ need_codex() {
 }
 
 run_agent() {
-  local name="$1"; shift || true
-  local cfg="$CONFIGS_DIR/$name.config.yaml"
-  if [ ! -f "$cfg" ]; then
-    echo "Config not found: $cfg" >&2
-    list_configs
-    exit 1
-  fi
+  local name="${1:-n8n}"; shift || true
   need_codex
-
-  # Detect Codex CLI capability: newer codex-cli (>=0.4x) does NOT accept --config <file>
-  # and instead uses `-c key=value` overrides. Fall back to best-effort flags.
-  if codex --help 2>/dev/null | grep -qE '^[[:space:]]*-c, --config <key=value>'; then
-    # Fallback path: approximate config via flags
-    local cfg_dir="$(dirname "$cfg")"
-    local preset_rel
-    preset_rel="$(sed -n 's/^\s*preset:\s*\(.*\)$/\1/p' "$cfg" | head -n1 | tr -d '"')"
-    local preset_path="$cfg_dir/$preset_rel"
-    # Extract model.name from preset YAML (simple awk across the model: block)
-    local model_name
-    if [ -f "$preset_path" ]; then
-      model_name="$(awk '
-        /^model:/ {inmodel=1; next}
-        /^[^[:space:]]/ {inmodel=0}
-        inmodel && /name:/ {print $2; exit}
-      ' "$preset_path")"
-    fi
-    [ -n "${model_name-}" ] || model_name="gpt-4o-mini"
-
-    echo "codex-cli does not support --config <file>. Starting with flags instead..." >&2
-    echo "Using model: $model_name" >&2
-    echo "Note: custom system/developer prompts from $preset_path cannot be injected automatically in this mode." >&2
-    exec codex -m "$model_name" -a on-request -s workspace-write -C "$ROOT_DIR" "$@"
-  else
-    # Legacy/alt Codex that supports --config <file>
-    exec codex --config "$cfg" "$@"
+  mkdir -p "$LOGS_DIR"
+  echo "Launching Codex (flags mode)." >&2
+  if [ "$name" = "n8n" ]; then
+    echo "After launch: paste the n8n system prompt from $PROMPTS_DIR/n8n-system.md" >&2
+    echo "Tip: show/copy prompt -> bash scripts/prompt.sh show n8n | bash scripts/prompt.sh copy n8n" >&2
   fi
+  exec codex -m gpt-5-mini -a on-request -s workspace-write -C "$ROOT_DIR" "$@"
 }
 
 run_ephemeral() {
@@ -79,12 +48,6 @@ run_ephemeral() {
       *) break ;;
     esac
   done
-  local cfg="$CONFIGS_DIR/$name.config.yaml"
-  if [ ! -f "$cfg" ]; then
-    echo "Config not found: $cfg" >&2
-    list_configs
-    exit 1
-  fi
   need_codex
   mkdir -p "$LOGS_DIR"
   local ts
@@ -96,47 +59,19 @@ run_ephemeral() {
     echo "Ephemeral session log: $log_file"
     echo "Tip: paste this task after start:" > "$run_dir/TASK.txt"
     if [ -n "$task" ]; then echo "$task" >> "$run_dir/TASK.txt"; fi
-    # Start interactive codex and capture transcript
-    if codex --help 2>/dev/null | grep -qE '^[[:space:]]*-c, --config <key=value>'; then
-      # Fallback flags mode
-      local cfg_dir="$(dirname "$cfg")"
-      local preset_rel
-      preset_rel="$(sed -n 's/^\s*preset:\s*\(.*\)$/\1/p' "$cfg" | head -n1 | tr -d '"')"
-      local preset_path="$cfg_dir/$preset_rel"
-      local model_name
-      if [ -f "$preset_path" ]; then
-        model_name="$(awk '
-          /^model:/ {inmodel=1; next}
-          /^[^[:space:]]/ {inmodel=0}
-          inmodel && /name:/ {print $2; exit}
-        ' "$preset_path")"
-      fi
-      [ -n "${model_name-}" ] || model_name="gpt-4o-mini"
-      echo "codex-cli lacks --config <file>; starting with flags (model=$model_name)." >&2
-      exec script -q "$log_file" codex -m "$model_name" -a on-request -s workspace-write -C "$ROOT_DIR"
-    else
-      exec script -q "$log_file" codex --config "$cfg"
+    if [ "$name" = "n8n" ]; then
+      echo "After launch: paste the n8n system prompt from $PROMPTS_DIR/n8n-system.md" >&2
+      echo "Tip: show/copy prompt -> bash scripts/prompt.sh show n8n | bash scripts/prompt.sh copy n8n" >&2
     fi
+    # Start interactive codex and capture transcript (flags mode)
+    exec script -q "$log_file" codex -m gpt-5-mini -a on-request -s workspace-write -C "$ROOT_DIR"
   else
     echo "'script' utility not found. Starting without transcript logging." >&2
-    if codex --help 2>/dev/null | grep -qE '^[[:space:]]*-c, --config <key=value>'; then
-      local cfg_dir="$(dirname "$cfg")"
-      local preset_rel
-      preset_rel="$(sed -n 's/^\s*preset:\s*\(.*\)$/\1/p' "$cfg" | head -n1 | tr -d '"')"
-      local preset_path="$cfg_dir/$preset_rel"
-      local model_name
-      if [ -f "$preset_path" ]; then
-        model_name="$(awk '
-          /^model:/ {inmodel=1; next}
-          /^[^[:space:]]/ {inmodel=0}
-          inmodel && /name:/ {print $2; exit}
-        ' "$preset_path")"
-      fi
-      [ -n "${model_name-}" ] || model_name="gpt-4o-mini"
-      exec codex -m "$model_name" -a on-request -s workspace-write -C "$ROOT_DIR"
-    else
-      exec codex --config "$cfg"
+    if [ "$name" = "n8n" ]; then
+      echo "After launch: paste the n8n system prompt from $PROMPTS_DIR/n8n-system.md" >&2
+      echo "Tip: show/copy prompt -> bash scripts/prompt.sh show n8n | bash scripts/prompt.sh copy n8n" >&2
     fi
+    exec codex -m gpt-5-mini -a on-request -s workspace-write -C "$ROOT_DIR"
   fi
 }
 
