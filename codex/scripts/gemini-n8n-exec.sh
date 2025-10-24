@@ -81,8 +81,8 @@ echo "🔬 Model: gemini-2.5-pro (function calling)" >&2
 echo "📁 Logs: $log_dir/" >&2
 echo "" >&2
 
-# Set Gemini API key from credentials
-export GEMINI_API_KEY="AIzaSyCz1MUFvR6zqlGxZ4RCwQWib8RaVU-geUE"
+# Gemini API key loaded from ~/credentials/.env (lines 14-23)
+# No need to export again - already in environment
 
 # Execute with error handling
 if (cd "$ROOT_DIR" && node "$GEMINI_SCRIPT" "$task" 2>&1) | tee "$log_file" > "$result_file"; then

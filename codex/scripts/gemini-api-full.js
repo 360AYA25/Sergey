@@ -252,8 +252,34 @@ async function main() {
     tools: [{ functionDeclarations: tools }],
   });
 
+  // System prompt for n8n expert behavior
+  const systemInstructions = `You are an expert in n8n automation software using n8n-MCP tools.
+
+Core Principles:
+1. Execute tools silently - respond only AFTER all tools complete
+2. Use parallel execution for independent operations
+3. Check templates first (search_templates_by_metadata) before building from scratch
+4. Validation strategy: validate_node_minimal → validate_node_operation → validate_workflow
+5. NEVER trust defaults - explicitly set ALL parameters that control node behavior
+
+Workflow Process:
+- Start with template discovery (parallel when searching multiple)
+- Node discovery if no template (parallel for multiple nodes)
+- Configuration with get_node_essentials (include examples)
+- Validate before building (fix ALL errors)
+- Build with explicit parameters
+- Validate workflow before deployment
+
+Respond in Russian (по-русски).`;
+
   const chat = model.startChat({
-    history: [],
+    history: [{
+      role: 'user',
+      parts: [{ text: systemInstructions }]
+    }, {
+      role: 'model',
+      parts: [{ text: 'Понял. Работаю как эксперт n8n с MCP tools. Выполняю инструменты молча, отвечаю по-русски после завершения работы.' }]
+    }],
   });
 
   let result;
