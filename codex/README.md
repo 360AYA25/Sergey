@@ -20,7 +20,7 @@ Quick Start
 Usage
 - See `USAGE.md` for the one‑command start, ephemeral subagent, scripts, and how to change the model.
 
-N8N Agent
+N8N Agent (Codex/GPT-5)
 - Files:
   - `prompts/n8n-system.md` — system prompt for n8n MCP.
   - `agents/n8n.yaml` — agent preset with n8n-MCP tools.
@@ -36,6 +36,24 @@ N8N Agent
   - Standard: `bash scripts/agent.sh run n8n`
   - Ephemeral: `bash scripts/agent.sh ephemeral n8n --task "..."`
   - Non-interactive (from Claude Code): `bash scripts/n8n-exec.sh "task description"`
+
+Gemini N8N Agent (Gemini 2.5 Flash)
+- Files:
+  - `scripts/gemini-api.js` — Direct Gemini API with n8n-MCP integration (Node.js).
+  - `scripts/gemini-n8n-exec.sh` — non-interactive wrapper for Claude Code integration.
+  - `package.json` — Node dependencies (@google/generative-ai).
+- Env vars:
+  - GEMINI_API_KEY — from ~/credentials/gemini-access.md
+  - N8N_API_KEY — n8n API key (hardcoded in script)
+- Features:
+  - Direct API calls (no CLI dependency)
+  - Full n8n-MCP integration (41 tools)
+  - Gemini 2.5 Flash: 500 req/day free tier
+- Use:
+  - Non-interactive (from Claude Code): `bash scripts/gemini-n8n-exec.sh "task description"`
+- When to use:
+  - Budget-friendly (free 500 req/day)
+  - Alternative to Codex/GPT-5
 
 Ephemeral Subagent
 - Run n8n agent in a separate, short-lived session without polluting your main chat:

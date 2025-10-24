@@ -1,0 +1,12 @@
+{
+  "name": "codex-agents",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Codex AI agents with n8n-MCP integration",
+  "scripts": {
+    "gemini": "node scripts/gemini-api.js"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0"
+  }
+}

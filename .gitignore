@@ -30,6 +30,7 @@ credentials/
 secrets/
 *.key
 *.pem
+.gemini/
  
 # codex agent configs and local secrets
 codex/secrets/.env
@@ -37,3 +38,5 @@ codex/secrets/*.key
 codex/secrets/*.json
 codex/*.local.*
 codex/**/.DS_Store
+codex/node_modules/
+codex/package-lock.json
