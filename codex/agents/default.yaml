@@ -2,7 +2,7 @@ name: codex-default
 description: Base Codex agent preset for the Sergey project
 model:
   provider: openai
-  name: gpt-5-mini
+  name: gpt-5
   temperature: 0.2
   top_p: 0.9
 prompts:

@@ -35,7 +35,7 @@ run_agent() {
     echo "After launch: paste the n8n system prompt from $PROMPTS_DIR/n8n-system.md" >&2
     echo "Tip: show/copy prompt -> bash scripts/prompt.sh show n8n | bash scripts/prompt.sh copy n8n" >&2
   fi
-  exec codex -m gpt-5-mini -a on-request -s workspace-write -C "$ROOT_DIR" "$@"
+  exec codex -m gpt-5 -a on-request -s workspace-write -C "$ROOT_DIR" "$@"
 }
 
 run_ephemeral() {
@@ -64,14 +64,14 @@ run_ephemeral() {
       echo "Tip: show/copy prompt -> bash scripts/prompt.sh show n8n | bash scripts/prompt.sh copy n8n" >&2
     fi
     # Start interactive codex and capture transcript (flags mode)
-    exec script -q "$log_file" codex -m gpt-5-mini -a on-request -s workspace-write -C "$ROOT_DIR"
+    exec script -q "$log_file" codex -m gpt-5 -a on-request -s workspace-write -C "$ROOT_DIR"
   else
     echo "'script' utility not found. Starting without transcript logging." >&2
     if [ "$name" = "n8n" ]; then
       echo "After launch: paste the n8n system prompt from $PROMPTS_DIR/n8n-system.md" >&2
       echo "Tip: show/copy prompt -> bash scripts/prompt.sh show n8n | bash scripts/prompt.sh copy n8n" >&2
     fi
-    exec codex -m gpt-5-mini -a on-request -s workspace-write -C "$ROOT_DIR"
+    exec codex -m gpt-5 -a on-request -s workspace-write -C "$ROOT_DIR"
   fi
 }
 

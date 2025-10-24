@@ -2,7 +2,7 @@ name: n8n-agent
 description: n8n MCP-guided agent preset for Sergey project
 model:
   provider: openai
-  name: gpt-5-mini
+  name: gpt-5
   temperature: 0.2
   top_p: 0.9
 prompts:

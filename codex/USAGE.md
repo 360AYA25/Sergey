@@ -8,9 +8,9 @@
 
 ## Что под капотом
 - Роль: специалист по n8n (проектные правила в `AGENTS.md`).
-- Модель: `gpt-5-mini` (быстрая и дешёвая). Настроена в:
+- Модель: `gpt-5` (полная версия). Настроена в:
   - `agents/n8n.yaml` и `agents/default.yaml`
-  - сценарии запуска используют `-m gpt-5-mini`.
+  - сценарии запуска используют `-m gpt-5`.
 - Доступы: предполагается работа через ноды/HTTP в n8n (Notion, Telegram, OpenFoodFacts — через креды n8n).
 
 ## Эфемерный подагент (отдельная сессия)
@@ -26,8 +26,8 @@
 - Интерактивное меню: `bash scripts/agent-menu.sh` (опционально)
 
 ## Где менять модель
-- `agents/n8n.yaml` и `agents/default.yaml` → `model.name: gpt-5-mini`
-- `scripts/agent.sh` → параметр `-m gpt-5-mini`
+- `agents/n8n.yaml` и `agents/default.yaml` → `model.name: gpt-5`
+- `scripts/agent.sh` → параметр `-m gpt-5`
 
 ## Переменные окружения
 - Обязательно: OpenAI ключ в окружении (например, переменная вида OPENAI_API_…)
