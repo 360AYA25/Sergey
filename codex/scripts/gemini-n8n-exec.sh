@@ -2,13 +2,25 @@
 set -euo pipefail
 
 # Gemini n8n agent executor (non-interactive)
-# Uses Google Gemini 2.5 Flash with n8n-MCP tools
+# Uses Google Gemini 2.5 Pro with n8n-MCP tools
 #
 # Usage:
 #   bash scripts/gemini-n8n-exec.sh "create Telegram webhook workflow"
 #   bash scripts/gemini-n8n-exec.sh --task "validate all workflows"
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
+# Load credentials from central .env file
+ENV_FILE="$HOME/credentials/.env"
+if [ -f "$ENV_FILE" ]; then
+  # Export all variables from .env (ignore comments and empty lines)
+  set -a
+  source "$ENV_FILE"
+  set +a
+else
+  echo "Warning: Credentials file not found at $ENV_FILE" >&2
+  echo "Required variables: GEMINI_API_KEY, N8N_URL, N8N credentials" >&2
+fi
 LOGS_DIR="$ROOT_DIR/logs"
 PROMPTS_DIR="$ROOT_DIR/prompts"
 N8N_PROMPT="$PROMPTS_DIR/n8n-system.md"
@@ -45,8 +57,8 @@ if ! command -v node >/dev/null 2>&1; then
   exit 1
 fi
 
-# Check gemini-api.js exists
-GEMINI_SCRIPT="$ROOT_DIR/scripts/gemini-api.js"
+# Check gemini-api-full.js exists
+GEMINI_SCRIPT="$ROOT_DIR/scripts/gemini-api-full.js"
 if [ ! -f "$GEMINI_SCRIPT" ]; then
   echo "Error: Gemini API script not found: $GEMINI_SCRIPT" >&2
   exit 1
@@ -65,7 +77,7 @@ log_file="$log_dir/execution.log"
 # Run Gemini API with n8n-MCP
 echo "🤖 Running Gemini n8n agent..." >&2
 echo "📋 Task: $task" >&2
-echo "🔬 Model: gemini-2.5-flash (direct API)" >&2
+echo "🔬 Model: gemini-2.5-pro (function calling)" >&2
 echo "📁 Logs: $log_dir/" >&2
 echo "" >&2
 
