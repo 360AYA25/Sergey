@@ -1,0 +1,114 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2025-01-24",
+  "description": "Knowledge base of proven n8n workflow patterns",
+  "patterns": [
+    {
+      "id": "pattern-1",
+      "name": "Dynamic Database Selection",
+      "problem": "Different users need different databases",
+      "solution": {
+        "type": "code_node",
+        "code": "const dbMapping = {'Sergey': 'db-id-1', 'Alena': 'db-id-2'}; return {database_id: dbMapping[$json.user] || dbMapping['Sergey']};"
+      },
+      "use_cases": [
+        "Notion multi-user",
+        "Database routing"
+      ],
+      "complexity": 2,
+      "success_count": 0
+    },
+    {
+      "id": "pattern-2",
+      "name": "Safe API Calls",
+      "problem": "API failures crash workflow",
+      "solution": {
+        "type": "node_config",
+        "config": {
+          "continueOnFail": true,
+          "options": {
+            "neverError": true
+          }
+        }
+      },
+      "use_cases": [
+        "All HTTP nodes",
+        "External API calls"
+      ],
+      "complexity": 1,
+      "critical": true,
+      "success_count": 0
+    },
+    {
+      "id": "pattern-13",
+      "name": "JavaScript Filtering for Notion",
+      "problem": "Notion API filters unreliable for Date/Title",
+      "solution": {
+        "type": "code_node",
+        "steps": [
+          "Get ALL records with simple filter (User/Owner only)",
+          "Filter in JavaScript with exact string comparison",
+          "Avoid timezone and type mismatch issues"
+        ],
+        "code": "const response = await this.helpers.request({...}); const matchingEntry = response.results.find(page => page.properties.Date.date.start.split('T')[0] === targetDate);"
+      },
+      "use_cases": [
+        "Notion date queries",
+        "Exact match filtering"
+      ],
+      "complexity": 4,
+      "success_count": 0
+    },
+    {
+      "id": "pattern-14",
+      "name": "Null-Safe Notion Property Reading",
+      "problem": "Crashes on null/empty Notion properties",
+      "solution": {
+        "type": "code_pattern",
+        "code": "const date = page.properties?.Date?.date?.start || null;"
+      },
+      "use_cases": [
+        "All Notion property reads"
+      ],
+      "complexity": 1,
+      "critical": true,
+      "success_count": 0
+    }
+  ],
+  "successful_workflows": [
+    {
+      "task": "Create simple webhook that returns success message",
+      "plan_from": "planner-gpt",
+      "quality_score": 7,
+      "complexity": 3,
+      "estimated_time": "30 minutes",
+      "patterns_used": [],
+      "created_at": "2025-10-24T22:10:25.502Z"
+    },
+    {
+      "task": "Create webhook that receives POST data and responds with success message",
+      "plan_from": "planner-gpt",
+      "quality_score": 7,
+      "complexity": 3,
+      "estimated_time": "30 minutes",
+      "patterns_used": [],
+      "created_at": "2025-10-24T22:19:46.595Z"
+    },
+    {
+      "task": "Create simple webhook",
+      "plan_from": "planner-gpt",
+      "quality_score": 7,
+      "complexity": 3,
+      "estimated_time": "30 minutes",
+      "patterns_used": [],
+      "created_at": "2025-10-25T12:38:25.013Z"
+    }
+  ],
+  "statistics": {
+    "total_patterns": 4,
+    "critical_patterns": 2,
+    "total_workflows": 3,
+    "avg_quality_score": "7.00",
+    "last_updated": "2025-10-25T12:38:25.014Z"
+  }
+}

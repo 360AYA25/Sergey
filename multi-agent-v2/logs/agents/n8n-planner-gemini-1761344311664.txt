@@ -1,0 +1,32 @@
+Готово! Я создал простой webhook в n8n:
+
+**Что сделано:**
+- Создан workflow "Simple Webhook Test"
+- 2 ноды: Webhook (триггер) + Respond to Webhook (ответ)
+- Webhook принимает POST запросы
+- Возвращает JSON с success сообщением
+- Workflow активирован и готов к работе
+
+**URL для тестирования:**
+`http://localhost:5678/webhook-test/simple-webhook`
+
+**Пример запроса:**
+```bash
+curl -X POST http://localhost:5678/webhook-test/simple-webhook \
+  -H "Content-Type: application/json" \
+  -d '{"test": "data"}'
+```
+
+**Ответ будет:**
+```json
+{
+  "status": "success",
+  "message": "Data received successfully",
+  "timestamp": "2024-10-27T10:30:28.123Z",
+  "receivedData": {
+    "test": "data"
+  }
+}
+```
+
+Workflow production-ready и следует best practices из knowledge base!

@@ -1,0 +1,26 @@
+Создал простой webhook сервер:
+
+**Что делает:**
+- ✅ Принимает GET и POST запросы на `/webhook`
+- ✅ Возвращает JSON с успешным сообщением
+- ✅ Логирует все входящие запросы
+- ✅ Показывает полученные данные в ответе
+- ✅ CORS настроен для работы из браузера
+
+**Запуск:**
+```bash
+npm run webhook
+```
+
+**Тестирование:**
+```bash
+# GET запрос
+curl http://localhost:3000/webhook
+
+# POST с данными
+curl -X POST http://localhost:3000/webhook \
+  -H "Content-Type: application/json" \
+  -d '{"test": "data"}'
+```
+
+Сервер работает на порту 3000 (можно изменить через `PORT=4000 npm run webhook`).

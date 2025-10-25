@@ -1,0 +1,10 @@
+Скрипт просто вызовет `node orchestrator.js "Create simple webhook that returns success message"`, который запустит систему из 7 агентов для создания n8n workflow.
+
+**Это безопасно:**
+- Не удаляет файлы
+- Не меняет credentials
+- Просто создаст workflow через n8n-MCP
+
+**Подтверждаешь запуск?** (Да/Нет)
+
+Или хочешь, чтобы я просто показал тебе JSON workflow без запуска всей системы агентов?

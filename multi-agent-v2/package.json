@@ -1,0 +1,26 @@
+{
+  "name": "n8n-multi-agent-v2",
+  "version": "2.1.0",
+  "description": "Multi-Agent System for n8n workflow creation using Claude Code + MCP",
+  "main": "orchestrator.js",
+  "scripts": {
+    "start": "node orchestrator.js",
+    "test": "node orchestrator.js 'Create simple webhook workflow for testing'"
+  },
+  "keywords": [
+    "n8n",
+    "multi-agent",
+    "claude",
+    "gpt",
+    "gemini",
+    "mcp",
+    "workflow-automation"
+  ],
+  "author": "Sergey",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
