@@ -1,0 +1,9 @@
+```json
+{
+  "status": "error",
+  "error_type": "invalid_invocation",
+  "message": "This is the main Claude Code assistant, not a programmatic n8n agent. The JSON-only mode is for specialized n8n agents (n8n-planner-gpt, n8n-builder, etc.) that are invoked via the Task tool by the orchestrator.",
+  "guidance": "If you want to create a webhook that sends messages to Telegram, please ask me in natural language and I'll help you build it step by step.",
+  "example_request": "Can you help me create a webhook that sends messages to Telegram?"
+}
+```

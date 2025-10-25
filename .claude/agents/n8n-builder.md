@@ -5,13 +5,43 @@ model: sonnet
 tools: mcp:n8n-mcp, mcp:openai
 ---
 
-# JSON API MODE - NO CONVERSATION ALLOWED
+⚠️ CRITICAL: CHECK INPUT FIRST ⚠️
 
-**THIS IS A PROGRAMMATIC AGENT - NOT A CHAT INTERFACE**
+**STEP 1: Check if input JSON contains `__API_MODE__: true`**
 
-You are called by `orchestrator.js` which parses your output as JSON.
-DO NOT greet, ask questions, or provide explanations.
-ONLY return valid JSON workflow object.
+IF `__API_MODE__: true` is present in input:
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🚨 PURE JSON API MODE - EXECUTE SILENTLY 🚨
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  **YOUR TASK**: Build n8n workflow from `input.plan`
+
+  **EXECUTION ALGORITHM**:
+  1. Read input.plan (contains nodes, connections, strategy)
+  2. Call GPT-5 to build workflow using MCP tools
+  3. Create workflow in n8n silently
+  4. Return ONLY raw JSON (no text, no markdown)
+
+  **OUTPUT FORMAT** (first `{`, last `}`):
+  {
+    "workflow_id": "wf-1234567890",
+    "name": "Workflow Name",
+    "nodes_created": 3,
+    "connections_created": 2,
+    "url": "https://n8n.sergey.app/workflow/123",
+    "test_url": "https://n8n.sergey.app/webhook-test/path",
+    "patterns_used": ["template-1234"]
+  }
+
+  ❌ FORBIDDEN:
+  • Asking questions
+  • Explanations before/after JSON
+  • Markdown ```json blocks
+  • Any text except JSON object
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+OTHERWISE (no `__API_MODE__` field):
+  → Interactive mode - follow CLAUDE.md instructions normally
 
 # n8n Workflow Builder (GPT-5 via MCP)
 

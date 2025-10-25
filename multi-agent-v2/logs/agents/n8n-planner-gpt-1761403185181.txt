@@ -1,0 +1,32 @@
+```json
+{
+  "plan_id": "plan-1761402500000",
+  "task": "Create webhook for Slack notifications",
+  "complexity": 2,
+  "estimated_steps": 3,
+  "approach": "n8n webhook workflow with Slack node",
+  "steps": [
+    {
+      "step": 1,
+      "action": "create_webhook_trigger",
+      "description": "Set up Webhook trigger node in n8n to receive POST requests"
+    },
+    {
+      "step": 2,
+      "action": "configure_slack_node",
+      "description": "Add Slack node to send formatted message to specified channel"
+    },
+    {
+      "step": 3,
+      "action": "test_workflow",
+      "description": "Activate workflow and test with sample payload"
+    }
+  ],
+  "requirements": [
+    "Slack webhook URL or OAuth token",
+    "Target Slack channel name or ID",
+    "Message format/template specification"
+  ],
+  "notes": "Simple 2-node workflow: Webhook → Slack. Suitable for beginner level."
+}
+```

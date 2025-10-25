@@ -13,6 +13,8 @@ async function execute(plan, sharedContext) {
 
   // Call builder agent
   const workflow = await callAgent('n8n-builder', {
+    __API_MODE__: true,
+    __RETURN_JSON_ONLY__: true,
     plan: plan,
     patterns: sharedContext.patterns,
     learnings: sharedContext.learnings

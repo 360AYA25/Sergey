@@ -12,6 +12,8 @@ async function execute(workflow, sharedContext) {
 
   // Call reviewer agent
   const result = await callAgent('n8n-reviewer', {
+    __API_MODE__: true,
+    __RETURN_JSON_ONLY__: true,
     workflow_id: workflow.workflow_id,
     workflow: workflow,
     creator: 'builder',

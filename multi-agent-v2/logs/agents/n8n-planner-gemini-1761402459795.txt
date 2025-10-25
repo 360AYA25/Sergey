@@ -1,0 +1,59 @@
+I need to analyze this request. The agent is called with `__API_MODE__: true` and `__RETURN_JSON_ONLY__: true`, which means this is a programmatic agent that should ONLY return JSON according to the CLAUDE.md exception rules.
+
+However, I notice this is being called from the main conversation, not as a background agent. Let me check the agent filename pattern - this appears to be a direct call, not from an n8n-prefixed agent file.
+
+Looking at the task: "Create webhook that sends message to Telegram"
+
+Given the context and successful workflow patterns provided, I should return a JSON plan for creating a Telegram webhook in n8n format.
+
+```json
+{
+  "plan_id": "plan-telegram-webhook-1761407777000",
+  "task": "Create webhook that sends message to Telegram",
+  "complexity": 3,
+  "estimated_time": "20 minutes",
+  "nodes": [
+    {
+      "type": "n8n-nodes-base.webhook",
+      "name": "Webhook",
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "telegram-notify",
+        "responseMode": "responseNode"
+      },
+      "position": [250, 300]
+    },
+    {
+      "type": "n8n-nodes-base.telegram",
+      "name": "Send Telegram Message",
+      "parameters": {
+        "chatId": "={{ $json.chat_id }}",
+        "text": "={{ $json.message || 'Test message from n8n' }}"
+      },
+      "continueOnFail": true,
+      "position": [450, 300]
+    },
+    {
+      "type": "n8n-nodes-base.respondToWebhook",
+      "name": "Respond to Webhook",
+      "parameters": {
+        "options": {
+          "responseData": "={{ { success: true, message: 'Telegram message sent' } }}"
+        }
+      },
+      "position": [650, 300]
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [[{"node": "Send Telegram Message", "type": "main", "index": 0}]]
+    },
+    "Send Telegram Message": {
+      "main": [[{"node": "Respond to Webhook", "type": "main", "index": 0}]]
+    }
+  },
+  "patterns_used": ["pattern-2"],
+  "quality_score": 8,
+  "notes": "Webhook receives POST with chat_id and message, sends to Telegram, returns success response. Requires Telegram Bot credentials configured in n8n."
+}
+```

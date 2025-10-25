@@ -12,6 +12,8 @@ async function execute(workflow, errors, sharedContext) {
 
   // Call debugger agent with FULL context
   const result = await callAgent('n8n-debugger', {
+    __API_MODE__: true,
+    __RETURN_JSON_ONLY__: true,
     workflow_id: workflow.workflow_id,
     workflow: workflow,
     errors: errors,

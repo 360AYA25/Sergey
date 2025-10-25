@@ -1,0 +1,90 @@
+```json
+{
+  "plan_id": "plan-slack-webhook-1761410000000",
+  "task": "Create webhook for Slack notifications",
+  "complexity": 3,
+  "estimated_time": "25 minutes",
+  "architecture": {
+    "trigger": "Webhook node (POST method)",
+    "processing": "Code node to format Slack message payload",
+    "output": "Slack node to send notification"
+  },
+  "nodes": [
+    {
+      "node_type": "n8n-nodes-base.webhook",
+      "name": "Webhook Trigger",
+      "operation": "webhook",
+      "parameters": {
+        "path": "slack-notify",
+        "httpMethod": "POST",
+        "responseMode": "responseNode"
+      },
+      "purpose": "Receive POST data for Slack notification"
+    },
+    {
+      "node_type": "n8n-nodes-base.code",
+      "name": "Format Slack Message",
+      "operation": "runOnceForAllItems",
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const data = $input.all()[0].json;\nconst message = data.message || 'No message provided';\nconst channel = data.channel || '#general';\nconst username = data.username || 'n8n-bot';\n\nreturn [{\n  json: {\n    text: message,\n    channel: channel,\n    username: username,\n    timestamp: new Date().toISOString()\n  }\n}];"
+      },
+      "purpose": "Transform webhook data into Slack message format"
+    },
+    {
+      "node_type": "n8n-nodes-base.slack",
+      "name": "Send to Slack",
+      "operation": "post",
+      "parameters": {
+        "resource": "message",
+        "operation": "post",
+        "channel": "={{ $json.channel }}",
+        "text": "={{ $json.text }}",
+        "username": "={{ $json.username }}",
+        "options": {
+          "continueOnFail": true
+        }
+      },
+      "purpose": "Send formatted message to Slack channel"
+    },
+    {
+      "node_type": "n8n-nodes-base.respondToWebhook",
+      "name": "Respond Success",
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { \"status\": \"success\", \"message\": \"Notification sent to Slack\", \"channel\": $json.channel } }}"
+      },
+      "purpose": "Return success response to webhook caller"
+    }
+  ],
+  "connections": [
+    {"from": "Webhook Trigger", "to": "Format Slack Message"},
+    {"from": "Format Slack Message", "to": "Send to Slack"},
+    {"from": "Send to Slack", "to": "Respond Success"}
+  ],
+  "required_credentials": [
+    {
+      "type": "slackApi",
+      "name": "Slack API",
+      "fields": ["accessToken"]
+    }
+  ],
+  "test_payload": {
+    "message": "Test notification from n8n",
+    "channel": "#notifications",
+    "username": "n8n-webhook-bot"
+  },
+  "error_handling": {
+    "strategy": "continueOnFail on Slack node",
+    "fallback": "Return error status in webhook response"
+  },
+  "maintainability_notes": [
+    "Code node has clear variable names for beginners",
+    "Default values prevent crashes on missing data",
+    "Each node has single responsibility",
+    "Webhook path is clear: /slack-notify"
+  ],
+  "patterns_applied": ["pattern-2"],
+  "quality_score": 8
+}
+```

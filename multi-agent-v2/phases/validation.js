@@ -15,6 +15,8 @@ async function execute(workflow, sharedContext) {
 
   // Call validator agent
   const result = await callAgent('n8n-validator', {
+    __API_MODE__: true,
+    __RETURN_JSON_ONLY__: true,
     workflow: workflow
   });
 

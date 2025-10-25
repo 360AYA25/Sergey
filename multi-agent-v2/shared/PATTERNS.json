@@ -221,13 +221,32 @@
       "estimated_time": "15 minutes",
       "patterns_used": [],
       "created_at": "2025-10-25T14:23:26.042Z"
+    },
+    {
+      "task": "Create webhook that sends message to Telegram",
+      "plan_chosen": "plan-telegram-webhook-1761407777000",
+      "plan_from": "planner-gemini",
+      "quality_score": 7,
+      "complexity": 3,
+      "estimated_time": "20 minutes",
+      "patterns_used": [],
+      "created_at": "2025-10-25T14:32:04.170Z"
+    },
+    {
+      "task": "Create webhook for Slack notifications",
+      "plan_chosen": "plan-1761402500000",
+      "plan_from": "planner-gpt",
+      "quality_score": 7,
+      "complexity": 2,
+      "patterns_used": [],
+      "created_at": "2025-10-25T14:41:18.641Z"
     }
   ],
   "statistics": {
     "total_patterns": 4,
     "critical_patterns": 2,
-    "total_workflows": 16,
+    "total_workflows": 18,
     "avg_quality_score": "7.00",
-    "last_updated": "2025-10-25T14:23:26.043Z"
+    "last_updated": "2025-10-25T14:41:18.642Z"
   }
 }
