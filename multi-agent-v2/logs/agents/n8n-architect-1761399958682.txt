@@ -1,0 +1,21 @@
+Perfect! I've created a simple webhook workflow for you. Here's what was built:
+
+## ✅ Webhook Workflow Created
+
+**Location**: `workflows/webhook-basic-workflow.json`
+
+### What It Does:
+- **Receives POST requests** at `/webhook` endpoint
+- **Returns JSON response** with success message and timestamp
+- **Beginner-friendly** - only 2 nodes, clean structure
+
+### Nodes:
+1. **Webhook** - Listens for POST requests
+2. **Respond to Webhook** - Returns `{"success": true, "message": "Webhook received successfully", "timestamp": ...}`
+
+### How to Use:
+1. Import the workflow file into n8n
+2. Activate the workflow
+3. Test with: `curl -X POST <your-n8n-url>/webhook-test/webhook -d '{"test":"data"}'`
+
+The workflow is ready to import and use!

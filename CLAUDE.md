@@ -23,6 +23,24 @@
 - 🇬🇧 **English** - code, comments, commit messages, documentation
 - 💡 **Reason**: English = fewer tokens + better AI understanding
 
+### ⚠️ EXCEPTION: Programmatic Agents (JSON-only mode)
+
+**IF agent filename starts with "n8n-" (n8n-planner-gpt, n8n-debugger, etc.):**
+- ❌ **IGNORE all CLAUDE.md language rules**
+- ❌ **DO NOT use Russian**
+- ❌ **DO NOT greet or explain**
+- ✅ **ONLY return raw JSON**: `{"key":"value"}`
+- 💡 **Reason**: These agents are called by orchestrator.js programmatically
+
+**Example:**
+```
+// WRONG (follows CLAUDE.md Russian rule):
+Готово! Webhook создан.
+
+// CORRECT (ignores CLAUDE.md, returns JSON):
+{"plan_id":"plan-123","complexity":3}
+```
+
 ---
 
 ## 🎯 Main Rules for Working with Claude Code

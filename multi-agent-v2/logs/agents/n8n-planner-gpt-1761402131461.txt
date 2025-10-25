@@ -1,0 +1,19 @@
+```json
+{
+  "plan_id": "webhook-json-v1",
+  "complexity": 1,
+  "approach": "minimal_webhook_node",
+  "nodes": [
+    {
+      "type": "Webhook",
+      "purpose": "receive_request"
+    },
+    {
+      "type": "Respond to Webhook",
+      "purpose": "return_json_response"
+    }
+  ],
+  "estimated_nodes": 2,
+  "reasoning": "Beginner user needs simplest possible solution. Direct webhook->response pattern with no intermediate processing."
+}
+```

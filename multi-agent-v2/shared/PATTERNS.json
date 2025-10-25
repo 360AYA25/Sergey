@@ -102,13 +102,132 @@
       "estimated_time": "30 minutes",
       "patterns_used": [],
       "created_at": "2025-10-25T12:38:25.013Z"
+    },
+    {
+      "task": "Create simple webhook that returns success message",
+      "plan_from": "planner-gpt",
+      "quality_score": 7,
+      "complexity": 3,
+      "estimated_time": "30 minutes",
+      "patterns_used": [],
+      "created_at": "2025-10-25T13:13:50.742Z"
+    },
+    {
+      "task": "Create simple webhook that returns success message",
+      "plan_from": "planner-gpt",
+      "quality_score": 7,
+      "complexity": 3,
+      "estimated_time": "30 minutes",
+      "patterns_used": [],
+      "created_at": "2025-10-25T13:19:52.373Z"
+    },
+    {
+      "task": "Create simple webhook that returns success message",
+      "plan_from": "planner-gemini",
+      "quality_score": 7,
+      "complexity": 3,
+      "estimated_time": "30 minutes",
+      "patterns_used": [],
+      "created_at": "2025-10-25T13:23:44.137Z"
+    },
+    {
+      "task": "Create webhook for Telegram bot",
+      "plan_from": "planner-gemini",
+      "quality_score": 7,
+      "complexity": 3,
+      "estimated_time": "30 minutes",
+      "patterns_used": [],
+      "created_at": "2025-10-25T13:30:18.454Z"
+    },
+    {
+      "task": "Create simple webhook that returns success message",
+      "plan_from": "planner-gpt",
+      "quality_score": 7,
+      "complexity": 3,
+      "estimated_time": "30 minutes",
+      "patterns_used": [],
+      "created_at": "2025-10-25T13:35:04.161Z"
+    },
+    {
+      "task": "Create simple webhook that returns success message",
+      "plan_from": "planner-gpt",
+      "quality_score": 7,
+      "complexity": 3,
+      "estimated_time": "30 minutes",
+      "patterns_used": [],
+      "created_at": "2025-10-25T13:39:07.944Z"
+    },
+    {
+      "task": "Create simple webhook that returns success message",
+      "plan_chosen": "plan-webhook-simple-1761400000000",
+      "plan_from": "planner-gemini",
+      "quality_score": 7,
+      "complexity": 2,
+      "estimated_time": "15 minutes",
+      "patterns_used": [],
+      "created_at": "2025-10-25T13:46:37.050Z"
+    },
+    {
+      "task": "Test interactive mode with updated agents",
+      "plan_from": "planner-gpt",
+      "quality_score": 7,
+      "complexity": 3,
+      "estimated_time": "30 minutes",
+      "patterns_used": [],
+      "created_at": "2025-10-25T13:52:20.596Z"
+    },
+    {
+      "task": "Create Slack notification webhook",
+      "plan_from": "planner-gpt",
+      "quality_score": 7,
+      "complexity": 3,
+      "estimated_time": "30 minutes",
+      "patterns_used": [],
+      "created_at": "2025-10-25T14:01:59.688Z"
+    },
+    {
+      "task": "Create webhook that sends Telegram notification",
+      "plan_from": "planner-gpt",
+      "quality_score": 7,
+      "complexity": 3,
+      "estimated_time": "30 minutes",
+      "patterns_used": [],
+      "created_at": "2025-10-25T14:07:12.686Z"
+    },
+    {
+      "task": "Create simple webhook",
+      "plan_from": "planner-gpt",
+      "quality_score": 7,
+      "complexity": 3,
+      "estimated_time": "30 minutes",
+      "patterns_used": [],
+      "created_at": "2025-10-25T14:11:27.955Z"
+    },
+    {
+      "task": "Create Telegram bot webhook",
+      "plan_from": "architect",
+      "quality_score": 7,
+      "complexity": 3,
+      "estimated_time": "30 minutes",
+      "patterns_used": [],
+      "created_at": "2025-10-25T14:19:18.076Z"
+    },
+    {
+      "task": "Simple webhook returns JSON",
+      "plan_chosen": "plan-webhook-json-simple-1761407577000",
+      "plan_from": "architect",
+      "quality_score": 7,
+      "complexity": 2,
+      "estimated_time": "15 minutes",
+      "patterns_used": [],
+      "created_at": "2025-10-25T14:23:26.042Z"
     }
   ],
   "statistics": {
     "total_patterns": 4,
     "critical_patterns": 2,
-    "total_workflows": 3,
+    "total_workflows": 16,
     "avg_quality_score": "7.00",
-    "last_updated": "2025-10-25T12:38:25.014Z"
+    "last_updated": "2025-10-25T14:23:26.043Z"
   }
 }

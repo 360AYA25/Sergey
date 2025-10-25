@@ -1,0 +1,17 @@
+Based on the planning.js code, I can see that I'm being called as a builder agent without a selected plan. The issue is that the orchestrator expects me to BUILD a workflow, but I haven't been given a chosen plan with workflow specifications.
+
+According to the agent architecture, I should return an error JSON indicating that I need a plan to build from:
+
+```json
+{
+  "error": "No plan provided",
+  "message": "Builder requires a chosen plan with workflow specification. Expected input: {plan_id, workflow_spec, nodes, connections}",
+  "status": "failed",
+  "required_input": {
+    "plan_id": "string",
+    "workflow_spec": "object",
+    "nodes": "array",
+    "connections": "array"
+  }
+}
+```

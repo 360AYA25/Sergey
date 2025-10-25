@@ -1,0 +1,113 @@
+🧪 Testing Multi-Agent System
+
+1️⃣ Checking MCP servers...
+   ✅ OpenAI MCP
+   ✅ Gemini MCP
+   ✅ n8n-MCP
+
+2️⃣ Creating test workflow...
+
+🔍 Checking MCP servers...
+
+🚀 Starting Multi-Agent Workflow Orchestrator...
+
+
+
+🚀 Multi-Agent Workflow Orchestrator
+📋 Session: session-1761399109858
+📝 Task: Create simple webhook that returns success message
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📐 Phase 1/7: Collaborative Planning...
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Invoking 3 planners in parallel...
+
+  📊 Full context: ~4K tokens
+  ⚠️  n8n-planner-gpt returned non-JSON response
+  ⚠️  n8n-planner-gemini returned non-JSON response
+  ⚠️  n8n-architect returned non-JSON response
+  ✅ GPT: complexity 3, 30 minutes
+  ✅ Gemini: complexity 3, 30 minutes
+  ✅ Claude: maintainability 7/10
+
+✅ Received 3 plans
+   1. planner-gpt: complexity 3, 30 minutes
+   2. planner-gemini: complexity 3, 30 minutes
+   3. architect: complexity 3, 30 minutes
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🗳️  Phase 2/7: Voting for Best Plan...
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Scoring plans...
+
+  planner-gpt: 59.0 points
+    - Simplicity: 28 (complexity: 3)
+    - Strategy: undefined
+    - Time: 30 minutes
+  planner-gemini: 59.0 points
+    - Simplicity: 28 (complexity: 3)
+    - Strategy: undefined
+    - Time: 30 minutes
+  architect: 59.0 points
+    - Simplicity: 28 (complexity: 3)
+    - Strategy: undefined
+    - Time: 30 minutes
+
+✅ Selected: planner-gpt (score: 59.0)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔨 Phase 3/7: Building Workflow...
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Building workflow from planner-gpt plan...
+  Strategy: undefined
+  ✅ Created undefined nodes
+  ✅ Created undefined connections
+
+✅ Created workflow: undefined
+   Nodes: undefined, Connections: undefined
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✅ Phase 4/7: Validating Workflow...
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Validating workflow undefined...
+  ✅ Validation passed
+
+✅ No errors found
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+👀 Phase 6/7: Peer Review...
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Reviewing workflow with Claude Opus...
+  📊 Quality score: 7/10
+
+📊 Quality score: 7/10
+✅ Review approved!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+💾 Phase 7/7: Saving Pattern...
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Updating knowledge base...
+  ✅ Pattern saved
+  📊 Total workflows: 8
+  📊 Avg quality: 7.00/10
+  📁 Workflow saved: workflows/successful/undefined.json
+✅ Pattern saved to knowledge base
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎉 Workflow Complete!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📝 Task: Create simple webhook that returns success message
+🆔 Workflow ID: undefined
+📊 Quality Score: 7/10
+⏱️  Time: 194.3s
+📋 Session: session-1761399109858
+
+
+✅ Test complete!

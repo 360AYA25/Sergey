@@ -1,0 +1,20 @@
+Готово! Webhook-воркфлоу создан и активирован.
+
+**Основные детали:**
+- **Workflow ID:** `SsXSPNKNLi7HBEWM`
+- **Production webhook URL:** `https://n8n.netmarine.ru/webhook/test-webhook`
+- **Test webhook URL:** `https://n8n.netmarine.ru/webhook-test/test-webhook`
+- **Статус:** активен
+
+**Структура:**
+1. Webhook триггер (принимает POST запросы)
+2. Response нода (возвращает `{"status": "success", "message": "Webhook received"}`)
+
+**Для тестирования:**
+```bash
+curl -X POST https://n8n.netmarine.ru/webhook/test-webhook \
+  -H "Content-Type: application/json" \
+  -d '{"test": "data"}'
+```
+
+Открыть в n8n: https://n8n.netmarine.ru/workflow/SsXSPNKNLi7HBEWM

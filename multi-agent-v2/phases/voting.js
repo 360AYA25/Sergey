@@ -63,15 +63,60 @@ async function interactiveVote(scoredPlans) {
   console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n');
 
   scoredPlans.forEach((plan, i) => {
-    console.log(`${i + 1}. ${plan.from} (Score: ${plan.score.toFixed(1)})`);
-    console.log(`   Сложность: ${plan.complexity || '?'}`);
-    console.log(`   Время: ${plan.estimated_time || '?'}`);
-    console.log(`   Maintainability: ${plan.maintainability_score || '?'}/10`);
-    if (plan.output) {
-      const preview = plan.output.substring(0, 150).replace(/\n/g, ' ');
-      console.log(`   План: ${preview}...`);
+    console.log(`\n${i + 1}. 📋 ${plan.from.toUpperCase()} (Score: ${plan.score.toFixed(1)})`);
+    console.log('   ─────────────────────────────────────');
+
+    // Strategy
+    const strategy = plan.strategy || 'unknown';
+    const strategyIcon = strategy === 'template' ? '📦' : strategy === 'hybrid' ? '🔀' : '🔨';
+    const strategyText = strategy === 'template' ? 'Template-based' :
+                        strategy === 'hybrid' ? 'Hybrid (template + custom)' :
+                        'From scratch';
+    console.log(`   ${strategyIcon} Подход: ${strategyText}`);
+
+    // Nodes
+    if (plan.nodes && Array.isArray(plan.nodes) && plan.nodes.length > 0) {
+      const nodeNames = plan.nodes.map(n => n.name || n.type || 'Unknown').slice(0, 5);
+      const nodeChain = nodeNames.join(' → ');
+      const moreNodes = plan.nodes.length > 5 ? ` (+${plan.nodes.length - 5} more)` : '';
+      console.log(`   🔗 Ноды: ${nodeChain}${moreNodes}`);
+    } else {
+      console.log(`   🔗 Ноды: не указаны в плане`);
     }
-    console.log('');
+
+    // Services (extract from nodes)
+    if (plan.nodes && Array.isArray(plan.nodes)) {
+      const services = new Set();
+      plan.nodes.forEach(node => {
+        const type = node.type || '';
+        if (type.includes('slack')) services.add('Slack');
+        if (type.includes('telegram')) services.add('Telegram');
+        if (type.includes('notion')) services.add('Notion');
+        if (type.includes('airtable')) services.add('Airtable');
+        if (type.includes('webhook')) services.add('Webhook');
+        if (type.includes('http')) services.add('HTTP');
+        if (type.includes('openai') || type.includes('openAi')) services.add('OpenAI');
+        if (type.includes('gemini')) services.add('Gemini');
+      });
+      if (services.size > 0) {
+        console.log(`   🌐 Сервисы: ${Array.from(services).join(', ')}`);
+      }
+    }
+
+    // Template ID if available
+    if (plan.template_id || plan.base_template) {
+      console.log(`   📦 Шаблон: #${plan.template_id || plan.base_template}`);
+    }
+
+    // Complexity & Time
+    console.log(`   ⚡ Сложность: ${plan.complexity || '?'}/10`);
+    console.log(`   ⏱️  Время: ${plan.estimated_time || '?'}`);
+    console.log(`   🧹 Maintainability: ${plan.maintainability_score || '?'}/10`);
+
+    // Risks if available
+    if (plan.risks && Array.isArray(plan.risks) && plan.risks.length > 0) {
+      console.log(`   ⚠️  Риски: ${plan.risks.slice(0, 2).join(', ')}`);
+    }
   });
 
   console.log('AI рекомендует: ' + scoredPlans[0].from + ' (лучший score)');

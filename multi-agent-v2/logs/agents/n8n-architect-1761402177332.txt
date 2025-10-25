@@ -1,0 +1,42 @@
+```json
+{
+  "plan_id": "plan-webhook-json-simple-1761407577000",
+  "complexity": 2,
+  "estimated_time": "15 minutes",
+  "steps": [
+    {
+      "step": 1,
+      "action": "create_webhook_trigger",
+      "node_type": "Webhook",
+      "config": {
+        "httpMethod": "POST",
+        "path": "json-webhook",
+        "responseMode": "responseNode"
+      }
+    },
+    {
+      "step": 2,
+      "action": "create_response_node",
+      "node_type": "Respond to Webhook",
+      "config": {
+        "options": {
+          "responseCode": 200,
+          "responseHeaders": {
+            "Content-Type": "application/json"
+          }
+        },
+        "respondWith": "json",
+        "responseBody": {
+          "status": "success",
+          "message": "Webhook received",
+          "timestamp": "={{ $now.toISO() }}"
+        }
+      }
+    }
+  ],
+  "patterns_used": [],
+  "quality_score": 8,
+  "maintainability": "high",
+  "notes": "Simple 2-node workflow. Webhook receives POST, responds with JSON. No external dependencies. Perfect for beginners."
+}
+```

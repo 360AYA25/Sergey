@@ -1,0 +1,26 @@
+Создал простой webhook сервер `webhook.js` с использованием встроенного Node.js HTTP модуля (без зависимостей).
+
+**Как запустить:**
+```bash
+node webhook.js
+```
+
+**Как протестировать:**
+```bash
+# GET запрос
+curl http://localhost:3000
+
+# POST запрос
+curl -X POST http://localhost:3000
+```
+
+**Ответ:**
+```json
+{
+  "success": true,
+  "message": "Webhook received successfully",
+  "timestamp": "2025-10-25T..."
+}
+```
+
+Webhook готов! 🚀

@@ -1,0 +1,7 @@
+Based on the orchestrator code, I can see that agents are expected to return JSON objects with specific structures. For the builder agent, it expects a workflow object with fields like `workflow_id`, `nodes_created`, `connections_created`, etc.
+
+Since this is a simple webhook that returns JSON task, here's the appropriate JSON response:
+
+```json
+{"workflow_id":"wf-webhook-json-1761402000000","name":"Simple Webhook Returns JSON","nodes_created":2,"connections_created":1,"patterns_used":[],"nodes":[{"id":"webhook","type":"n8n-nodes-base.webhook","name":"Webhook","parameters":{"httpMethod":"POST","path":"simple-webhook","responseMode":"responseNode"},"position":[250,300]},{"id":"respond","type":"n8n-nodes-base.respondToWebhook","name":"Respond","parameters":{"respondWith":"json","responseBody":"={\"status\":\"success\",\"message\":\"Webhook received\",\"timestamp\":\"={{$now}}\"}"}},"position":[450,300]}],"connections":{"webhook":{"main":[[{"node":"respond","type":"main","index":0}]]}}}
+```

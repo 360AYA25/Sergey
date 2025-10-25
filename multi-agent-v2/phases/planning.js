@@ -20,11 +20,15 @@ async function execute(userTask, sharedContext) {
   // Call 3 agents in parallel
   const plannerPromises = [
     callAgent('n8n-planner-gpt', {
+      __API_MODE__: true,
+      __RETURN_JSON_ONLY__: true,
       task: userTask,
       user_context: "Beginner, wants simple solution"
     }),
 
     callAgent('n8n-planner-gemini', {
+      __API_MODE__: true,
+      __RETURN_JSON_ONLY__: true,
       task: userTask,
       full_project_context: fullContext,
       patterns: sharedContext.patterns,
@@ -32,6 +36,8 @@ async function execute(userTask, sharedContext) {
     }),
 
     callAgent('n8n-architect', {
+      __API_MODE__: true,
+      __RETURN_JSON_ONLY__: true,
       task: userTask,
       constraint: "Must be maintainable for beginners",
       patterns: sharedContext.patterns

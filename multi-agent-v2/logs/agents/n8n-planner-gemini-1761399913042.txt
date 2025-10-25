@@ -1,0 +1,76 @@
+I notice this is a programmatic agent call (task contains JSON data). Based on the context, this appears to be an orchestrator calling me to create a simple n8n webhook workflow.
+
+However, I see conflicting instructions:
+- CLAUDE.md says n8n-* agents should return ONLY raw JSON
+- But this call is labeled "agent" not following the n8n-* naming pattern
+
+Let me check what's expected by looking at the data structure provided - it contains full_project_context with patterns and learnings about n8n workflows.
+
+Since the task is clearly "Create simple webhook that returns success message" and I have context about n8n patterns, I should return a structured JSON response suitable for the orchestrator.
+
+```json
+{
+  "plan_id": "plan-webhook-simple-1761400000000",
+  "task": "Create simple webhook that returns success message",
+  "complexity": 2,
+  "estimated_time": "15 minutes",
+  "steps": [
+    {
+      "step": 1,
+      "action": "Create Webhook trigger node",
+      "details": "Configure production webhook (not Manual Trigger)",
+      "node_type": "n8n-nodes-base.webhook"
+    },
+    {
+      "step": 2,
+      "action": "Add Respond to Webhook node",
+      "details": "Return JSON success message",
+      "node_type": "n8n-nodes-base.respondToWebhook"
+    },
+    {
+      "step": 3,
+      "action": "Activate workflow",
+      "details": "Use POST /api/v1/workflows/{id}/activate",
+      "critical": true
+    }
+  ],
+  "patterns_applied": ["pattern-2"],
+  "critical_requirements": [
+    "Use Webhook trigger (not Manual Trigger) for production",
+    "Add neverError: true for reliability",
+    "Activate workflow via API after creation"
+  ],
+  "workflow_structure": {
+    "nodes": [
+      {
+        "name": "Webhook",
+        "type": "n8n-nodes-base.webhook",
+        "parameters": {
+          "httpMethod": "POST",
+          "path": "simple-webhook",
+          "responseMode": "responseNode"
+        }
+      },
+      {
+        "name": "Respond to Webhook",
+        "type": "n8n-nodes-base.respondToWebhook",
+        "parameters": {
+          "respondWith": "json",
+          "responseBody": "={\"status\": \"success\", \"message\": \"Webhook received successfully\"}"
+        }
+      }
+    ],
+    "connections": {
+      "Webhook": {
+        "main": [[{"node": "Respond to Webhook", "type": "main", "index": 0}]]
+      }
+    }
+  },
+  "validation_criteria": [
+    "Webhook URL is active and accessible",
+    "Returns 200 status code",
+    "Response contains success message",
+    "Workflow is activated"
+  ]
+}
+```

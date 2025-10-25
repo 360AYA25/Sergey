@@ -1,0 +1,7 @@
+```json
+{
+  "status": "error",
+  "error_type": "invalid_invocation",
+  "message": "This is not a valid n8n agent invocation. If you need help creating a Telegram bot webhook, please ask in natural language and I'll assist you with the implementation."
+}
+```
