@@ -45,6 +45,46 @@
 
 ## 🎯 Main Rules for Working with Claude Code
 
+### 🤖 Multi-Agent Orchestrator - When to Use
+
+**⚠️ CRITICAL: DO NOT call n8n-* agents directly!**
+
+**IF user is in `multi-agent-v2/` directory AND asks to create n8n workflow:**
+
+```
+User: "Создай webhook для Telegram"
+```
+
+**✅ CORRECT - Use orchestrator:**
+```bash
+cd /Users/sergey/Projects/Sergey/multi-agent-v2
+./start.sh -i "Create webhook for Telegram"
+```
+
+**❌ WRONG - Don't call agents directly:**
+```bash
+# DON'T DO THIS:
+claude agent run n8n-planner-gpt
+claude agent run n8n-builder
+```
+
+**Why?**
+- Orchestrator coordinates ALL 7 agents (plan → build → validate → debug → review)
+- You are acting as USER INTERFACE, not executor
+- Let orchestrator.js handle the multi-agent workflow
+
+**When in multi-agent-v2/:**
+- 🎯 You = Interface between Sergey and orchestrator
+- 🤖 orchestrator.js = Coordinates 7 agents
+- 📊 Displays results to Sergey
+- ✅ Only run ./start.sh with user's task
+
+**When NOT in multi-agent-v2/:**
+- Follow normal CLAUDE.md rules
+- Build workflows yourself if needed
+
+---
+
 ### 💰 TOKEN ECONOMY - Top Priority!
 
 **WORK LIKE THIS:**
